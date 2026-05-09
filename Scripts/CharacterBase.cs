@@ -18,9 +18,22 @@ public class CharacterBase : MonoBehaviour
 
     public bool IsDead => HP <= 0;
 
+    private HealthBar2D healthBar;
+
+    protected virtual void Awake()
+    {
+        healthBar = GetComponent<HealthBar2D>();
+
+        if (healthBar == null)
+        {
+            healthBar = gameObject.AddComponent<HealthBar2D>();
+        }
+    }
+
     protected virtual void Start()
     {
         HP = MaxHP;
+        UpdateHealthBar();
     }
 
     public void TakeDamage(CharacterBase attacker)
@@ -28,7 +41,14 @@ public class CharacterBase : MonoBehaviour
         int damage = Mathf.Max(1, attacker.Attack - Defense);
         HP -= damage;
 
+        if (HP < 0)
+        {
+            HP = 0;
+        }
+
         Debug.Log(attacker.name + " -> " + name + " damage: " + damage + " (HP: " + HP + ")");
+
+        UpdateHealthBar();
 
         if (HP <= 0)
         {
@@ -39,8 +59,25 @@ public class CharacterBase : MonoBehaviour
     public void Die()
     {
         Debug.Log(name + " died");
-        Position = new Vector2Int(-1, -1);
+
+        if (MapManager.Instance != null)
+        {
+            MapManager.Instance.RemoveUnit(this);
+        }
+        else
+        {
+            Position = new Vector2Int(-1, -1);
+        }
+
         gameObject.SetActive(false);
+    }
+
+    private void UpdateHealthBar()
+    {
+        if (healthBar != null)
+        {
+            healthBar.SetValue(HP, MaxHP);
+        }
     }
 
     public bool TryMove(Vector2Int dir)
