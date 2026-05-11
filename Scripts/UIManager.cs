@@ -8,21 +8,46 @@ public class UIManager : MonoBehaviour
     public TurnManager turn;
     public TMP_Text QiText;
     public TMP_Text TurnText;
-    private float unit_per_index = 100;
+    public LineAnimator line;
+    public List<GameObject> jewels;
+    List<SpriteRenderer> colors;
 
-    Vector3 ToVector3(Vector2Int v)
+    private void Start()
     {
-        return new Vector3(v.x * unit_per_index, v.y * unit_per_index, 0f);
+        colors = new List<SpriteRenderer>();
+        foreach (var obj in jewels)
+        {
+            colors.Add(obj.GetComponent<SpriteRenderer>());
+        }
     }
 
     public void Refresh()
     {
-        turn.player.transform.position = ToVector3(turn.player.Position);
-        foreach (EnemyUnit enemy in turn.enemies)
+        PlayerUnit player = MapManager.Instance.Player;
+        for (int i = 0; i < 3; i++)
         {
-            enemy.transform.position = ToVector3(enemy.Position);
+            string s = i >= player.actionHistory.Count ? null :  player.actionHistory[i];
+            switch (s)
+            {
+                case "Move":
+                    //#D4B000
+                    colors[i].color = new Color32(212, 176, 0, 255);
+                    break;
+                case "Attack":
+                    //#CD2E3A
+                    colors[i].color = new Color32(205, 46, 58, 255);
+                    break;
+                case "Defense":
+                    //#0047A0
+                    colors[i].color = new Color32(0, 71, 160, 255);
+                    break;
+                default:
+                    colors[i].color = Color.white;
+                    break;
+            }
         }
-        QiText.text = "<color=#B8F8FB>Qi" + turn.player.ActionPoints + "</color>";
+        QiText.text = "<color=#B8F8FB>Qi" + player.ActionPoints + "</color>";
         TurnText.text = "<color=#FFD000>Turn:" + turn.turnCount + "</color>";
+        line.DrawPath(player.path);
     }
 }

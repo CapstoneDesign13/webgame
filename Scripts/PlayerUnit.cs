@@ -6,20 +6,21 @@ public class PlayerUnit : CharacterBase
     public UIManager ui;
     public int ActionPoints = 3;
 
-    private Queue<string> actionHistory = new Queue<string>();
+    public List<string> actionHistory = new List<string>();
+    public List<Vector3> path = new List<Vector3>();
+
 
     public void ResetTurn()
     {
         ActionPoints = 3;
+        actionHistory.Clear();
+        path.Clear();
+        path.Add(transform.position);
     }
 
     public void RegisterAction(string action)
     {
-        actionHistory.Enqueue(action);
-
-        if (actionHistory.Count > 2)
-            actionHistory.Dequeue();
-
+        actionHistory.Add(action);
         CheckComboSkill();
     }
 
@@ -27,7 +28,7 @@ public class PlayerUnit : CharacterBase
     {
         if (actionHistory.Count < 2) return;
 
-        var arr = actionHistory.ToArray();
+        var arr = actionHistory;
 
         if (arr[0] == "Move" && arr[1] == "Move")
         {
@@ -49,6 +50,7 @@ public class PlayerUnit : CharacterBase
 
         if (TryMove(dir))
         {
+            path.Add(transform.position);
             ActionPoints--;
             RegisterAction("Move");
             ui.Refresh();

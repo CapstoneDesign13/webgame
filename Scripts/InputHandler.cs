@@ -4,38 +4,37 @@ using UnityEngine;
 
 public class InputHandler : MonoBehaviour
 {
-    public PlayerUnit player;
     public TurnManager turn;
     public WindowManager window;
 
     public void MoveU()
     {
-        player.DoMove(Vector2Int.up);
+        MapManager.Instance.Player.DoMove(Vector2Int.up);
     }
 
     public void MoveD()
     {
-        player.DoMove(Vector2Int.down);
+        MapManager.Instance.Player.DoMove(Vector2Int.down);
     }
 
     public void MoveL()
     {
-        player.DoMove(Vector2Int.left);
+        MapManager.Instance.Player.DoMove(Vector2Int.left);
     }
 
     public void MoveR()
     {
-        player.DoMove(Vector2Int.right);
+        MapManager.Instance.Player.DoMove(Vector2Int.right);
     }
 
     public void DoZ()
     {
-        player.DoAttack();
+        MapManager.Instance.Player.DoAttack();
     }
 
     public void DoX()
     {
-        player.DoDefense();
+        MapManager.Instance.Player.DoDefense();
     }
 
     public void DoSpace()
@@ -67,13 +66,13 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Z))
         {
             Debug.Log("Z pressed");
-            player.DoAttack();
+            DoZ();
         }
 
         if (Input.GetKeyDown(KeyCode.X))
         {
             Debug.Log("X pressed");
-            player.DoDefense();
+            DoX();
         }
 
         if (Input.GetKeyDown(KeyCode.C))
@@ -84,6 +83,7 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Debug.Log("SPACE pressed");
+            DoSpace();
         }
 
         if (Input.GetKeyDown(KeyCode.Tab))
@@ -95,7 +95,7 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Tab))
         {
             Debug.Log("Tab released");
-            window.OpenField();
+            window.CloseInfo();
         }
     }
 }
