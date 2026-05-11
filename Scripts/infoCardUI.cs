@@ -16,6 +16,6 @@ public class infoCardUI : MonoBehaviour
         hpTxt.text = string.Join("/", unit.HP, unit.MaxHP);
         atkTxt.text = unit.Attack.ToString();
         defTxt.text = unit.Defense.ToString();
-        posTxt.text = string.Join(",", unit.Position);
+        posTxt.text = string.Join(",", unit.CurrentGridPosition);
     }
 }

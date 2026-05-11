@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class InfoPanelUI : MonoBehaviour
 {
-    public TurnManager turn;
     public GameObject infoCard;
     private void OnEnable()
     {
@@ -12,8 +11,8 @@ public class InfoPanelUI : MonoBehaviour
             Destroy(child.gameObject);
         GameObject obj = Instantiate(infoCard, this.transform);
         infoCardUI card = obj.GetComponent<infoCardUI>();
-        card.setup(turn.player);
-        foreach (EnemyUnit enemy in turn.enemies)
+        card.setup(MapManager.Instance.Player);
+        foreach (EnemyUnit enemy in MapManager.Instance.Enemies)
         {
             if (enemy.IsDead)
                 continue;

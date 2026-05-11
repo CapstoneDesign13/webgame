@@ -4,24 +4,32 @@ using UnityEngine;
 
 public class WindowManager : MonoBehaviour
 {
-    public GameObject fieldPanel;
     public GameObject infoPanel;
+    public GameObject duelPanel;
 
     public void CloseAll()
     {
-        fieldPanel.SetActive(false);
-        infoPanel.SetActive(false);
+        duelPanel.SetActive(false);
     }
 
     public void OpenField()
     {
         CloseAll();
-        fieldPanel.SetActive(true);
+    }
+
+    public void CloseInfo()
+    {
+        infoPanel.SetActive(false);
     }
 
     public void OpenInfo()
     {
-        CloseAll();
         infoPanel.SetActive(true);
+    }
+
+    public void OpenDuel()
+    {
+        CloseAll();
+        duelPanel.SetActive(true);
     }
 }

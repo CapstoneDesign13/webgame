@@ -6,7 +6,7 @@ public class EnemyUnit : CharacterBase
     {
         if (IsDead) return;
 
-        Vector2Int dir = player.Position - Position;
+        Vector2Int dir = player.CurrentGridPosition - CurrentGridPosition;
 
         Vector2Int moveDir = new Vector2Int(
             Mathf.Clamp(dir.x, -1, 1),
