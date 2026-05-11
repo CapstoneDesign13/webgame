@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class WindowManager : MonoBehaviour
 {
+    public GameObject input;
     public GameObject infoPanel;
     public GameObject duelPanel;
 
     public void CloseAll()
     {
+        input.SetActive(true);
         duelPanel.SetActive(false);
     }
 
@@ -30,6 +32,7 @@ public class WindowManager : MonoBehaviour
     public void OpenDuel()
     {
         CloseAll();
+        input.SetActive(false);
         duelPanel.SetActive(true);
     }
 }

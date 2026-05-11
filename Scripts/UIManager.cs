@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -10,14 +11,14 @@ public class UIManager : MonoBehaviour
     public TMP_Text TurnText;
     public LineAnimator line;
     public List<GameObject> jewels;
-    List<SpriteRenderer> colors;
+    List<Image> colors;
 
     private void Start()
     {
-        colors = new List<SpriteRenderer>();
+        colors = new List<Image>();
         foreach (var obj in jewels)
         {
-            colors.Add(obj.GetComponent<SpriteRenderer>());
+            colors.Add(obj.GetComponent<Image>());
         }
     }
 

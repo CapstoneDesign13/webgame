@@ -18,10 +18,12 @@ public class TurnManager : MonoBehaviour
     {
         MapManager.Instance.Player.ResetTurn();
         ui.Refresh();
+        window.input.SetActive(true);
     }
 
     public void EndPlayerTurn()
     {
+        window.input.SetActive(false);
         StartCoroutine(EnemyTurn());
     }
 

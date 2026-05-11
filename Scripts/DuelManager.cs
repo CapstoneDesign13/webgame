@@ -171,6 +171,9 @@ public class DuelManager : MonoBehaviour
             player.TakeDamage(enemy);
             enemy.TakeDamage(player);
 
+            WhoAmI(player);
+            WhoIsNext(enemy);
+
             yield return new WaitForSeconds(duelActionDelay);
 
             if (player.IsDead)
@@ -183,8 +186,6 @@ public class DuelManager : MonoBehaviour
                 Debug.Log(enemy.name + " defeated in duel.");
                 break;
             }
-            WhoAmI(player);
-            WhoIsNext(enemy);
         }
     }
 
