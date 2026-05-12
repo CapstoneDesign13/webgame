@@ -1,0 +1,20 @@
+{
+    "items": [
+    {
+        "id": "무당파 검성N",
+        "path": "무당파 검성/rotations/north"
+    },
+    {
+        "id": "무당파 검성S",
+        "path": "무당파 검성/rotations/south"
+    },
+    {
+        "id": "무당파 검성NE",
+        "path": "무당파 검성/rotations/north-east"
+    },
+    {
+        "id": "무당파 검성SW",
+        "path": "무당파 검성/rotations/south-west"
+    }
+    ]
+}
