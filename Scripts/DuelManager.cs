@@ -130,8 +130,8 @@ public class DuelManager : MonoBehaviour
 
     void WhoAmI(PlayerUnit player)
     {
-        Sprite spr = null;
-        ally_img.sprite = spr;
+        Sprite cache = ModDatabase.Instance.GetPic(player.name + "NE");
+        ally_img.sprite = cache;
         ally_info.setup(player);
     }
 
@@ -152,8 +152,8 @@ public class DuelManager : MonoBehaviour
 
     void WhoIsNext(EnemyUnit duelEnemy)
     {
-        Sprite spr = null;
-        enemy_img.sprite = spr;
+        Sprite cache = ModDatabase.Instance.GetPic(duelEnemy.name + "SW");
+        enemy_img.sprite = cache;
         enemy_info.setup(duelEnemy);
     }
 

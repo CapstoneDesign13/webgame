@@ -112,19 +112,16 @@ public class MapManager : MonoBehaviour
     [SerializeField] private EnemyUnit enemyPrefab;
     [SerializeField] private Transform unitRoot;
 
-    [Header("Spawn Settings")]
-    [SerializeField] private bool spawnUnitsOnAwake = true;
-
     [SerializeField]
     private UnitSpawnSetting playerSpawn =
-        new UnitSpawnSetting("Player", new Vector2Int(4, 0), 100, 20, 5);
+        new UnitSpawnSetting("무당파 검성", new Vector2Int(4, 0), 100, 20, 5);
 
     [SerializeField]
     private List<UnitSpawnSetting> enemySpawns = new List<UnitSpawnSetting>()
     {
-        new UnitSpawnSetting("Enemy 1", new Vector2Int(0, 9), 50, 12, 3),
-        new UnitSpawnSetting("Enemy 2", new Vector2Int(4, 9), 60, 10, 4),
-        new UnitSpawnSetting("Enemy 3", new Vector2Int(8, 9), 70, 15, 2)
+        new UnitSpawnSetting("무당파 검성", new Vector2Int(0, 9), 50, 12, 3),
+        new UnitSpawnSetting("무당파 검성", new Vector2Int(4, 9), 60, 10, 4),
+        new UnitSpawnSetting("무당파 검성", new Vector2Int(8, 9), 70, 15, 2)
     };
 
     [Header("Death Handling")]
@@ -158,11 +155,6 @@ public class MapManager : MonoBehaviour
         Instance = this;
 
         GenerateMap();
-
-        if (spawnUnitsOnAwake)
-        {
-            SpawnInitialUnits();
-        }
     }
 
     /// <summary>
@@ -233,6 +225,9 @@ public class MapManager : MonoBehaviour
                 playerSpawn.defense
             );
             player.ui = ui;
+            SpriteRenderer spr = player.GetComponent<SpriteRenderer>();
+            Sprite cache = ModDatabase.Instance.GetPic(player.name + "N");
+            spr.sprite = cache;
             PlaceUnit(player, playerSpawn.startPosition);
         }
         else
@@ -254,7 +249,9 @@ public class MapManager : MonoBehaviour
                     setting.attack,
                     setting.defense
                 );
-
+                SpriteRenderer spr = enemy.GetComponent<SpriteRenderer>();
+                Sprite cache = ModDatabase.Instance.GetPic(enemy.name + "S");
+                spr.sprite = cache;
                 PlaceUnit(enemy, setting.startPosition);
             }
         }
