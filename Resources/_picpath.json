@@ -1,20 +1,196 @@
 {
     "items": [
     {
-        "id": "무당파 검성N",
-        "path": "무당파 검성/rotations/north"
+        "id": "무당파 장문인N",
+        "path": "무당파 장문인/rotations/north"
     },
     {
-        "id": "무당파 검성S",
-        "path": "무당파 검성/rotations/south"
+        "id": "무당파 장문인NE",
+        "path": "무당파 장문인/rotations/north-east"
+    },
+    {
+        "id": "무당파 장문인E",
+        "path": "무당파 장문인/rotations/east"
+    },
+    {
+        "id": "무당파 장문인SE",
+        "path": "무당파 장문인/rotations/south-east"
+    },
+    {
+        "id": "무당파 장문인S",
+        "path": "무당파 장문인/rotations/south"
+    },
+    {
+        "id": "무당파 장문인SW",
+        "path": "무당파 장문인/rotations/south-west"
+    },
+    {
+        "id": "무당파 장문인W",
+        "path": "무당파 장문인/rotations/west"
+    },
+    {
+        "id": "무당파 장문인NW",
+        "path": "무당파 장문인/rotations/north-west"
+    },
+    {
+        "id": "무당파 검성N",
+        "path": "무당파 검성/rotations/north"
     },
     {
         "id": "무당파 검성NE",
         "path": "무당파 검성/rotations/north-east"
     },
     {
+        "id": "무당파 검성E",
+        "path": "무당파 검성/rotations/east"
+    },
+    {
+        "id": "무당파 검성SE",
+        "path": "무당파 검성/rotations/south-east"
+    },
+    {
+        "id": "무당파 검성S",
+        "path": "무당파 검성/rotations/south"
+    },
+    {
         "id": "무당파 검성SW",
         "path": "무당파 검성/rotations/south-west"
+    },
+    {
+        "id": "무당파 검성W",
+        "path": "무당파 검성/rotations/west"
+    },
+    {
+        "id": "무당파 검성NW",
+        "path": "무당파 검성/rotations/north-west"
+    },
+    {
+        "id": "무당파 기공사N",
+        "path": "무당파 기공사/rotations/north"
+    },
+    {
+        "id": "무당파 기공사NE",
+        "path": "무당파 기공사/rotations/north-east"
+    },
+    {
+        "id": "무당파 기공사E",
+        "path": "무당파 기공사/rotations/east"
+    },
+    {
+        "id": "무당파 기공사SE",
+        "path": "무당파 기공사/rotations/south-east"
+    },
+    {
+        "id": "무당파 기공사S",
+        "path": "무당파 기공사/rotations/south"
+    },
+    {
+        "id": "무당파 기공사SW",
+        "path": "무당파 기공사/rotations/south-west"
+    },
+    {
+        "id": "무당파 기공사W",
+        "path": "무당파 기공사/rotations/west"
+    },
+    {
+        "id": "무당파 기공사NW",
+        "path": "무당파 기공사/rotations/north-west"
+    },
+    {
+        "id": "무당파 태극검수N",
+        "path": "무당파 태극검수/rotations/north"
+    },
+    {
+        "id": "무당파 태극검수NE",
+        "path": "무당파 태극검수/rotations/north-east"
+    },
+    {
+        "id": "무당파 태극검수E",
+        "path": "무당파 태극검수/rotations/east"
+    },
+    {
+        "id": "무당파 태극검수SE",
+        "path": "무당파 태극검수/rotations/south-east"
+    },
+    {
+        "id": "무당파 태극검수S",
+        "path": "무당파 태극검수/rotations/south"
+    },
+    {
+        "id": "무당파 태극검수SW",
+        "path": "무당파 태극검수/rotations/south-west"
+    },
+    {
+        "id": "무당파 태극검수W",
+        "path": "무당파 태극검수/rotations/west"
+    },
+    {
+        "id": "무당파 태극검수NW",
+        "path": "무당파 태극검수/rotations/north-west"
+    },
+    {
+        "id": "무당파 호법선사N",
+        "path": "무당파 호법선사/rotations/north"
+    },
+    {
+        "id": "무당파 호법선사NE",
+        "path": "무당파 호법선사/rotations/north-east"
+    },
+    {
+        "id": "무당파 호법선사E",
+        "path": "무당파 호법선사/rotations/east"
+    },
+    {
+        "id": "무당파 호법선사SE",
+        "path": "무당파 호법선사/rotations/south-east"
+    },
+    {
+        "id": "무당파 호법선사S",
+        "path": "무당파 호법선사/rotations/south"
+    },
+    {
+        "id": "무당파 호법선사SW",
+        "path": "무당파 호법선사/rotations/south-west"
+    },
+    {
+        "id": "무당파 호법선사W",
+        "path": "무당파 호법선사/rotations/west"
+    },
+    {
+        "id": "무당파 호법선사NW",
+        "path": "무당파 호법선사/rotations/north-west"
+    },
+    {
+        "id": "무당파 평제자N",
+        "path": "무당파 평제자/rotations/north"
+    },
+    {
+        "id": "무당파 평제자NE",
+        "path": "무당파 평제자/rotations/north-east"
+    },
+    {
+        "id": "무당파 평제자E",
+        "path": "무당파 평제자/rotations/east"
+    },
+    {
+        "id": "무당파 평제자SE",
+        "path": "무당파 평제자/rotations/south-east"
+    },
+    {
+        "id": "무당파 평제자S",
+        "path": "무당파 평제자/rotations/south"
+    },
+    {
+        "id": "무당파 평제자SW",
+        "path": "무당파 평제자/rotations/south-west"
+    },
+    {
+        "id": "무당파 평제자W",
+        "path": "무당파 평제자/rotations/west"
+    },
+    {
+        "id": "무당파 평제자NW",
+        "path": "무당파 평제자/rotations/north-west"
     }
     ]
 }
