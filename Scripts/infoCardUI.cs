@@ -15,10 +15,10 @@ public class infoCardUI : MonoBehaviour
     public void setup(CharacterBase unit)
     {
         teamTxt.text = unit.team.ToString();
-        hpTxt.text = string.Join("/", unit.HP, unit.MaxHP);
-        atkTxt.text = unit.Attack.ToString();
-        defTxt.text = unit.Defense.ToString();
-        posTxt.text = string.Join(",", unit.CurrentGridPosition);
+        hpTxt.text = $"체력:{unit.HP}/{unit.MaxHP}";
+        atkTxt.text = $"공격력:{ unit.Attack}";
+        defTxt.text = $"방어력:{unit.Defense}";
+        posTxt.text = $"위치:{unit.CurrentGridPosition}";
         Sprite cache = ModDatabase.Instance.GetPic(unit.name + "S");
         pic.sprite = cache;
     }

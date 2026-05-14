@@ -1,3 +1,5 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -57,18 +59,29 @@ public class TileData
     }
 }
 
+[JsonConverter(typeof(StringEnumConverter))]
+public enum PieceType
+{
+    Soldier,
+    Horse,
+    Chariot,
+    King
+}
+
 [System.Serializable]
 public class UnitSpawnSetting
 {
     public string displayName;
+    public PieceType type;
     public Vector2Int startPosition;
     public int hp;
     public int attack;
     public int defense;
 
-    public UnitSpawnSetting(string displayName, Vector2Int startPosition, int hp, int attack, int defense)
+    public UnitSpawnSetting(string displayName, PieceType type, Vector2Int startPosition, int hp, int attack, int defense)
     {
         this.displayName = displayName;
+        this.type = type;
         this.startPosition = startPosition;
         this.hp = hp;
         this.attack = attack;
@@ -110,18 +123,20 @@ public class MapManager : MonoBehaviour
     [Header("Unit Prefabs")]
     [SerializeField] private PlayerUnit playerPrefab;
     [SerializeField] private EnemyUnit enemyPrefab;
+    [SerializeField] private HorseUnit HorsePrefab;
+    [SerializeField] private ChariotUnit ChariotPrefab;
     [SerializeField] private Transform unitRoot;
 
     [SerializeField]
     private UnitSpawnSetting playerSpawn =
-        new UnitSpawnSetting("무당파 검성", new Vector2Int(4, 0), 100, 20, 5);
+        new UnitSpawnSetting("무당파 검성", PieceType.King, new Vector2Int(4, 0), 100, 20, 5);
 
     [SerializeField]
     private List<UnitSpawnSetting> enemySpawns = new List<UnitSpawnSetting>()
     {
-        new UnitSpawnSetting("무당파 검성", new Vector2Int(0, 9), 50, 12, 3),
-        new UnitSpawnSetting("무당파 검성", new Vector2Int(4, 9), 60, 10, 4),
-        new UnitSpawnSetting("무당파 검성", new Vector2Int(8, 9), 70, 15, 2)
+        new UnitSpawnSetting("무당파 검성", PieceType.Horse, new Vector2Int(0, 9), 50, 12, 3),
+        new UnitSpawnSetting("무당파 검성", PieceType.Soldier, new Vector2Int(4, 9), 60, 10, 4),
+        new UnitSpawnSetting("무당파 검성", PieceType.Chariot, new Vector2Int(8, 9), 70, 15, 2)
     };
 
     [Header("Death Handling")]
@@ -241,7 +256,19 @@ public class MapManager : MonoBehaviour
             {
                 UnitSpawnSetting setting = enemySpawns[i];
 
-                EnemyUnit enemy = Instantiate(enemyPrefab, parent);
+                EnemyUnit enemy;
+                switch(setting.type)
+                {
+                    case PieceType.Horse:
+                        enemy = Instantiate(HorsePrefab, parent);
+                        break;
+                    case PieceType.Chariot:
+                        enemy = Instantiate(ChariotPrefab, parent);
+                        break;
+                    default:
+                        enemy = Instantiate(enemyPrefab, parent);
+                        break;
+                }
                 enemy.SetupStats(
                     setting.displayName,
                     Team.Enemy,

@@ -171,4 +171,11 @@ public class CharacterBase : MonoBehaviour
         }
         return hit;
     }
+
+    public bool TryAttackTarget(CharacterBase character)
+    {
+        bool hit = false;
+        character.TakeDamage(this);
+        return hit;
+    }
 }

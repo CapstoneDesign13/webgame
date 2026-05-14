@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class EnemyUnit : CharacterBase
 {
-    public void TakeTurn(PlayerUnit player)
+    // 기본 쫄병 AI
+    public virtual void TakeTurn(PlayerUnit player)
     {
         if (IsDead) return;
 
@@ -13,10 +14,10 @@ public class EnemyUnit : CharacterBase
             Mathf.Clamp(dir.y, -1, 1)
         );
 
-        // 공격 가능하면 공격
+        // 상하좌우 인접 공격
         if (Mathf.Abs(dir.x) + Mathf.Abs(dir.y) == 1)
         {
-            TryAttack();
+            TryAttackTarget(player);
         }
         else
         {
