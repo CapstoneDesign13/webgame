@@ -4587,27 +4587,35 @@ MonoBehaviour:
   tileRoot: {fileID: 0}
   playerPrefab: {fileID: 7828127010101975679, guid: edfad073db8d3a54f87d8bf65fd1cfee,
     type: 3}
-  enemyPrefab: {fileID: 696604709452101422, guid: 0b7a46bfc091cbc4cbd46ab6ea992fd1,
+  enemyPrefab: {fileID: 2904876277835658708, guid: c4638c091fdc9a147b76dc6eeed4ce71,
+    type: 3}
+  HorsePrefab: {fileID: 5113752453396528763, guid: f16734ef0be8ad14a86ef850e69fb122,
+    type: 3}
+  ChariotPrefab: {fileID: 2181360455487635776, guid: 12e679d8e03430a4e87c58b54955135c,
     type: 3}
   unitRoot: {fileID: 0}
   playerSpawn:
     displayName: "\uBB34\uB2F9\uD30C \uAC80\uC131"
+    type: 0
     startPosition: {x: 4, y: 0}
     hp: 100
     attack: 20
     defense: 5
   enemySpawns:
   - displayName: "\uBB34\uB2F9\uD30C \uAC80\uC131"
+    type: 1
     startPosition: {x: 0, y: 9}
     hp: 50
     attack: 12
     defense: 3
   - displayName: "\uBB34\uB2F9\uD30C \uAC80\uC131"
+    type: 0
     startPosition: {x: 4, y: 9}
     hp: 60
     attack: 10
     defense: 4
   - displayName: "\uBB34\uB2F9\uD30C \uAC80\uC131"
+    type: 2
     startPosition: {x: 8, y: 9}
     hp: 70
     attack: 15
