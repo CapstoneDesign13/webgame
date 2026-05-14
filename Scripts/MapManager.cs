@@ -65,6 +65,9 @@ public enum PieceType
     Soldier,
     Horse,
     Chariot,
+    Cannon,
+    Elephant,
+    Guard,
     King
 }
 
@@ -125,6 +128,10 @@ public class MapManager : MonoBehaviour
     [SerializeField] private EnemyUnit enemyPrefab;
     [SerializeField] private HorseUnit HorsePrefab;
     [SerializeField] private ChariotUnit ChariotPrefab;
+    [SerializeField] private CannonUnit CannonPrefab;
+    [SerializeField] private ElephantUnit ElephantPrefab;
+    [SerializeField] private GuardUnit GuardPrefab;
+    [SerializeField] private KingUnit KingPrefab;
     [SerializeField] private Transform unitRoot;
 
     [SerializeField]
@@ -264,6 +271,18 @@ public class MapManager : MonoBehaviour
                         break;
                     case PieceType.Chariot:
                         enemy = Instantiate(ChariotPrefab, parent);
+                        break;
+                    case PieceType.Cannon:
+                        enemy = Instantiate(CannonPrefab, parent);
+                        break;
+                    case PieceType.Elephant:
+                        enemy = Instantiate(ElephantPrefab, parent);
+                        break;
+                    case PieceType.Guard:
+                        enemy = Instantiate(GuardPrefab, parent);
+                        break;
+                    case PieceType.King:
+                        enemy = Instantiate(KingPrefab, parent);
                         break;
                     default:
                         enemy = Instantiate(enemyPrefab, parent);
