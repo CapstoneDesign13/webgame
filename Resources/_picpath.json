@@ -767,6 +767,198 @@
     {
         "id": "하오문 뒷골목패NW",
         "path": "하오문/하오문 뒷골목패/rotations/north-west"
+    },
+    {
+        "id": "천마신교 천마N",
+        "path": "천마신교/천마신교 천마/rotations/north"
+    },
+    {
+        "id": "천마신교 천마NE",
+        "path": "천마신교/천마신교 천마/rotations/north-east"
+    },
+    {
+        "id": "천마신교 천마E",
+        "path": "천마신교/천마신교 천마/rotations/east"
+    },
+    {
+        "id": "천마신교 천마SE",
+        "path": "천마신교/천마신교 천마/rotations/south-east"
+    },
+    {
+        "id": "천마신교 천마S",
+        "path": "천마신교/천마신교 천마/rotations/south"
+    },
+    {
+        "id": "천마신교 천마SW",
+        "path": "천마신교/천마신교 천마/rotations/south-west"
+    },
+    {
+        "id": "천마신교 천마W",
+        "path": "천마신교/천마신교 천마/rotations/west"
+    },
+    {
+        "id": "천마신교 천마NW",
+        "path": "천마신교/천마신교 천마/rotations/north-west"
+    },
+    {
+        "id": "천마신교 광마N",
+        "path": "천마신교/천마신교 광마/rotations/north"
+    },
+    {
+        "id": "천마신교 광마NE",
+        "path": "천마신교/천마신교 광마/rotations/north-east"
+    },
+    {
+        "id": "천마신교 광마E",
+        "path": "천마신교/천마신교 광마/rotations/east"
+    },
+    {
+        "id": "천마신교 광마SE",
+        "path": "천마신교/천마신교 광마/rotations/south-east"
+    },
+    {
+        "id": "천마신교 광마S",
+        "path": "천마신교/천마신교 광마/rotations/south"
+    },
+    {
+        "id": "천마신교 광마SW",
+        "path": "천마신교/천마신교 광마/rotations/south-west"
+    },
+    {
+        "id": "천마신교 광마W",
+        "path": "천마신교/천마신교 광마/rotations/west"
+    },
+    {
+        "id": "천마신교 광마NW",
+        "path": "천마신교/천마신교 광마/rotations/north-west"
+    },
+    {
+        "id": "천마신교 혈포마N",
+        "path": "천마신교/천마신교 혈포마/rotations/north"
+    },
+    {
+        "id": "천마신교 혈포마NE",
+        "path": "천마신교/천마신교 혈포마/rotations/north-east"
+    },
+    {
+        "id": "천마신교 혈포마E",
+        "path": "천마신교/천마신교 혈포마/rotations/east"
+    },
+    {
+        "id": "천마신교 혈포마SE",
+        "path": "천마신교 혈포마/rotations/south-east"
+    },
+    {
+        "id": "천마신교 혈포마S",
+        "path": "천마신교/천마신교 혈포마/rotations/south"
+    },
+    {
+        "id": "천마신교 혈포마SW",
+        "path": "천마신교/천마신교 혈포마/rotations/south-west"
+    },
+    {
+        "id": "천마신교 혈포마W",
+        "path": "천마신교/천마신교 혈포마/rotations/west"
+    },
+    {
+        "id": "천마신교 혈포마NW",
+        "path": "천마신교/천마신교 혈포마/rotations/north-west"
+    },
+    {
+        "id": "천마신교 흡성마N",
+        "path": "천마신교/천마신교 흡성마/rotations/north"
+    },
+    {
+        "id": "천마신교 흡성마NE",
+        "path": "천마신교/천마신교 흡성마/rotations/north-east"
+    },
+    {
+        "id": "천마신교 흡성마E",
+        "path": "천마신교/천마신교 흡성마/rotations/east"
+    },
+    {
+        "id": "천마신교 흡성마SE",
+        "path": "천마신교/천마신교 흡성마/rotations/south-east"
+    },
+    {
+        "id": "천마신교 흡성마S",
+        "path": "천마신교/천마신교 흡성마/rotations/south"
+    },
+    {
+        "id": "천마신교 흡성마SW",
+        "path": "천마신교/천마신교 흡성마/rotations/south-west"
+    },
+    {
+        "id": "천마신교 흡성마W",
+        "path": "천마신교/천마신교 흡성마/rotations/west"
+    },
+    {
+        "id": "천마신교 흡성마NW",
+        "path": "천마신교/천마신교 흡성마/rotations/north-west"
+    },
+    {
+        "id": "천마신교 혈류마N",
+        "path": "천마신교/천마신교 혈류마/rotations/north"
+    },
+    {
+        "id": "천마신교 혈류마NE",
+        "path": "천마신교/천마신교 혈류마/rotations/north-east"
+    },
+    {
+        "id": "천마신교 혈류마E",
+        "path": "천마신교/천마신교 혈류마/rotations/east"
+    },
+    {
+        "id": "천마신교 혈류마SE",
+        "path": "천마신교/천마신교 혈류마/rotations/south-east"
+    },
+    {
+        "id": "천마신교 혈류마S",
+        "path": "천마신교/천마신교 혈류마/rotations/south"
+    },
+    {
+        "id": "천마신교 혈류마SW",
+        "path": "천마신교/천마신교 혈류마/rotations/south-west"
+    },
+    {
+        "id": "천마신교 혈류마W",
+        "path": "천마신교/천마신교 혈류마/rotations/west"
+    },
+    {
+        "id": "천마신교 혈류마NW",
+        "path": "천마신교/천마신교 혈류마/rotations/north-west"
+    },
+    {
+        "id": "천마신교 마교도N",
+        "path": "천마신교/천마신교 마교도/rotations/north"
+    },
+    {
+        "id": "천마신교 마교도NE",
+        "path": "천마신교/천마신교 마교도/rotations/north-east"
+    },
+    {
+        "id": "천마신교 마교도E",
+        "path": "천마신교/천마신교 마교도/rotations/east"
+    },
+    {
+        "id": "천마신교 마교도SE",
+        "path": "천마신교/천마신교 마교도/rotations/south-east"
+    },
+    {
+        "id": "천마신교 마교도S",
+        "path": "천마신교/천마신교 마교도/rotations/south"
+    },
+    {
+        "id": "천마신교 마교도SW",
+        "path": "천마신교/천마신교 마교도/rotations/south-west"
+    },
+    {
+        "id": "천마신교 마교도W",
+        "path": "천마신교/천마신교 마교도/rotations/west"
+    },
+    {
+        "id": "천마신교 마교도NW",
+        "path": "천마신교/천마신교 마교도/rotations/north-west"
     }
     ]
 }
