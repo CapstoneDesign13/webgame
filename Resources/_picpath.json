@@ -769,36 +769,68 @@
         "path": "하오문/하오문 뒷골목패/rotations/north-west"
     },
     {
-        "id": "천마신교 천마N",
-        "path": "천마신교/천마신교 천마/rotations/north"
+        "id": "천마신교 천마 1페이즈N",
+        "path": "천마신교/천마신교 천마 1페이즈/rotations/north"
     },
     {
-        "id": "천마신교 천마NE",
-        "path": "천마신교/천마신교 천마/rotations/north-east"
+        "id": "천마신교 천마 1페이즈NE",
+        "path": "천마신교/천마신교 천마 1페이즈/rotations/north-east"
     },
     {
-        "id": "천마신교 천마E",
-        "path": "천마신교/천마신교 천마/rotations/east"
+        "id": "천마신교 천마 1페이즈E",
+        "path": "천마신교/천마신교 천마 1페이즈/rotations/east"
     },
     {
-        "id": "천마신교 천마SE",
-        "path": "천마신교/천마신교 천마/rotations/south-east"
+        "id": "천마신교 천마 1페이즈SE",
+        "path": "천마신교/천마신교 천마 1페이즈/rotations/south-east"
     },
     {
-        "id": "천마신교 천마S",
-        "path": "천마신교/천마신교 천마/rotations/south"
+        "id": "천마신교 천마 1페이즈S",
+        "path": "천마신교/천마신교 천마 1페이즈/rotations/south"
     },
     {
-        "id": "천마신교 천마SW",
-        "path": "천마신교/천마신교 천마/rotations/south-west"
+        "id": "천마신교 천마 1페이즈SW",
+        "path": "천마신교/천마신교 천마 1페이즈/rotations/south-west"
     },
     {
-        "id": "천마신교 천마W",
-        "path": "천마신교/천마신교 천마/rotations/west"
+        "id": "천마신교 천마 1페이즈W",
+        "path": "천마신교/천마신교 천마 1페이즈/rotations/west"
     },
     {
-        "id": "천마신교 천마NW",
-        "path": "천마신교/천마신교 천마/rotations/north-west"
+        "id": "천마신교 천마 1페이즈NW",
+        "path": "천마신교/천마신교 천마 1페이즈/rotations/north-west"
+    },
+    {
+        "id": "천마신교 천마 2페이즈N",
+        "path": "천마신교/천마신교 천마 2페이즈/rotations/north"
+    },
+    {
+        "id": "천마신교 천마 2페이즈NE",
+        "path": "천마신교/천마신교 천마 2페이즈/rotations/north-east"
+    },
+    {
+        "id": "천마신교 천마 2페이즈E",
+        "path": "천마신교/천마신교 천마 2페이즈/rotations/east"
+    },
+    {
+        "id": "천마신교 천마 2페이즈SE",
+        "path": "천마신교/천마신교 천마 2페이즈/rotations/south-east"
+    },
+    {
+        "id": "천마신교 천마 2페이즈S",
+        "path": "천마신교/천마신교 천마 2페이즈/rotations/south"
+    },
+    {
+        "id": "천마신교 천마 2페이즈SW",
+        "path": "천마신교/천마신교 천마 2페이즈/rotations/south-west"
+    },
+    {
+        "id": "천마신교 천마 2페이즈W",
+        "path": "천마신교/천마신교 천마 2페이즈/rotations/west"
+    },
+    {
+        "id": "천마신교 천마 2페이즈NW",
+        "path": "천마신교/천마신교 천마 2페이즈/rotations/north-west"
     },
     {
         "id": "천마신교 광마N",
