@@ -8,6 +8,7 @@ public class InitHandler : MonoBehaviour
 {
     public ResourceLoader resourceLoader;
     public MapManager map;
+    public TurnManager turn; 
 
     void Start()
     {
@@ -20,5 +21,6 @@ public class InitHandler : MonoBehaviour
         resourceLoader.LoadMods();
 
         map.SpawnInitialUnits();
+        turn.StartPlayerTurn();
     }
 }
