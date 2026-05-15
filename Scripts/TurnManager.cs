@@ -82,8 +82,6 @@ public class TurnManager : MonoBehaviour
 
         PlayerUnit player = MapManager.Instance.Player;
 
-        // 원본 Enemies 리스트를 직접 foreach하지 않고 복사본을 사용한다.
-        // 일기토/사망 처리 중 리스트가 바뀌어도 EnemyTurn 순회가 깨지지 않게 하기 위함.
         List<EnemyUnit> enemies = MapManager.Instance.GetLivingEnemies();
 
         for (int i = 0; i < enemies.Count; i++)
