@@ -6,6 +6,8 @@ public class BoardCameraFitter : MonoBehaviour
     private const string RuntimeObjectName = "[BoardCameraFitter]";
     private const string TargetRootName = "Square";
     private const float Padding = 0.4f;
+    private const float HorizontalOffset = 0.15f;
+    private const float VerticalOffset = 0f;
 
     private Camera targetCamera;
     private Transform targetRoot;
@@ -99,8 +101,8 @@ public class BoardCameraFitter : MonoBehaviour
         );
 
         Vector3 cameraPosition = targetCamera.transform.position;
-        cameraPosition.x = bounds.center.x;
-        cameraPosition.y = bounds.center.y;
+        cameraPosition.x = bounds.center.x + HorizontalOffset;
+        cameraPosition.y = bounds.center.y + VerticalOffset;
         targetCamera.transform.position = cameraPosition;
 
         lastScreenWidth = Screen.width;
@@ -109,6 +111,20 @@ public class BoardCameraFitter : MonoBehaviour
 
     private bool TryGetTargetBounds(out Bounds bounds)
     {
+        if (targetRoot == null)
+        {
+            bounds = default;
+            return false;
+        }
+
+        SpriteRenderer boardSpriteRenderer = targetRoot.GetComponent<SpriteRenderer>();
+
+        if (boardSpriteRenderer != null && boardSpriteRenderer.enabled)
+        {
+            bounds = boardSpriteRenderer.bounds;
+            return true;
+        }
+
         Renderer[] renderers = targetRoot.GetComponentsInChildren<Renderer>(true);
 
         bool hasBounds = false;
