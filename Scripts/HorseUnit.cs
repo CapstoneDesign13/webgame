@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class HorseUnit : EnemyUnit
@@ -20,10 +21,9 @@ public class HorseUnit : EnemyUnit
 
         Vector2Int playerPos = player.CurrentGridPosition;
 
-        // 1. 공격 가능한지 먼저 검사
+        // 1. 공격 가능 여부 검사
         foreach (var move in horseMoves)
         {
-            // 말 다리 막힘 체크
             if (IsHorseLegBlocked(move))
                 continue;
 
@@ -36,27 +36,25 @@ public class HorseUnit : EnemyUnit
             }
         }
 
-        // 2. 플레이어에게 가장 가까워지는 위치로 이동
+        // 2. 실제 경로 거리 기준 최적 이동 선택
         Vector2Int bestMove = Vector2Int.zero;
-        int bestDistance = int.MaxValue;
+        int bestPathDistance = int.MaxValue;
 
         foreach (var move in horseMoves)
         {
             if (IsHorseLegBlocked(move))
                 continue;
 
-            Vector2Int targetPos = CurrentGridPosition + move;
+            Vector2Int nextPos = CurrentGridPosition + move;
 
-            if (!MapManager.Instance.CanMoveTo(targetPos))
+            if (!MapManager.Instance.CanMoveTo(nextPos))
                 continue;
 
-            int distance =
-                Mathf.Abs(playerPos.x - targetPos.x) +
-                Mathf.Abs(playerPos.y - targetPos.y);
+            int pathDistance = GetPathDistance(nextPos, playerPos);
 
-            if (distance < bestDistance)
+            if (pathDistance < bestPathDistance)
             {
-                bestDistance = distance;
+                bestPathDistance = pathDistance;
                 bestMove = move;
             }
         }
@@ -67,19 +65,59 @@ public class HorseUnit : EnemyUnit
         }
     }
 
+    private int GetPathDistance(Vector2Int start, Vector2Int target)
+    {
+        Queue<(Vector2Int pos, int dist)> queue = new();
+        HashSet<Vector2Int> visited = new();
+
+        queue.Enqueue((start, 0));
+        visited.Add(start);
+
+        while (queue.Count > 0)
+        {
+            var (current, dist) = queue.Dequeue();
+
+            if (current == target)
+                return dist;
+
+            foreach (var move in horseMoves)
+            {
+                Vector2Int next = current + move;
+
+                if (visited.Contains(next))
+                    continue;
+
+                // 임시로 현재 위치 기준 체크용 함수 사용
+                if (IsHorseLegBlockedFrom(current, move))
+                    continue;
+
+                if (!MapManager.Instance.CanMoveTo(next) && next != target)
+                    continue;
+
+                visited.Add(next);
+                queue.Enqueue((next, dist + 1));
+            }
+        }
+
+        return int.MaxValue;
+    }
+
     private bool IsHorseLegBlocked(Vector2Int move)
+    {
+        return IsHorseLegBlockedFrom(CurrentGridPosition, move);
+    }
+
+    private bool IsHorseLegBlockedFrom(Vector2Int origin, Vector2Int move)
     {
         Vector2Int legPos;
 
-        // 가로 2칸 이동
         if (Mathf.Abs(move.x) == 2)
         {
-            legPos = CurrentGridPosition + new Vector2Int(move.x / 2, 0);
+            legPos = origin + new Vector2Int(move.x / 2, 0);
         }
-        // 세로 2칸 이동
         else
         {
-            legPos = CurrentGridPosition + new Vector2Int(0, move.y / 2);
+            legPos = origin + new Vector2Int(0, move.y / 2);
         }
 
         return MapManager.Instance.IsTileOccupied(legPos);
