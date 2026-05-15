@@ -9,12 +9,7 @@ public class TurnManager : MonoBehaviour
     public int turnCount = 0;
     private bool duelStarted = false;
 
-    void Start()
-    {
-        StartPlayerTurn();
-    }
-
-    void StartPlayerTurn()
+    public void StartPlayerTurn()
     {
         MapManager.Instance.Player.ResetTurn();
         ui.Refresh();
