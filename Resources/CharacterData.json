@@ -1,7 +1,7 @@
 {
   "items": [
     {
-      "id": "mudang_king_01",
+      "id": "mudang_king",
       "name": "무당파 장문인",
       "faction": "무당파",
       "hp": 7,
@@ -15,7 +15,7 @@
       "effect_color": ""
     },
     {
-      "id": "mudang_chariot_01",
+      "id": "mudang_chariot",
       "name": "무당파 검성",
       "faction": "무당파",
       "hp": 4,
@@ -29,7 +29,7 @@
       "effect_color": ""
     },
     {
-      "id": "mudang_cannon_01",
+      "id": "mudang_cannon",
       "name": "무당파 기공사",
       "faction": "무당파",
       "hp": 5,
@@ -43,7 +43,7 @@
       "effect_color": ""
     },
     {
-      "id": "mudang_horse_01",
+      "id": "mudang_horse",
       "name": "무당파 태극검수",
       "faction": "무당파",
       "hp": 3,
@@ -57,7 +57,7 @@
       "effect_color": ""
     },
     {
-      "id": "mudang_elephant_01",
+      "id": "mudang_elephant",
       "name": "무당파 호법선사",
       "faction": "무당파",
       "hp": 6,
@@ -71,7 +71,7 @@
       "effect_color": ""
     },
     {
-      "id": "mudang_guard_01",
+      "id": "mudang_guard",
       "name": "무당파 평제자",
       "faction": "무당파",
       "hp": 4,
@@ -86,7 +86,7 @@
     },
 
     {
-      "id": "sacheon_king_01",
+      "id": "sacheon_king",
       "name": "사천당가 당가주",
       "faction": "사천당가",
       "hp": 7,
@@ -100,7 +100,7 @@
       "effect_color": ""
     },
     {
-      "id": "sacheon_chariot_01",
+      "id": "sacheon_chariot",
       "name": "사천당가 독혈사신",
       "faction": "사천당가",
       "hp": 4,
@@ -114,7 +114,7 @@
       "effect_color": ""
     },
     {
-      "id": "sacheon_cannon_01",
+      "id": "sacheon_cannon",
       "name": "사천당가 암기포수",
       "faction": "사천당가",
       "hp": 5,
@@ -128,7 +128,7 @@
       "effect_color": ""
     },
     {
-      "id": "sacheon_horse_01",
+      "id": "sacheon_horse",
       "name": "사천당가 비영독수",
       "faction": "사천당가",
       "hp": 3,
@@ -142,7 +142,7 @@
       "effect_color": ""
     },
     {
-      "id": "sacheon_elephant_01",
+      "id": "sacheon_elephant",
       "name": "사천당가 만천우침",
       "faction": "사천당가",
       "hp": 6,
@@ -156,7 +156,7 @@
       "effect_color": ""
     },
     {
-      "id": "sacheon_guard_01",
+      "id": "sacheon_guard",
       "name": "사천당가 평제자",
       "faction": "사천당가",
       "hp": 4,
@@ -171,7 +171,7 @@
     },
 
     {
-      "id": "solim_king_01",
+      "id": "solim_king",
       "name": "소림사 방장",
       "faction": "소림사",
       "hp": 8,
@@ -185,7 +185,7 @@
       "effect_color": ""
     },
     {
-      "id": "solim_chariot_01",
+      "id": "solim_chariot",
       "name": "소림사 금강나한",
       "faction": "소림사",
       "hp": 4,
@@ -199,7 +199,7 @@
       "effect_color": ""
     },
     {
-      "id": "solim_cannon_01",
+      "id": "solim_cannon",
       "name": "소림사 사자후승",
       "faction": "소림사",
       "hp": 6,
@@ -213,7 +213,7 @@
       "effect_color": ""
     },
     {
-      "id": "solim_horse_01",
+      "id": "solim_horse",
       "name": "소림사 지진나한",
       "faction": "소림사",
       "hp": 4,
@@ -227,7 +227,7 @@
       "effect_color": ""
     },
     {
-      "id": "solim_elephant_01",
+      "id": "solim_elephant",
       "name": "소림사 자비호법승",
       "faction": "소림사",
       "hp": 7,
@@ -241,7 +241,7 @@
       "effect_color": ""
     },
     {
-      "id": "solim_guard_01",
+      "id": "solim_guard",
       "name": "소림사 행자승",
       "faction": "소림사",
       "hp": 5,
@@ -256,7 +256,7 @@
     },
 
     {
-      "id": "haoman_king_01",
+      "id": "haoman_king",
       "name": "하오문 문주",
       "faction": "하오문",
       "hp": 7,
@@ -270,7 +270,7 @@
       "effect_color": ""
     },
     {
-      "id": "haoman_chariot_01",
+      "id": "haoman_chariot",
       "name": "하오문 야행객",
       "faction": "하오문",
       "hp": 3,
@@ -284,7 +284,7 @@
       "effect_color": ""
     },
     {
-      "id": "haoman_cannon_01",
+      "id": "haoman_cannon",
       "name": "하오문 연막술사",
       "faction": "하오문",
       "hp": 5,
@@ -298,7 +298,7 @@
       "effect_color": ""
     },
     {
-      "id": "haoman_horse_01",
+      "id": "haoman_horse",
       "name": "하오문 비수첩자",
       "faction": "하오문",
       "hp": 3,
@@ -312,7 +312,7 @@
       "effect_color": ""
     },
     {
-      "id": "haoman_elephant_01",
+      "id": "haoman_elephant",
       "name": "하오문 혼선교란자",
       "faction": "하오문",
       "hp": 6,
@@ -326,7 +326,7 @@
       "effect_color": ""
     },
     {
-      "id": "haoman_guard_01",
+      "id": "haoman_guard",
       "name": "하오문 뒷골목패",
       "faction": "하오문",
       "hp": 4,
@@ -339,23 +339,36 @@
       "sprite_id": "하오문 뒷골목패",
       "effect_color": ""
     },
-
     {
-      "id": "demonic_king_01",
-      "name": "천마",
-      "faction": "천마신교",
-      "hp": 8,
-      "max_hp": 8,
-      "ap": 3,
-      "atk": 2,
-      "def": 2,
-      "unit_type": "KingUnit",
-      "passive_id": "",
-      "sprite_id": "천마",
-      "effect_color": ""
-    },
-    {
-      "id": "demonic_chariot_01",
+    "id": "demonic_king_phase1",
+    "name": "천마 (1페이즈)",
+    "faction": "천마신교",
+    "hp": 15,
+    "max_hp": 15,
+    "ap": 3,
+    "atk": 2,
+    "def": 3,
+    "unit_type": "KingUnit",
+    "passive_id": "",
+    "sprite_id": "천마_1페이즈",
+    "effect_color": ""
+  },
+  {
+    "id": "demonic_king_phase2",
+    "name": "천마 (2페이즈)",
+    "faction": "천마신교",
+    "hp": 1,
+    "max_hp": 1,
+    "ap": 4,
+    "atk": 4,
+    "def": 1,
+    "unit_type": "KingUnit",
+    "passive_id": "",
+    "sprite_id": "천마_2페이즈",
+    "effect_color": ""
+  },
+  {
+      "id": "demonic_chariot",
       "name": "천마신교 광마",
       "faction": "천마신교",
       "hp": 5,
@@ -369,7 +382,7 @@
       "effect_color": ""
     },
     {
-      "id": "demonic_cannon_01",
+      "id": "demonic_cannon",
       "name": "천마신교 혈포마",
       "faction": "천마신교",
       "hp": 6,
@@ -383,7 +396,7 @@
       "effect_color": ""
     },
     {
-      "id": "demonic_horse_01",
+      "id": "demonic_horse",
       "name": "천마신교 흡성마",
       "faction": "천마신교",
       "hp": 4,
@@ -397,7 +410,7 @@
       "effect_color": ""
     },
     {
-      "id": "demonic_elephant_01",
+      "id": "demonic_elephant",
       "name": "천마신교 혈류마",
       "faction": "천마신교",
       "hp": 7,
@@ -411,7 +424,7 @@
       "effect_color": ""
     },
     {
-      "id": "demonic_guard_01",
+      "id": "demonic_guard",
       "name": "천마신교 마교도",
       "faction": "천마신교",
       "hp": 4,
