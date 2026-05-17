@@ -801,6 +801,38 @@
         "path": "천마신교/천마신교 천마 1페이즈/rotations/north-west"
     },
     {
+        "id": "천마신교 천마 1페이즈 오라N",
+        "path": "천마신교/천마신교 천마 1페이즈 오라/rotations/north"
+    },
+    {
+        "id": "천마신교 천마 1페이즈 오라NE",
+        "path": "천마신교/천마신교 천마 1페이즈 오라/rotations/north-east"
+    },
+    {
+        "id": "천마신교 천마 1페이즈 오라E",
+        "path": "천마신교/천마신교 천마 1페이즈 오라/rotations/east"
+    },
+    {
+        "id": "천마신교 천마 1페이즈 오라SE",
+        "path": "천마신교/천마신교 천마 1페이즈 오라/rotations/south-east"
+    },
+    {
+        "id": "천마신교 천마 1페이즈 오라S",
+        "path": "천마신교/천마신교 천마 1페이즈 오라/rotations/south"
+    },
+    {
+        "id": "천마신교 천마 1페이즈 오라SW",
+        "path": "천마신교/천마신교 천마 1페이즈 오라/rotations/south-west"
+    },
+    {
+        "id": "천마신교 천마 1페이즈 오라W",
+        "path": "천마신교/천마신교 천마 1페이즈 오라/rotations/west"
+    },
+    {
+        "id": "천마신교 천마 1페이즈 오라NW",
+        "path": "천마신교/천마신교 천마 1페이즈 오라/rotations/north-west"
+    },
+    {
         "id": "천마신교 천마 2페이즈N",
         "path": "천마신교/천마신교 천마 2페이즈/rotations/north"
     },
@@ -831,6 +863,38 @@
     {
         "id": "천마신교 천마 2페이즈NW",
         "path": "천마신교/천마신교 천마 2페이즈/rotations/north-west"
+    },
+    {
+        "id": "천마신교 천마 2페이즈 오라N",
+        "path": "천마신교/천마신교 천마 2페이즈 오라/rotations/north"
+    },
+    {
+        "id": "천마신교 천마 2페이즈 오라NE",
+        "path": "천마신교/천마신교 천마 2페이즈 오라/rotations/north-east"
+    },
+    {
+        "id": "천마신교 천마 2페이즈 오라E",
+        "path": "천마신교/천마신교 천마 2페이즈 오라/rotations/east"
+    },
+    {
+        "id": "천마신교 천마 2페이즈 오라SE",
+        "path": "천마신교/천마신교 천마 2페이즈 오라/rotations/south-east"
+    },
+    {
+        "id": "천마신교 천마 2페이즈 오라S",
+        "path": "천마신교/천마신교 천마 2페이즈 오라/rotations/south"
+    },
+    {
+        "id": "천마신교 천마 2페이즈 오라SW",
+        "path": "천마신교/천마신교 천마 2페이즈 오라/rotations/south-west"
+    },
+    {
+        "id": "천마신교 천마 2페이즈 오라W",
+        "path": "천마신교/천마신교 천마 2페이즈 오라/rotations/west"
+    },
+    {
+        "id": "천마신교 천마 2페이즈 오라NW",
+        "path": "천마신교/천마신교 천마 2페이즈 오라/rotations/north-west"
     },
     {
         "id": "천마신교 광마N",
