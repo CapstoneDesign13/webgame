@@ -114,7 +114,7 @@ public class InputHandler : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyUp(KeyCode.Tab))
+        /*if (Input.GetKeyUp(KeyCode.Tab))
         {
             Debug.Log("Tab released");
 
@@ -122,6 +122,6 @@ public class InputHandler : MonoBehaviour
             {
                 window.CloseInfo();
             }
-        }
+        }*/
     }
 }

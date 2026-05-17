@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InfoPanelUI : MonoBehaviour
+public class InfoPanelUI : FullScreenPanel
 {
     public GameObject infoCard;
-    private void OnEnable()
+    public override void Refresh()
     {
         foreach (Transform child in this.transform)
             Destroy(child.gameObject);
@@ -19,6 +19,19 @@ public class InfoPanelUI : MonoBehaviour
             obj = Instantiate(infoCard, this.transform);
             card = obj.GetComponent<infoCardUI>();
             card.setup(enemy);
+        }
+    }
+
+    public void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.Tab))
+        {
+            Debug.Log("Tab released");
+
+            if (window != null)
+            {
+                window.CloseInfo();
+            }
         }
     }
 }

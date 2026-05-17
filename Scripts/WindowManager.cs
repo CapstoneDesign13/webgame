@@ -9,9 +9,27 @@ public class WindowManager : MonoBehaviour
     public GameObject duelPanel;
     public GameObject merchantPanel;
 
+    private int _active = 0;
+    public void Increase()
+    {
+        _active++;
+        if (_active > 0)
+        {
+            input.SetActive(false);
+        }
+    }
+
+    public void Decrease()
+    {
+        _active--;
+        if (_active == 0)
+        {
+            input.SetActive(true);
+        }
+    }
+
     public void CloseAll()
     {
-        input.SetActive(true);
         duelPanel.SetActive(false);
     }
 
@@ -33,14 +51,12 @@ public class WindowManager : MonoBehaviour
     public void OpenDuel()
     {
         CloseAll();
-        input.SetActive(false);
         duelPanel.SetActive(true);
     }
 
     public void OpenMerchant()
     {
         CloseAll();
-        input.SetActive(false);
         merchantPanel.SetActive(true);
     }
 }
