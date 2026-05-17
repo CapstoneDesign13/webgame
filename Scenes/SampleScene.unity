@@ -780,6 +780,7 @@ GameObject:
   - component: {fileID: 313791279}
   - component: {fileID: 313791281}
   - component: {fileID: 313791282}
+  - component: {fileID: 313791283}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -893,6 +894,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f534220c12a24e41891360432517470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoardCameraFitter
+--- !u!114 &313791283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 313791278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac6768a1ca1af8a44a5786be64603551, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
+  ui: {fileID: 114774162}
+  playerPrefab: {fileID: 7828127010101975679, guid: edfad073db8d3a54f87d8bf65fd1cfee,
+    type: 3}
+  enemyPrefab: {fileID: 2904876277835658708, guid: c4638c091fdc9a147b76dc6eeed4ce71,
+    type: 3}
+  HorsePrefab: {fileID: 5113752453396528763, guid: f16734ef0be8ad14a86ef850e69fb122,
+    type: 3}
+  ChariotPrefab: {fileID: 2181360455487635776, guid: 12e679d8e03430a4e87c58b54955135c,
+    type: 3}
+  CannonPrefab: {fileID: 3531776341545314620, guid: 196ef795570743142b123c1a86cc6c99,
+    type: 3}
+  ElephantPrefab: {fileID: 5533581083049255567, guid: 4c542e5d5f49ea74e917e6f9cd78b9ba,
+    type: 3}
+  GuardPrefab: {fileID: 3363836350062602364, guid: ff5d68e73bbc14646905cade985d5bb0,
+    type: 3}
+  KingPrefab: {fileID: 277587615129836927, guid: 5191e4ce66fabca42b049ae176332248,
+    type: 3}
+  unitRoot: {fileID: 0}
 --- !u!224 &349861687 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3057785020538758909, guid: c9d2278610f183d4fb50573b0d3eefb4,
@@ -4588,7 +4619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b2dc7d9589384143ab577aaa575a328, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ui: {fileID: 114774162}
+  spawn: {fileID: 313791283}
   width: 9
   height: 10
   cellSize: 1
@@ -4599,23 +4630,6 @@ MonoBehaviour:
   drawIntersectionGizmos: 1
   tileVisualPrefab: {fileID: 0}
   tileRoot: {fileID: 0}
-  playerPrefab: {fileID: 7828127010101975679, guid: edfad073db8d3a54f87d8bf65fd1cfee,
-    type: 3}
-  enemyPrefab: {fileID: 2904876277835658708, guid: c4638c091fdc9a147b76dc6eeed4ce71,
-    type: 3}
-  HorsePrefab: {fileID: 5113752453396528763, guid: f16734ef0be8ad14a86ef850e69fb122,
-    type: 3}
-  ChariotPrefab: {fileID: 2181360455487635776, guid: 12e679d8e03430a4e87c58b54955135c,
-    type: 3}
-  CannonPrefab: {fileID: 3531776341545314620, guid: 196ef795570743142b123c1a86cc6c99,
-    type: 3}
-  ElephantPrefab: {fileID: 5533581083049255567, guid: 4c542e5d5f49ea74e917e6f9cd78b9ba,
-    type: 3}
-  GuardPrefab: {fileID: 3363836350062602364, guid: ff5d68e73bbc14646905cade985d5bb0,
-    type: 3}
-  KingPrefab: {fileID: 277587615129836927, guid: 5191e4ce66fabca42b049ae176332248,
-    type: 3}
-  unitRoot: {fileID: 0}
   playerSpawn:
     displayName: "\uBB34\uB2F9\uD30C \uAC80\uC131"
     type: 0
@@ -4643,6 +4657,7 @@ MonoBehaviour:
     attack: 15
     defense: 2
   deactivateUnitOnDeath: 1
+  Player: {fileID: 0}
 --- !u!4 &1851237154
 Transform:
   m_ObjectHideFlags: 0
