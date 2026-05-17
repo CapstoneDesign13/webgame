@@ -907,6 +907,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnManager
   ui: {fileID: 114774162}
+  window: {fileID: 518549340}
   playerPrefab: {fileID: 7828127010101975679, guid: edfad073db8d3a54f87d8bf65fd1cfee,
     type: 3}
   enemyPrefab: {fileID: 2904876277835658708, guid: c4638c091fdc9a147b76dc6eeed4ce71,
@@ -922,6 +923,8 @@ MonoBehaviour:
   GuardPrefab: {fileID: 3363836350062602364, guid: ff5d68e73bbc14646905cade985d5bb0,
     type: 3}
   KingPrefab: {fileID: 277587615129836927, guid: 5191e4ce66fabca42b049ae176332248,
+    type: 3}
+  MerchantPrefab: {fileID: 540618184418837216, guid: 2044cd044d6f73f46a50761df40446b1,
     type: 3}
   unitRoot: {fileID: 0}
 --- !u!224 &349861687 stripped
@@ -4632,30 +4635,27 @@ MonoBehaviour:
   tileRoot: {fileID: 0}
   playerSpawn:
     displayName: "\uBB34\uB2F9\uD30C \uAC80\uC131"
+    clan: 0
     type: 0
     startPosition: {x: 4, y: 0}
     hp: 100
     attack: 20
     defense: 5
   enemySpawns:
-  - displayName: "\uD558\uC624\uBB38 \uBE44\uC218\uCCA9\uC790"
-    type: 1
-    startPosition: {x: 0, y: 9}
+  - displayName: "\uC0C1\uD68C \uC0C1\uC778"
+    clan: 1
+    type: 0
+    startPosition: {x: 5, y: 5}
     hp: 50
     attack: 12
     defense: 3
-  - displayName: "\uD558\uC624\uBB38 \uB4B7\uACE8\uBAA9\uD328"
+  - displayName: "\uC0C1\uD68C \uBC31\uC6B4\uC0C1\uD68C"
+    clan: 1
     type: 0
-    startPosition: {x: 4, y: 9}
-    hp: 60
-    attack: 10
-    defense: 4
-  - displayName: "\uD558\uC624\uBB38 \uC57C\uD589\uAC1D"
-    type: 2
-    startPosition: {x: 8, y: 9}
-    hp: 70
-    attack: 15
-    defense: 2
+    startPosition: {x: 3, y: 5}
+    hp: 50
+    attack: 12
+    defense: 3
   deactivateUnitOnDeath: 1
   Player: {fileID: 0}
 --- !u!4 &1851237154
