@@ -95,6 +95,6 @@ public class SpawnManager : MonoBehaviour
 
     public void MerchantDialog()
     {
-        window.OpenInfo();
+        window.OpenMerchant();
     }
 }

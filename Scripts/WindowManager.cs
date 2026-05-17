@@ -7,6 +7,7 @@ public class WindowManager : MonoBehaviour
     public GameObject input;
     public GameObject infoPanel;
     public GameObject duelPanel;
+    public GameObject merchantPanel;
 
     public void CloseAll()
     {
@@ -34,5 +35,12 @@ public class WindowManager : MonoBehaviour
         CloseAll();
         input.SetActive(false);
         duelPanel.SetActive(true);
+    }
+
+    public void OpenMerchant()
+    {
+        CloseAll();
+        input.SetActive(false);
+        merchantPanel.SetActive(true);
     }
 }
