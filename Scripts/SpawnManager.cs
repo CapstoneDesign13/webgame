@@ -3,6 +3,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public UIManager ui;
+    public WindowManager window;
     [Header("Unit Prefabs")]
     [SerializeField] private PlayerUnit playerPrefab;
     [SerializeField] private EnemyUnit enemyPrefab;
@@ -12,6 +13,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private ElephantUnit ElephantPrefab;
     [SerializeField] private GuardUnit GuardPrefab;
     [SerializeField] private KingUnit KingPrefab;
+    [SerializeField] private MerchantUnit MerchantPrefab;
     [SerializeField] private Transform unitRoot;
 
     public void SpawnPlayer(UnitSpawnSetting setting)
@@ -75,6 +77,24 @@ public class SpawnManager : MonoBehaviour
 
     public void SpawnNeutral(UnitSpawnSetting setting)
     {
+        var map = MapManager.Instance;
+        MerchantUnit merchant = Instantiate(MerchantPrefab, transform);
+        merchant.SetupStats(
+            setting.displayName,
+            Team.Neutral,
+            setting.hp,
+            setting.attack,
+            setting.defense
+        );
+        merchant.dialog = MerchantDialog;
+        SpriteRenderer spr = merchant.GetComponent<SpriteRenderer>();
+        Sprite cache = ModDatabase.Instance.GetPic(merchant.name + "S");
+        spr.sprite = cache;
+        map.PlaceUnit(merchant, setting.startPosition);
+    }
 
+    public void MerchantDialog()
+    {
+        window.OpenInfo();
     }
 }

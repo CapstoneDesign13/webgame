@@ -90,9 +90,10 @@ public class CharacterBase : MonoBehaviour
         }
     }
 
-    public virtual void Answer()
+    public virtual bool Answer()
     {
         Debug.Log("대화가 통할 상대가 아니다!");
+        return false;
     }
 
     public void Die()

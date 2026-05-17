@@ -92,8 +92,8 @@ public class PlayerUnit : CharacterBase
 
                 if (target != null && target.team != this.team)
                 {
-                    target.Answer();
-                    return true;
+                    if(target.Answer());
+                        return true;
                 }
             }
         }
@@ -102,7 +102,7 @@ public class PlayerUnit : CharacterBase
 
     public bool PrimaryAction()
     {
-        if (enabled)
+        if (engaged)
             return TryAttack();
         else
             return TryTalk();

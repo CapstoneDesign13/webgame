@@ -71,19 +71,31 @@ public enum PieceType
     King
 }
 
+public enum Clan
+{
+    무당파,
+    비전투,
+    사천당가,
+    소림사,
+    천마신교,
+    하오문
+}
+
 [System.Serializable]
 public class UnitSpawnSetting
 {
     public string displayName;
+    public Clan clan;
     public PieceType type;
     public Vector2Int startPosition;
     public int hp;
     public int attack;
     public int defense;
 
-    public UnitSpawnSetting(string displayName, PieceType type, Vector2Int startPosition, int hp, int attack, int defense)
+    public UnitSpawnSetting(string displayName, Clan clan, PieceType type, Vector2Int startPosition, int hp, int attack, int defense)
     {
         this.displayName = displayName;
+        this.clan = clan;
         this.type = type;
         this.startPosition = startPosition;
         this.hp = hp;
@@ -125,14 +137,14 @@ public class MapManager : MonoBehaviour
 
     [SerializeField]
     private UnitSpawnSetting playerSpawn =
-        new UnitSpawnSetting("무당파 검성", PieceType.King, new Vector2Int(4, 0), 100, 20, 5);
+        new UnitSpawnSetting("무당파 검성", Clan.무당파, PieceType.King, new Vector2Int(4, 0), 100, 20, 5);
 
     [SerializeField]
     private List<UnitSpawnSetting> enemySpawns = new List<UnitSpawnSetting>()
     {
-        new UnitSpawnSetting("무당파 검성", PieceType.Horse, new Vector2Int(0, 9), 50, 12, 3),
-        new UnitSpawnSetting("무당파 검성", PieceType.Soldier, new Vector2Int(4, 9), 60, 10, 4),
-        new UnitSpawnSetting("무당파 검성", PieceType.Chariot, new Vector2Int(8, 9), 70, 15, 2)
+        new UnitSpawnSetting("무당파 검성", Clan.무당파, PieceType.Horse, new Vector2Int(0, 9), 50, 12, 3),
+        new UnitSpawnSetting("무당파 검성", Clan.무당파, PieceType.Soldier, new Vector2Int(4, 9), 60, 10, 4),
+        new UnitSpawnSetting("무당파 검성", Clan.무당파, PieceType.Chariot, new Vector2Int(8, 9), 70, 15, 2)
     };
 
     [Header("Death Handling")]
@@ -230,8 +242,10 @@ public class MapManager : MonoBehaviour
         for (int i = 0; i < enemySpawns.Count; i++)
         {
             UnitSpawnSetting setting = enemySpawns[i];
-
-            spawn.SpawnEnemy(setting);
+            if (setting.clan == Clan.비전투)
+                spawn.SpawnNeutral(setting);
+            else
+                spawn.SpawnEnemy(setting);
         }
     }
     

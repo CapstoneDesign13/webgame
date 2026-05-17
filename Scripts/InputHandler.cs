@@ -44,7 +44,7 @@ public class InputHandler : MonoBehaviour
     public void DoZ()
     {
         if (!CanUsePlayerInput()) return;
-        MapManager.Instance.Player.DoAttack();
+        MapManager.Instance.Player.PrimaryAction();
     }
 
     public void DoX()
