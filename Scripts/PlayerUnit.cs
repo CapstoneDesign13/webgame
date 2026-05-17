@@ -5,6 +5,7 @@ public class PlayerUnit : CharacterBase
 {
     public UIManager ui;
     public int ActionPoints = 3;
+    public bool engaged = false;
 
     public List<string> actionHistory = new List<string>();
     public List<Vector3> path = new List<Vector3>();
@@ -77,5 +78,33 @@ public class PlayerUnit : CharacterBase
         ActionPoints--;
         RegisterAction("Defense");
         ui.Refresh();
+    }
+
+    public bool TryTalk()
+    {
+        Vector2Int targetPos;
+        for (int x = -1; x <= 1; x += 1)
+        {
+            for (int y = -1; y <= 1; y += 1)
+            {
+                targetPos = CurrentGridPosition + new Vector2Int(x, y);
+                var target = MapManager.Instance.GetUnitAt(targetPos);
+
+                if (target != null && target.team != this.team)
+                {
+                    target.Answer();
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public bool PrimaryAction()
+    {
+        if (enabled)
+            return TryAttack();
+        else
+            return TryTalk();
     }
 }

@@ -3,7 +3,8 @@ using UnityEngine;
 public enum Team
 {
     Enemy,
-    Ally
+    Ally,
+    Neutral
 }
 
 public class CharacterBase : MonoBehaviour
@@ -87,6 +88,11 @@ public class CharacterBase : MonoBehaviour
         {
             Die();
         }
+    }
+
+    public virtual void Answer()
+    {
+        Debug.Log("대화가 통할 상대가 아니다!");
     }
 
     public void Die()

@@ -95,7 +95,7 @@ public class UnitSpawnSetting
 public class MapManager : MonoBehaviour
 {
     public static MapManager Instance { get; private set; }
-    public UIManager ui;
+    public SpawnManager spawn;
 
     [Header("Board Size")]
     [SerializeField] private int width = 9;
@@ -123,17 +123,6 @@ public class MapManager : MonoBehaviour
     [SerializeField] private GameObject tileVisualPrefab;
     [SerializeField] private Transform tileRoot;
 
-    [Header("Unit Prefabs")]
-    [SerializeField] private PlayerUnit playerPrefab;
-    [SerializeField] private EnemyUnit enemyPrefab;
-    [SerializeField] private HorseUnit HorsePrefab;
-    [SerializeField] private ChariotUnit ChariotPrefab;
-    [SerializeField] private CannonUnit CannonPrefab;
-    [SerializeField] private ElephantUnit ElephantPrefab;
-    [SerializeField] private GuardUnit GuardPrefab;
-    [SerializeField] private KingUnit KingPrefab;
-    [SerializeField] private Transform unitRoot;
-
     [SerializeField]
     private UnitSpawnSetting playerSpawn =
         new UnitSpawnSetting("무당파 검성", PieceType.King, new Vector2Int(4, 0), 100, 20, 5);
@@ -154,7 +143,7 @@ public class MapManager : MonoBehaviour
     private readonly List<CharacterBase> allUnits = new List<CharacterBase>();
     private readonly List<EnemyUnit> enemies = new List<EnemyUnit>();
 
-    public PlayerUnit Player { get; private set; }
+    public PlayerUnit Player;
 
     public IReadOnlyList<CharacterBase> AllUnits
     {
@@ -234,76 +223,15 @@ public class MapManager : MonoBehaviour
             Debug.LogWarning("현재 적 시작 설정 개수: " + enemySpawns.Count + ". 요구사항 기준은 적 3명입니다.");
         }
 
-        Transform parent = unitRoot != null ? unitRoot : transform;
+        //Transform parent = unitRoot != null ? unitRoot : transform;
 
-        if (playerPrefab != null)
-        {
-            PlayerUnit player = Instantiate(playerPrefab, parent);
-            player.SetupStats(
-                playerSpawn.displayName,
-                Team.Ally,
-                playerSpawn.hp,
-                playerSpawn.attack,
-                playerSpawn.defense
-            );
-            player.ui = ui;
-            SpriteRenderer spr = player.GetComponent<SpriteRenderer>();
-            Sprite cache = ModDatabase.Instance.GetPic(player.name + "N");
-            spr.sprite = cache;
-            PlaceUnit(player, playerSpawn.startPosition);
-        }
-        else
-        {
-            Debug.LogWarning("Player Prefab이 MapManager에 연결되지 않았습니다.");
-        }
+        spawn.SpawnPlayer(playerSpawn);
 
-        if (enemyPrefab != null)
+        for (int i = 0; i < enemySpawns.Count; i++)
         {
-            for (int i = 0; i < enemySpawns.Count; i++)
-            {
-                UnitSpawnSetting setting = enemySpawns[i];
+            UnitSpawnSetting setting = enemySpawns[i];
 
-                EnemyUnit enemy;
-                switch(setting.type)
-                {
-                    case PieceType.Horse:
-                        enemy = Instantiate(HorsePrefab, parent);
-                        break;
-                    case PieceType.Chariot:
-                        enemy = Instantiate(ChariotPrefab, parent);
-                        break;
-                    case PieceType.Cannon:
-                        enemy = Instantiate(CannonPrefab, parent);
-                        break;
-                    case PieceType.Elephant:
-                        enemy = Instantiate(ElephantPrefab, parent);
-                        break;
-                    case PieceType.Guard:
-                        enemy = Instantiate(GuardPrefab, parent);
-                        break;
-                    case PieceType.King:
-                        enemy = Instantiate(KingPrefab, parent);
-                        break;
-                    default:
-                        enemy = Instantiate(enemyPrefab, parent);
-                        break;
-                }
-                enemy.SetupStats(
-                    setting.displayName,
-                    Team.Enemy,
-                    setting.hp,
-                    setting.attack,
-                    setting.defense
-                );
-                SpriteRenderer spr = enemy.GetComponent<SpriteRenderer>();
-                Sprite cache = ModDatabase.Instance.GetPic(enemy.name + "S");
-                spr.sprite = cache;
-                PlaceUnit(enemy, setting.startPosition);
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Enemy Prefab이 MapManager에 연결되지 않았습니다.");
+            spawn.SpawnEnemy(setting);
         }
     }
     
