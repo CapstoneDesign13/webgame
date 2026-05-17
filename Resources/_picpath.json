@@ -1055,6 +1055,230 @@
     {
         "id": "천마신교 마교도NW",
         "path": "천마신교/천마신교 마교도/rotations/north-west"
-    }
+    },
+    {
+        "id": "객잔 간판N",
+        "path": "비전투/객잔 간판/rotations/north"
+    },
+    {
+        "id": "객잔 간판NE",
+        "path": "비전투/객잔 간판/rotations/north-east"
+    },
+    {
+        "id": "객잔 간판E",
+        "path": "비전투/객잔 간판/rotations/east"
+    },
+    {
+        "id": "객잔 간판SE",
+        "path": "비전투/객잔 간판/rotations/south-east"
+    },
+    {
+        "id": "객잔 간판S",
+        "path": "비전투/객잔 간판/rotations/south"
+    },
+    {
+        "id": "객잔 간판SW",
+        "path": "비전투/객잔 간판/rotations/south-west"
+    },
+    {
+        "id": "객잔 간판W",
+        "path": "비전투/객잔 간판/rotations/west"
+    },
+    {
+        "id": "객잔 간판NW",
+        "path": "비전투/객잔 간판/rotations/north-west"
+    },
+    {
+        "id": "객잔 술 항아리N",
+        "path": "비전투/객잔 술 항아리/rotations/north"
+    },
+    {
+        "id": "객잔 술 항아리NE",
+        "path": "비전투/객잔 술 항아리/rotations/north-east"
+    },
+    {
+        "id": "객잔 술 항아리E",
+        "path": "비전투/객잔 술 항아리/rotations/east"
+    },
+    {
+        "id": "객잔 술 항아리SE",
+        "path": "비전투/객잔 술 항아리/rotations/south-east"
+    },
+    {
+        "id": "객잔 술 항아리S",
+        "path": "비전투/객잔 술 항아리/rotations/south"
+    },
+    {
+        "id": "객잔 술 항아리SW",
+        "path": "비전투/객잔 술 항아리/rotations/south-west"
+    },
+    {
+        "id": "객잔 술 항아리W",
+        "path": "비전투/객잔 술 항아리/rotations/west"
+    },
+    {
+        "id": "객잔 술 항아리NW",
+        "path": "비전투/객잔 술 항아리/rotations/north-west"
+    },
+    {
+        "id": "객잔 카운터N",
+        "path": "비전투/객잔 카운터/rotations/north"
+    },
+    {
+        "id": "객잔 카운터NE",
+        "path": "비전투/객잔 카운터/rotations/north-east"
+    },
+    {
+        "id": "객잔 카운터E",
+        "path": "비전투/객잔 카운터/rotations/east"
+    },
+    {
+        "id": "객잔 카운터SE",
+        "path": "비전투/객잔 카운터/rotations/south-east"
+    },
+    {
+        "id": "객잔 카운터S",
+        "path": "비전투/객잔 카운터/rotations/south"
+    },
+    {
+        "id": "객잔 카운터SW",
+        "path": "비전투/객잔 카운터/rotations/south-west"
+    },
+    {
+        "id": "객잔 카운터W",
+        "path": "비전투/객잔 카운터/rotations/west"
+    },
+    {
+        "id": "객잔 카운터NW",
+        "path": "비전투/객잔 카운터/rotations/north-west"
+    },
+    {
+        "id": "객잔 테이블N",
+        "path": "비전투/객잔 테이블/rotations/north"
+    },
+    {
+        "id": "객잔 테이블NE",
+        "path": "비전투/객잔 테이블/rotations/north-east"
+    },
+    {
+        "id": "객잔 테이블E",
+        "path": "비전투/객잔 테이블/rotations/east"
+    },
+    {
+        "id": "객잔 테이블SE",
+        "path": "비전투/객잔 테이블/rotations/south-east"
+    },
+    {
+        "id": "객잔 테이블S",
+        "path": "비전투/객잔 테이블/rotations/south"
+    },
+    {
+        "id": "객잔 테이블SW",
+        "path": "비전투/객잔 테이블/rotations/south-west"
+    },
+    {
+        "id": "객잔 테이블W",
+        "path": "비전투/객잔 테이블/rotations/west"
+    },
+    {
+        "id": "객잔 테이블NW",
+        "path": "비전투/객잔 테이블/rotations/north-west"
+    },
+    {
+        "id": "객잔 주인N",
+        "path": "비전투/객잔 주인/rotations/north"
+    },
+    {
+        "id": "객잔 주인NE",
+        "path": "비전투/객잔 주인/rotations/north-east"
+    },
+    {
+        "id": "객잔 주인E",
+        "path": "비전투/객잔 주인/rotations/east"
+    },
+    {
+        "id": "객잔 주인SE",
+        "path": "비전투/객잔 주인/rotations/south-east"
+    },
+    {
+        "id": "객잔 주인S",
+        "path": "비전투/객잔 주인/rotations/south"
+    },
+    {
+        "id": "객잔 주인SW",
+        "path": "비전투/객잔 주인/rotations/south-west"
+    },
+    {
+        "id": "객잔 주인W",
+        "path": "비전투/객잔 주인/rotations/west"
+    },
+    {
+        "id": "객잔 주인NW",
+        "path": "비전투/객잔 주인/rotations/north-west"
+    },
+    {
+        "id": "상회 백운상회N",
+        "path": "비전투/상회 백운상회/rotations/north"
+    },
+    {
+        "id": "상회 백운상회NE",
+        "path": "비전투/상회 백운상회/rotations/north-east"
+    },
+    {
+        "id": "상회 백운상회E",
+        "path": "비전투/상회 백운상회/rotations/east"
+    },
+    {
+        "id": "상회 백운상회SE",
+        "path": "비전투/상회 백운상회/rotations/south-east"
+    },
+    {
+        "id": "상회 백운상회S",
+        "path": "비전투/상회 백운상회/rotations/south"
+    },
+    {
+        "id": "상회 백운상회SW",
+        "path": "비전투/상회 백운상회/rotations/south-west"
+    },
+    {
+        "id": "상회 백운상회W",
+        "path": "비전투/상회 백운상회/rotations/west"
+    },
+    {
+        "id": "상회 백운상회NW",
+        "path": "비전투/상회 백운상회/rotations/north-west"
+    },
+    {
+        "id": "상회 상인N",
+        "path": "비전투/상회 상인/rotations/north"
+    },
+    {
+        "id": "상회 상인NE",
+        "path": "비전투/상회 상인/rotations/north-east"
+    },
+    {
+        "id": "상회 상인E",
+        "path": "비전투/상회 상인/rotations/east"
+    },
+    {
+        "id": "상회 상인SE",
+        "path": "비전투/상회 상인/rotations/south-east"
+    },
+    {
+        "id": "상회 상인S",
+        "path": "비전투/상회 상인/rotations/south"
+    },
+    {
+        "id": "상회 상인SW",
+        "path": "비전투/상회 상인/rotations/south-west"
+    },
+    {
+        "id": "상회 상인W",
+        "path": "비전투/상회 상인/rotations/west"
+    },
+    {
+        "id": "상회 상인NW",
+        "path": "비전투/상회 상인/rotations/north-west"
+    }  
     ]
 }
