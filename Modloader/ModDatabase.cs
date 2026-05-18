@@ -9,6 +9,7 @@ public class ModDatabase : ScriptableObject
     public static ModDatabase Instance { get; private set; }
 
     public Dictionary<string, PicPath> picpathDatabase = new Dictionary<string, PicPath>();
+    public Dictionary<string, UnitSpawnSetting> unitspawnDatabase = new Dictionary<string, UnitSpawnSetting>();
 
     public void Initialize()
     {

@@ -5,8 +5,7 @@ using UnityEngine;
 
 public class ResourceLoader : MonoBehaviour
 {
-    [HideInInspector]
-    public ModDatabase database; // shared
+    [HideInInspector] public ModDatabase database; // shared
 
     void LoadFromTextAsset<TData, TItem>(
     TextAsset file,
@@ -74,6 +73,12 @@ public class ResourceLoader : MonoBehaviour
             {
                 LoadFromTextAsset<Data_picpath, PicPath>(
                     file, database.picpathDatabase, "이미지 경로"
+                );
+            }
+            else if (lowerName.EndsWith("_chardata"))
+            {
+                LoadFromTextAsset<Data_unitspawn, UnitSpawnSetting>(
+                    file, database.unitspawnDatabase, "캐릭터 데이터"
                 );
             }
         }
