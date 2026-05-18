@@ -6,13 +6,15 @@ public abstract class FullScreenPanel : MonoBehaviour
 
     private void OnEnable()
     {
-        window.Increase();
+        if (window != null)
+            window.Increase();
         Refresh();
     }
 
     private void OnDisable()
     {
-        window.Decrease();
+        if (window != null)
+            window.Decrease();
     }
 
     public virtual void Refresh()

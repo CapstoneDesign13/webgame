@@ -71,6 +71,7 @@ public enum PieceType
     King
 }
 
+[JsonConverter(typeof(StringEnumConverter))]
 public enum Clan
 {
     무당파,
@@ -82,15 +83,20 @@ public enum Clan
 }
 
 [System.Serializable]
-public class UnitSpawnSetting
+public class UnitSpawnSetting : IHasID
 {
-    public string displayName;
-    public Clan clan;
-    public PieceType type;
-    public Vector2Int startPosition;
+    public string id;
+    string IHasID.id => id;
+    [JsonProperty("name")] public string displayName;
+    [JsonProperty("faction")] public Clan clan;
     public int hp;
-    public int attack;
-    public int defense;
+    [JsonProperty("atk")] public int attack;
+    [JsonProperty("def")] public int defense;
+    [JsonProperty("unit_type")] public PieceType type;
+    public string passive_id;
+    public string sprite_id;
+
+    public Vector2Int startPosition;
 
     public UnitSpawnSetting(string displayName, Clan clan, PieceType type, Vector2Int startPosition, int hp, int attack, int defense)
     {
