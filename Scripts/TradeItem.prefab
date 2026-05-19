@@ -269,7 +269,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 350, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8845599385513408224
 CanvasRenderer:
@@ -384,6 +384,7 @@ GameObject:
   - component: {fileID: 1169859318043541207}
   - component: {fileID: 7989290676558886469}
   - component: {fileID: 7777001306969147847}
+  - component: {fileID: 8343127464304870429}
   m_Layer: 5
   m_Name: TradeItem
   m_TagString: Untagged
@@ -403,12 +404,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2024627753166656729}
   - {fileID: 5622362096706791668}
   - {fileID: 4886327912095058054}
   - {fileID: 6651743715254815960}
   - {fileID: 2206555210597694912}
   - {fileID: 7260569414335028188}
-  - {fileID: 2024627753166656729}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -480,6 +481,24 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 0
   m_ReverseArrangement: 0
+--- !u!114 &8343127464304870429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4807443503988191181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5544aa6e47fae9d47aecddbc8341cfad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MerchantCardUI
+  nameTxt: {fileID: 1315970256734603981}
+  typeTxt: {fileID: 4975302462126401445}
+  priceTxt: {fileID: 8189354671648618959}
+  descTxt: {fileID: 763742843285154047}
+  btn: {fileID: 8054938841154693323}
+  pic: {fileID: 7009582486820997455}
 --- !u!1 &5660528514852819108
 GameObject:
   m_ObjectHideFlags: 0
@@ -810,13 +829,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6972062610791780134}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

@@ -4,12 +4,31 @@ using System.Collections.Generic;
 public class PlayerUnit : CharacterBase
 {
     public UIManager ui;
+    public ComboManager combo;
+
     public int ActionPoints = 3;
     public bool engaged = false;
+
+    public StatEntry statEntry = new StatEntry();
+
+    public List<Active> actives = new List<Active>();
+    public List<Passive> passives = new List<Passive>();
 
     public List<string> actionHistory = new List<string>();
     public List<Vector3> path = new List<Vector3>();
 
+    public void Learn((Combo, PoolType) pair)
+    {
+        switch (pair.Item2)
+        {
+            case PoolType.Active:
+                actives.Add((Active)pair.Item1);
+                break;
+            case PoolType.Passive:
+                passives.Add((Passive)pair.Item1);
+                break;
+        }
+    }
 
     public void ResetTurn()
     {
@@ -17,32 +36,14 @@ public class PlayerUnit : CharacterBase
         actionHistory.Clear();
         path.Clear();
         path.Add(transform.position);
+        //¹æ¾î·ÂÀº »ó´ëÅÏ Á¾·á½Ã ±îÁö À¯Áö
+        statEntry.def = 0;
     }
 
     public void RegisterAction(string action)
     {
         actionHistory.Add(action);
-        CheckComboSkill();
-    }
-
-    void CheckComboSkill()
-    {
-        if (actionHistory.Count < 2) return;
-
-        var arr = actionHistory;
-
-        if (arr[0] == "Move" && arr[1] == "Move")
-        {
-            Debug.Log("Combo: Diagonal Move Enabled (ê¶ ë‚´ë¶€)");
-        }
-        else if (arr[0] == "Move" && arr[1] == "Attack")
-        {
-            Debug.Log("Combo: Dash Attack!");
-        }
-        else if (arr[0] == "Attack" && arr[1] == "Attack")
-        {
-            Debug.Log("Combo: Double Strike!");
-        }
+        statEntry += combo.Pmatch(actionHistory, passives);
     }
 
     public void DoMove(Vector2Int dir)

@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 2324236343598682440, guid: 35f2be12d4099004aabb891c24c93296,
+  m_Sprite: {fileID: 4814271557941635497, guid: 21924b168dacfb543912294b0557f3f6,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -116,6 +116,10 @@ MonoBehaviour:
   showHealthBar: 1
   healthBar: {fileID: 0}
   ui: {fileID: 0}
+  combo: {fileID: 0}
   ActionPoints: 3
+  engaged: 0
+  actives: []
+  passives: []
   actionHistory: []
   path: []
