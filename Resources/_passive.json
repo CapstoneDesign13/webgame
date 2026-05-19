@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "id": "p_combo_001",
+      "name": "연환격",
+      "description": "1회 턴 안에 연속으로 2회 이상 공격(Z) 입력 시 발동, ZZ당 공격력+1",
+      "command_chains": [
+        "Z,Z"
+      ],
+      "stat_bonuses": {
+        "atk": 1,
+        "def": 0
+      }
+    },
+    {
+      "id": "p_combo_002",
+      "name": "동장철벽",
+      "description": "1회 턴 안에 연속으로 2회 이상 방어(X) 입력 시 발동, XX당 방어력+1",
+      "command_chains": [
+        "X,X"
+      ],
+      "stat_bonuses": {
+        "atk": 0,
+        "def": 1
+      }
+    }
+  ]
+}
