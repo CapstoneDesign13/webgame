@@ -36,7 +36,7 @@ public class PlayerUnit : CharacterBase
         actionHistory.Clear();
         path.Clear();
         path.Add(transform.position);
-        //¹æ¾î·ÂÀº »ó´ëÅÏ Á¾·á½Ã ±îÁö À¯Áö
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         statEntry.def = 0;
     }
 
@@ -62,12 +62,17 @@ public class PlayerUnit : CharacterBase
     public void DoAttack()
     {
         if (ActionPoints <= 0) return;
-
+        
         if (TryAttack())
         {
             ActionPoints--;
             RegisterAction("Attack");
             ui.Refresh();
+            
+            if (RunManager.Instance != null)
+            {
+                RunManager.Instance.TryClearBattle();
+            }
         }
     }
 

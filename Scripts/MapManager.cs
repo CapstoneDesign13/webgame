@@ -569,14 +569,67 @@ public bool ForceSetUnitPosition(CharacterBase unit, Vector2Int targetPosition)
     Debug.Log(unit.name + " moved to duel position " + targetPosition);
 
     return true;
-    }
+}
     /// <summary>
     /// Scene 뷰에서 9x10 교차점 위치를 작은 점으로 보여준다.
     /// 실제 게임 화면에는 표시되지 않는다.
     /// 이 기능은 캐릭터가 장기판 교차점 위에 정확히 놓이는지 확인하기 위한 디버그용이다.
     /// </summary>
-    private void OnDrawGizmos()
+
+public void ClearRoomUnitsExceptPlayer()
+{
+    for (int i = allUnits.Count - 1; i >= 0; i--)
     {
+        CharacterBase unit = allUnits[i];
+
+        if (unit == null)
+        {
+            allUnits.RemoveAt(i);
+            continue;
+        }
+
+        if (unit is PlayerUnit)
+        {
+            continue;
+        }
+
+        Vector2Int pos = unit.CurrentGridPosition;
+
+        if (IsInsideBoard(pos))
+        {
+            TileData tile = GetTile(pos);
+
+            if (tile != null && tile.Occupant == unit)
+            {
+                tile.Occupant = null;
+            }
+        }
+
+        EnemyUnit enemy = unit as EnemyUnit;
+
+        if (enemy != null)
+        {
+            enemies.Remove(enemy);
+        }
+
+        Destroy(unit.gameObject);
+        allUnits.RemoveAt(i);
+    }
+}
+
+public void RepositionPlayer(Vector2Int targetPosition)
+{
+    if (Player == null)
+    {
+        return;
+    }
+
+    ClearUnitOccupationOnly(Player);
+    ForceSetUnitPosition(Player, targetPosition);
+}
+
+private void OnDrawGizmos()
+{
         if (!drawIntersectionGizmos)
         {
             return;

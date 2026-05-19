@@ -73,6 +73,15 @@ public class MerchantPanel : FullScreenPanel
         this.gameObject.SetActive(false);
     }
 
+    public void NextStage()
+    {
+        Escape();
+        if (RunManager.Instance != null)
+        {
+            RunManager.Instance.GoNextRoom();
+        }
+    }
+
     public void Purchase((Combo, PoolType)pair)
     {
         int i = instock.FindIndex(x => x == pair);

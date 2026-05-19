@@ -21,6 +21,24 @@ public class TurnManager : MonoBehaviour
         }
     }
 
+    public void ResetForNewRoom()
+{
+    if (enemyTurnCoroutine != null)
+    {
+        StopCoroutine(enemyTurnCoroutine);
+        enemyTurnCoroutine = null;
+    }
+
+    duelStarted = false;
+    isResolvingTurn = false;
+    turnCount = 0;
+
+    if (window != null)
+    {
+        window.OpenField();
+    }
+}
+
     public void StartPlayerTurn()
     {
         if (duelStarted)

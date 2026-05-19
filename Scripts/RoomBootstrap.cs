@@ -15,23 +15,54 @@ public class RoomBootstrap : MonoBehaviour
 
     public RoomType type = RoomType.Battle;
 
+    public RoomType CurrentType { get; private set; }
+    public string CurrentStageKey { get; private set; }
+
     public void BootstrapLoad()
     {
-        switch (type)
+        LoadRoom(new RoomDefinition
+        {
+            type = type,
+            stageKey = "stage1"
+        });
+    }
+
+    public void LoadRoom(RoomDefinition room)
+    {
+        CurrentType = room.type;
+        CurrentStageKey = room.stageKey;
+
+        switch (room.type)
         {
             case RoomType.Battle:
-                LoadBattle();
+                LoadBattle(room.stageKey);
                 break;
+
             case RoomType.Merchant:
                 LoadMerchant();
                 break;
         }
-        
     }
 
-    public void LoadBattle()
+    public void LoadBattle(string stageKey)
     {
-        var results = placement.GenerateStage("stage1", MapManager.Instance.Player.CurrentGridPosition);
+        if (string.IsNullOrEmpty(stageKey))
+        {
+            stageKey = "stage1";
+        }
+
+        if (!ModDatabase.Instance.enemyPool.ContainsKey(stageKey))
+        {
+            Debug.LogError($"ìŠ¤í°í’€ì´ ì—†ìŠµë‹ˆë‹¤: {stageKey}");
+            return;
+        }
+
+        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
+
+        var results = placement.GenerateStage(
+            stageKey,
+            currentPlayer.CurrentGridPosition
+        );
 
         foreach (var r in results)
         {
@@ -39,15 +70,17 @@ public class RoomBootstrap : MonoBehaviour
             spawn.SpawnEnemy(setting, pos);
         }
 
-        player.engaged = true;
+        currentPlayer.engaged = true;
     }
 
     public void LoadMerchant()
     {
+        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
+
         var settings = new List<(UnitSpawnSetting, Vector2Int)>()
         {
-            (new UnitSpawnSetting("»óÈ¸ »óÀÎ", Clan.ºñÀüÅõ, PieceType.Soldier, 50, 12, 3), new Vector2Int(5, 5)),
-            (new UnitSpawnSetting("»óÈ¸ ¹é¿î»óÈ¸", Clan.ºñÀüÅõ, PieceType.Soldier, 50, 12, 3), new Vector2Int(3, 5)),
+            (new UnitSpawnSetting("ìƒíšŒ ìƒì¸", Clan.ë¹„ì „íˆ¬, PieceType.Soldier, 50, 12, 3), new Vector2Int(5, 5)),
+            (new UnitSpawnSetting("ìƒíšŒ ë°±ìš´ìƒíšŒ", Clan.ë¹„ì „íˆ¬, PieceType.Soldier, 50, 12, 3), new Vector2Int(3, 5)),
         };
 
         foreach (var r in settings)
@@ -55,6 +88,6 @@ public class RoomBootstrap : MonoBehaviour
             spawn.SpawnNeutral(r.Item1, r.Item2);
         }
 
-        player.engaged = false;
+        currentPlayer.engaged = false;
     }
 }
