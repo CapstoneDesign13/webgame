@@ -173,6 +173,7 @@ public class CharacterBase : MonoBehaviour
                 {
                     hit = true;
                     target.TakeDamage(this);
+                    Debug.Log(target == null ? "Çã°ø" : target.name);
                 }
             }
         }

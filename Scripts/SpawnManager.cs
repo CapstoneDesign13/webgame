@@ -16,7 +16,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private MerchantUnit MerchantPrefab;
     [SerializeField] private Transform unitRoot;
 
-    public void SpawnPlayer(UnitSpawnSetting setting)
+    public void SpawnPlayer(UnitSpawnSetting setting, Vector2Int startPosition)
     {
         var map = MapManager.Instance;
         map.Player = Instantiate(playerPrefab, transform);
@@ -31,10 +31,10 @@ public class SpawnManager : MonoBehaviour
         SpriteRenderer spr = map.Player.GetComponent<SpriteRenderer>();
         Sprite cache = ModDatabase.Instance.GetPic(map.Player.name + "N");
         spr.sprite = cache;
-        map.PlaceUnit(map.Player, setting.startPosition);
+        map.PlaceUnit(map.Player, startPosition);
     }
 
-    public void SpawnEnemy(UnitSpawnSetting setting)
+    public void SpawnEnemy(UnitSpawnSetting setting, Vector2Int startPosition)
     {
         var map = MapManager.Instance;
         EnemyUnit enemy;
@@ -72,10 +72,10 @@ public class SpawnManager : MonoBehaviour
         SpriteRenderer spr = enemy.GetComponent<SpriteRenderer>();
         Sprite cache = ModDatabase.Instance.GetPic(enemy.name + "S");
         spr.sprite = cache;
-        map.PlaceUnit(enemy, setting.startPosition);
+        map.PlaceUnit(enemy, startPosition);
     }
 
-    public void SpawnNeutral(UnitSpawnSetting setting)
+    public void SpawnNeutral(UnitSpawnSetting setting, Vector2Int startPosition)
     {
         var map = MapManager.Instance;
         MerchantUnit merchant = Instantiate(MerchantPrefab, transform);
@@ -90,7 +90,7 @@ public class SpawnManager : MonoBehaviour
         SpriteRenderer spr = merchant.GetComponent<SpriteRenderer>();
         Sprite cache = ModDatabase.Instance.GetPic(merchant.name + "S");
         spr.sprite = cache;
-        map.PlaceUnit(merchant, setting.startPosition);
+        map.PlaceUnit(merchant, startPosition);
     }
 
     public void MerchantDialog()

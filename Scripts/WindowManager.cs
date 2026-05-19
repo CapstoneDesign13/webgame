@@ -15,7 +15,8 @@ public class WindowManager : MonoBehaviour
         _active++;
         if (_active > 0)
         {
-            input.SetActive(false);
+            if (input != null)
+                input.SetActive(false);
         }
     }
 
@@ -24,7 +25,8 @@ public class WindowManager : MonoBehaviour
         _active--;
         if (_active == 0)
         {
-            input.SetActive(true);
+            if (input != null)
+                input.SetActive(true);
         }
     }
 

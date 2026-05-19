@@ -100,11 +100,11 @@ public class PlayerUnit : CharacterBase
         return false;
     }
 
-    public bool PrimaryAction()
+    public void PrimaryAction()
     {
         if (engaged)
-            return TryAttack();
+            DoAttack();
         else
-            return TryTalk();
+            TryTalk();
     }
 }

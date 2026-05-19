@@ -96,14 +96,11 @@ public class UnitSpawnSetting : IHasID
     public string passive_id;
     public string sprite_id;
 
-    public Vector2Int startPosition;
-
-    public UnitSpawnSetting(string displayName, Clan clan, PieceType type, Vector2Int startPosition, int hp, int attack, int defense)
+    public UnitSpawnSetting(string displayName, Clan clan, PieceType type, int hp, int attack, int defense)
     {
         this.displayName = displayName;
         this.clan = clan;
         this.type = type;
-        this.startPosition = startPosition;
         this.hp = hp;
         this.attack = attack;
         this.defense = defense;
@@ -140,18 +137,6 @@ public class MapManager : MonoBehaviour
     [Header("Optional Tile Visual")]
     [SerializeField] private GameObject tileVisualPrefab;
     [SerializeField] private Transform tileRoot;
-
-    [SerializeField]
-    private UnitSpawnSetting playerSpawn =
-        new UnitSpawnSetting("무당파 검성", Clan.무당파, PieceType.King, new Vector2Int(4, 0), 100, 20, 5);
-
-    [SerializeField]
-    private List<UnitSpawnSetting> enemySpawns = new List<UnitSpawnSetting>()
-    {
-        new UnitSpawnSetting("무당파 검성", Clan.무당파, PieceType.Horse, new Vector2Int(0, 9), 50, 12, 3),
-        new UnitSpawnSetting("무당파 검성", Clan.무당파, PieceType.Soldier, new Vector2Int(4, 9), 60, 10, 4),
-        new UnitSpawnSetting("무당파 검성", Clan.무당파, PieceType.Chariot, new Vector2Int(8, 9), 70, 15, 2)
-    };
 
     [Header("Death Handling")]
     [SerializeField] private bool deactivateUnitOnDeath = true;
@@ -222,37 +207,6 @@ public class MapManager : MonoBehaviour
         }
 
         Debug.Log("Map generated: " + width + "x" + height);
-    }
-
-    /// <summary>
-    /// 플레이어 1명과 적 3명을 기본 위치에 생성한다.
-    /// Prefab을 Inspector에 연결해야 실제 GameObject가 생성된다.
-    /// </summary>
-    public void SpawnInitialUnits()
-    {
-        if (allUnits.Count > 0)
-        {
-            Debug.LogWarning("이미 유닛이 배치되어 있습니다.");
-            return;
-        }
-
-        if (enemySpawns.Count != 3)
-        {
-            Debug.LogWarning("현재 적 시작 설정 개수: " + enemySpawns.Count + ". 요구사항 기준은 적 3명입니다.");
-        }
-
-        //Transform parent = unitRoot != null ? unitRoot : transform;
-
-        spawn.SpawnPlayer(playerSpawn);
-
-        for (int i = 0; i < enemySpawns.Count; i++)
-        {
-            UnitSpawnSetting setting = enemySpawns[i];
-            if (setting.clan == Clan.비전투)
-                spawn.SpawnNeutral(setting);
-            else
-                spawn.SpawnEnemy(setting);
-        }
     }
     
     /// <summary>
