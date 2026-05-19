@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+
+      "id": "stage1",
+      "list" : [{"enemy_id" : "mudang_king",
+      "PowerScore": 15,
+      "MustBeInPalace" : true},
+      {"enemy_id" : "mudang_chariot",
+      "PowerScore": 15,
+      "MustBeInPalace" : false},
+      {"enemy_id" : "mudang_cannon",
+      "PowerScore": 7,
+      "MustBeInPalace" : false},
+      {"enemy_id" : "mudang_horse",
+      "PowerScore": 5,
+      "MustBeInPalace" : false},
+      {"enemy_id" : "mudang_elephant",
+      "PowerScore": 3,
+      "MustBeInPalace" : false},
+      {"enemy_id" : "mudang_guard",
+      "PowerScore": 3,
+      "MustBeInPalace" : true}
+    ]
+    }
+  ]
+}
