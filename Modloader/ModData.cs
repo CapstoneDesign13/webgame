@@ -14,3 +14,5 @@ public interface IHasID
 public class Data_picpath : ModDataBase<PicPath> { }
 public class Data_unitspawn : ModDataBase<UnitSpawnSetting> { }
 public class Data_spawnpool : ModDataBase<SpawnPool> { }
+public class Data_active : ModDataBase<Active> { }
+public class Data_passive : ModDataBase<Passive> { }

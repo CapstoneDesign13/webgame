@@ -87,6 +87,18 @@ public class ResourceLoader : MonoBehaviour
                     file, database.enemyPool, "스폰 테이블"
                 );
             }
+            else if (lowerName.EndsWith("_active"))
+            {
+                LoadFromTextAsset<Data_active, Active>(
+                    file, database.activePool, "액티브"
+                );
+            }
+            else if (lowerName.EndsWith("_passive"))
+            {
+                LoadFromTextAsset<Data_passive, Passive>(
+                    file, database.passivePool, "패시브"
+                );
+            }
         }
     }
 }
