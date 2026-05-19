@@ -81,6 +81,12 @@ public class ResourceLoader : MonoBehaviour
                     file, database.unitspawnDatabase, "캐릭터 데이터"
                 );
             }
+            else if (lowerName.EndsWith("_spawnpool"))
+            {
+                LoadFromTextAsset<Data_spawnpool, SpawnPool>(
+                    file, database.enemyPool, "스폰 테이블"
+                );
+            }
         }
     }
 }

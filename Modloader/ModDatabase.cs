@@ -10,6 +10,7 @@ public class ModDatabase : ScriptableObject
 
     public Dictionary<string, PicPath> picpathDatabase = new Dictionary<string, PicPath>();
     public Dictionary<string, UnitSpawnSetting> unitspawnDatabase = new Dictionary<string, UnitSpawnSetting>();
+    public Dictionary<string, SpawnPool> enemyPool = new Dictionary<string, SpawnPool>();
 
     public void Initialize()
     {

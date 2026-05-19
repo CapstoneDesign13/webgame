@@ -1,14 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using TMPro;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class InitHandler : MonoBehaviour
 {
     public ResourceLoader resourceLoader;
-    public MapManager map;
-    public TurnManager turn; 
+    public SpawnManager spawn;
+    public RoomBootstrap room;
+    public TurnManager turn;
+    public PlayerUnit player;
+    
+
+    [SerializeField]
+    private readonly Vector2Int initpos = new Vector2Int(4, 0);
 
     void Start()
     {
@@ -20,7 +22,10 @@ public class InitHandler : MonoBehaviour
 
         resourceLoader.LoadMods();
 
-        map.SpawnInitialUnits();
+        MapManager.Instance.PlaceUnit(player, initpos);
+        if (player.team != Team.Ally)
+            Debug.LogError("주인공 팀이 이상합니다.");
+        room.BootstrapLoad();
         turn.StartPlayerTurn();
     }
 }
