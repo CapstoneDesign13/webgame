@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
                     break;
             }
         }
-        QiText.text = "<color=#B8F8FB>Qi" + player.ActionPoints + "</color>";
+        QiText.text = "<color=#B8F8FB>Qi:" + player.ActionPoints + "</color>";
         TurnText.text = "<color=#FFD000>Turn:" + turn.turnCount + "</color>";
         line.DrawPath(player.path);
     }
