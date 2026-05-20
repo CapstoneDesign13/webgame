@@ -72,13 +72,18 @@ public class MerchantPanel : FullScreenPanel
     {
         this.gameObject.SetActive(false);
     }
-
+    
     public void NextStage()
     {
         Escape();
+        
         if (RunManager.Instance != null)
         {
-            RunManager.Instance.GoNextRoom();
+            RunManager.Instance.GoNextBattleRoom();
+        }
+        else
+        {
+            Debug.LogWarning("RunManager가 씬에 없습니다.");
         }
     }
 
