@@ -17,6 +17,7 @@ public class DuelManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TurnManager turnManager;
+    [SerializeField] private Button continueButton;
 
     [Header("Duel Settings")]
     [SerializeField] private float duelActionDelay = 0.6f;
@@ -29,6 +30,10 @@ public class DuelManager : MonoBehaviour
 
     private void OnEnable()
     {
+        if (continueButton != null)
+        {
+            continueButton.gameObject.SetActive(false);
+        }
         StartDuelPhase(MapManager.Instance.Player, MapManager.Instance.Enemies);
     }
 
@@ -204,11 +209,33 @@ public class DuelManager : MonoBehaviour
     private void FinishDuel(bool playerWon)
     {
         isRunning = false;
-
+        
         if (playerWon)
         {
             int rand = Random.Range(0, flavor_text.Count);
             txt.text = flavor_text[rand];
+            if (continueButton != null)
+            {
+                continueButton.gameObject.SetActive(true);
+            }
+            return;
+        }
+        txt.text = "패배했습니다.";
+    }
+
+    public void ContinueAfterDuelVictory()
+    {
+        if (continueButton != null)
+        {
+            continueButton.gameObject.SetActive(false);
+        }
+        if (RunManager.Instance != null)
+        {
+            RunManager.Instance.CompleteBattleFromDuel();
+        }
+        else
+        {
+            Debug.LogWarning("RunManager가 씬에 없습니다.");
         }
     }
 }

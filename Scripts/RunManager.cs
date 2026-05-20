@@ -119,6 +119,27 @@ public class RunManager : MonoBehaviour
         return true;
     }
 
+    public void CompleteBattleFromDuel()
+    {
+        if (transitioning)
+        {
+            return;
+        }
+        if (roomBootstrap == null)
+        {
+            Debug.LogWarning("RunManager: roomBootstrap이 연결되어 있지 않습니다.");
+            return;
+        }
+        if (roomBootstrap.CurrentType != RoomType.Battle)
+        {
+            Debug.LogWarning("RunManager: 현재 방이 Battle이 아니므로 일기토 클리어를 처리하지 않습니다.");
+            return;
+        }
+        transitioning = true;
+        Debug.Log("STAGE CLEAR BY DUEL");
+        OpenStageClearChoice();
+        }
+
     private void OpenStageClearChoice()
     {
         if (window != null && window.stageClearPanel != null)
