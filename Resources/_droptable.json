@@ -1,0 +1,49 @@
+{
+  "items": [
+    {
+      "id": "stage1",
+      "list": [
+        {
+          "enemy_id": "a_combo_001",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "enemy_id": "a_combo_002",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "enemy_id": "a_combo_003",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "enemy_id": "a_combo_004",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "enemy_id": "a_combo_005",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "enemy_id": "a_combo_006",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "enemy_id": "p_combo_001",
+          "type": "Passive",
+          "price": 11
+        },
+        {
+          "enemy_id": "p_combo_002",
+          "type": "Passive",
+          "price": 11
+        }
+      ]
+    }
+  ]
+}
