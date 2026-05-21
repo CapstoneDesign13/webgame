@@ -5,7 +5,7 @@
       "name": "연환격",
       "description": "1회 턴 안에 연속으로 2회 이상 공격(Z) 입력 시 발동, ZZ당 공격력+1",
       "command_chains": [
-        "Z,Z"
+        "Z", "Z"
       ],
       "stat_bonuses": {
         "atk": 1,
@@ -17,7 +17,7 @@
       "name": "동장철벽",
       "description": "1회 턴 안에 연속으로 2회 이상 방어(X) 입력 시 발동, XX당 방어력+1",
       "command_chains": [
-        "X,X"
+        "X", "X"
       ],
       "stat_bonuses": {
         "atk": 0,

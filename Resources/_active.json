@@ -5,7 +5,7 @@
       "name": "질풍참",
       "description": "이동 후 공격 시 발동, 도착한 위치를 중심으로 가로세로 5x5 범위의 적들을 플레이어 공격력에 공격력 +1 해서 공격합니다.",
       "command_chains": [
-        "MOVE,Z"
+        "MOVE", "Z"
       ],
       "stat_bonuses": {
         "atk": 1,
@@ -49,7 +49,7 @@
       "name": "연환전광참",
       "description": "이동 후 연속 공격 시 발동, 도착한 위치를 중심으로 거대한 십자 범위를 공격합니다.",
       "command_chains": [
-        "MOVE,Z,Z"
+        "MOVE", "Z", "Z"
       ],
       "stat_bonuses": {
         "atk": 1,
@@ -75,7 +75,7 @@
       "name": "유성반월참",
       "description": "곡선 이동 후 공격 시 발동",
       "command_chains": [
-        "MOVE,MOVE,Z"
+        "MOVE", "MOVE", "Z"
       ],
       "stat_bonuses": {
         "atk": 3,
@@ -101,7 +101,7 @@
       "name": "삼재회검",
       "description": "제자리에서 공격 3회 입력 시 발동",
       "command_chains": [
-        "Z,Z,Z"
+        "Z", "Z", "Z"
       ],
       "stat_bonuses": {
         "atk": 3,
@@ -117,7 +117,7 @@
       "name": "유능제강",
       "description": "공격 후 연속 방어 시 발동",
       "command_chains": [
-        "Z,X,X"
+        "Z", "X", "X"
       ],
       "stat_bonuses": {
         "atk": 0,
@@ -143,7 +143,7 @@
       "name": "음양협격",
       "description": "공격, 방어, 공격을 연달아 할 시 발동",
       "command_chains": [
-        "Z,X,Z"
+        "Z", "X", "Z"
       ],
       "stat_bonuses": {
         "atk": 2,
