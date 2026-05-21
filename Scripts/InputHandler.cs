@@ -51,7 +51,7 @@ public class InputHandler : MonoBehaviour
     public void DoX()
     {
         if (!CanUsePlayerInput()) return;
-        MapManager.Instance.Player.DoDefense();
+        MapManager.Instance.Player.SecondaryAction();
     }
 
     public void DoSpace()
