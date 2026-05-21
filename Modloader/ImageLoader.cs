@@ -25,23 +25,6 @@ public static class ModCache
 
         Texture2D tex = Resources.Load<Texture2D>(keyPath.path);
 
-        if (tex == null)
-        {
-            string modPath = Path.Combine(Application.dataPath, keyPath.path);
-
-            byte[] data = System.IO.File.ReadAllBytes(modPath);
-            tex = new Texture2D(2, 2);
-            bool loadSuccess = tex.LoadImage(data);
-
-            if (!loadSuccess)
-            {
-                Debug.LogWarning("이미지 결함: " + modPath);
-                spriteCache[key] = null;
-                textureCache[key] = null;
-                return null;
-            }
-        }
-
         Sprite sprite = null;
         if (tex == null)
             Debug.Log("이미지 없음. 경로: " + "Mods/Images/" + key);

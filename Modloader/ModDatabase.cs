@@ -13,6 +13,7 @@ public class ModDatabase : ScriptableObject
     public Dictionary<string, SpawnPool> enemyPool = new Dictionary<string, SpawnPool>();
     public Dictionary<string, Active> activePool = new Dictionary<string, Active>();
     public Dictionary<string, Passive> passivePool = new Dictionary<string, Passive>();
+    public Dictionary<string, DropTable> droptable = new Dictionary<string, DropTable>();
 
     public void Initialize()
     {

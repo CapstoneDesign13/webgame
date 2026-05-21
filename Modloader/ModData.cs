@@ -16,3 +16,4 @@ public class Data_unitspawn : ModDataBase<UnitSpawnSetting> { }
 public class Data_spawnpool : ModDataBase<SpawnPool> { }
 public class Data_active : ModDataBase<Active> { }
 public class Data_passive : ModDataBase<Passive> { }
+public class Data_droptable : ModDataBase<DropTable> { }

@@ -99,6 +99,26 @@ public class ResourceLoader : MonoBehaviour
                     file, database.passivePool, "패시브"
                 );
             }
+            else if (lowerName.EndsWith("_droptable"))
+            {
+                LoadFromTextAsset<Data_droptable, DropTable>(
+                    file, database.droptable, "드롭 테이블"
+                );
+            }
+        }
+    }
+
+    public void LoadOneMod(string keyPath)
+    {
+        TextAsset file = Resources.Load<TextAsset>(keyPath);
+
+        string lowerName = file.name.ToLower();
+
+        if (lowerName.EndsWith("_droptable"))
+        {
+            LoadFromTextAsset<Data_passive, Passive>(
+                file, database.passivePool, "드롭 테이블"
+            );
         }
     }
 }
