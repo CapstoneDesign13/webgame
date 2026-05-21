@@ -1,10 +1,12 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public enum RoomType
 {
     Battle,
-    Merchant
+    Merchant,
+    Pub
 }
 
 public class RoomBootstrap : MonoBehaviour
@@ -40,6 +42,10 @@ public class RoomBootstrap : MonoBehaviour
 
             case RoomType.Merchant:
                 LoadMerchant();
+                break;
+
+            case RoomType.Pub:
+                LoadPub();
                 break;
         }
     }
@@ -77,15 +83,43 @@ public class RoomBootstrap : MonoBehaviour
     {
         PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
 
-        var settings = new List<(UnitSpawnSetting, Vector2Int)>()
+        var settings = new List<(UnitSpawnSetting, Vector2Int, DialogType?)>()
         {
-            (new UnitSpawnSetting("상회 상인", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(5, 5)),
-            (new UnitSpawnSetting("상회 백운상회", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(3, 5)),
+            (new UnitSpawnSetting("상회 상인", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(5, 5), DialogType.상인),
+            (new UnitSpawnSetting("상회 백운상회", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(3, 5), null),
         };
 
         foreach (var r in settings)
         {
-            spawn.SpawnNeutral(r.Item1, r.Item2);
+            spawn.SpawnNeutral(r.Item1, r.Item2, r.Item3);
+        }
+
+        currentPlayer.engaged = false;
+    }
+
+    public void LoadPub()
+    {
+        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
+
+        var settings = new List<(UnitSpawnSetting, Vector2Int, DialogType?)>()
+        {
+            (new UnitSpawnSetting("객잔 간판", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(1, 1), null),
+            (new UnitSpawnSetting("객잔 술 항아리", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(1, 4), null),
+            (new UnitSpawnSetting("객잔 카운터", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(1, 7), null),
+            (new UnitSpawnSetting("객잔 주인", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(4, 1), DialogType.객잔),
+            (new UnitSpawnSetting("객잔 테이블", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(4, 4), null),
+        };
+
+        foreach (var r in settings)
+        {
+            try
+            {
+                spawn.SpawnNeutral(r.Item1, r.Item2, r.Item3);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Spawn failed at {r.Item2}: {e}");
+            }
         }
 
         currentPlayer.engaged = false;

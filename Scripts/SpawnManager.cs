@@ -1,9 +1,12 @@
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
     public UIManager ui;
     public WindowManager window;
+    public DialogManager dialog;
     [Header("Unit Prefabs")]
     [SerializeField] private PlayerUnit playerPrefab;
     [SerializeField] private EnemyUnit enemyPrefab;
@@ -75,7 +78,7 @@ public class SpawnManager : MonoBehaviour
         map.PlaceUnit(enemy, startPosition);
     }
 
-    public void SpawnNeutral(UnitSpawnSetting setting, Vector2Int startPosition)
+    public void SpawnNeutral(UnitSpawnSetting setting, Vector2Int startPosition, DialogType? type)
     {
         var map = MapManager.Instance;
         MerchantUnit merchant = Instantiate(MerchantPrefab, transform);
@@ -86,15 +89,12 @@ public class SpawnManager : MonoBehaviour
             setting.attack,
             setting.defense
         );
-        merchant.dialog = MerchantDialog;
+        merchant.type = type;
+        if (type != null)
+            merchant.SetDialogHandler(dialog);
         SpriteRenderer spr = merchant.GetComponent<SpriteRenderer>();
         Sprite cache = ModDatabase.Instance.GetPic(merchant.name + "S");
         spr.sprite = cache;
         map.PlaceUnit(merchant, startPosition);
-    }
-
-    public void MerchantDialog()
-    {
-        window.OpenMerchant();
     }
 }

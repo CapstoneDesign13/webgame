@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class WindowManager : MonoBehaviour
 {
-    public GameObject input;
-    public GameObject infoPanel;
-    public GameObject duelPanel;
-    public GameObject merchantPanel;
+    public InputHandler input;
+    public InfoPanelUI infoPanel;
+    public DuelPanel duelPanel;
+    public MerchantPanel merchantPanel;
     public GameObject stageClearPanel;
+    public ChoicePanel choicePanel;
 
     private int _active = 0;
 
@@ -20,7 +21,7 @@ public class WindowManager : MonoBehaviour
         {
             if (input != null)
             {
-                input.SetActive(false);
+                input.gameObject.SetActive(false);
             }
         }
     }
@@ -35,7 +36,7 @@ public class WindowManager : MonoBehaviour
 
             if (input != null)
             {
-                input.SetActive(true);
+                input.gameObject.SetActive(true);
             }
         }
     }
@@ -44,12 +45,12 @@ public class WindowManager : MonoBehaviour
     {
         if (duelPanel != null)
         {
-            duelPanel.SetActive(false);
+            duelPanel.gameObject.SetActive(false);
         }
 
         if (merchantPanel != null)
         {
-            merchantPanel.SetActive(false);
+            merchantPanel.gameObject.SetActive(false);
         }
 
         if (stageClearPanel != null)
@@ -67,7 +68,7 @@ public class WindowManager : MonoBehaviour
     {
         if (infoPanel != null)
         {
-            infoPanel.SetActive(false);
+            infoPanel.gameObject.SetActive(false);
         }
     }
 
@@ -75,7 +76,7 @@ public class WindowManager : MonoBehaviour
     {
         if (infoPanel != null)
         {
-            infoPanel.SetActive(true);
+            infoPanel.gameObject.SetActive(true);
         }
     }
 
@@ -85,7 +86,7 @@ public class WindowManager : MonoBehaviour
 
         if (duelPanel != null)
         {
-            duelPanel.SetActive(true);
+            duelPanel.gameObject.SetActive(true);
         }
     }
 
@@ -95,7 +96,18 @@ public class WindowManager : MonoBehaviour
 
         if (merchantPanel != null)
         {
-            merchantPanel.SetActive(true);
+            merchantPanel.gameObject.SetActive(true);
+        }
+    }
+
+    public void OpenPub(string title_txt, List<SelcEntry> entries)
+    {
+        CloseAll();
+
+        choicePanel.Setup(title_txt, entries);
+        if (choicePanel != null)
+        {
+            choicePanel.gameObject.SetActive(true);
         }
     }
 
@@ -105,7 +117,7 @@ public class WindowManager : MonoBehaviour
 
         if (input != null)
         {
-            input.SetActive(false);
+            input.gameObject.SetActive(false);
         }
 
         if (stageClearPanel != null)

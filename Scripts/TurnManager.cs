@@ -64,7 +64,7 @@ public class TurnManager : MonoBehaviour
 
         if (window != null && window.input != null)
         {
-            window.input.SetActive(true);
+            window.input.gameObject.SetActive(true);
         }
     }
 
@@ -80,7 +80,7 @@ public class TurnManager : MonoBehaviour
 
         if (window != null && window.input != null)
         {
-            window.input.SetActive(false);
+            window.input.gameObject.SetActive(false);
         }
 
         enemyTurnCoroutine = StartCoroutine(EnemyTurn());
