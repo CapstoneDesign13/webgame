@@ -7,9 +7,10 @@ public class InputHandler : MonoBehaviour
     public TurnManager turn;
     public WindowManager window;
 
-    private void Start()
+    private void Awake()
     {
-        Input.imeCompositionMode = IMECompositionMode.Off;
+            Debug.Log("IMECompositionMode Off");
+            Input.imeCompositionMode = IMECompositionMode.Off;
     }
 
     private bool CanUsePlayerInput()
