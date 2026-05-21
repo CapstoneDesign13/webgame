@@ -1,12 +1,69 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+
+[System.Serializable]
+public class DropInstance
+{
+    public string id;
+    public PoolType type;
+    public int price;
+
+    static DropInstance()
+    {
+
+    }
+
+    public static DropInstance soldout = new DropInstance()
+    {
+        id = "soldout",
+        type = PoolType.None,
+        price = 0,
+    };
+}
+
+[JsonObject]
+[System.Serializable]
+public class DropTable : IHasID, IEnumerable<DropInstance>
+{
+    public string id;
+    string IHasID.id => id;
+    public int Count { get => list.Count; }
+    public List<DropInstance> list;
+    public DropInstance this[int key] => list[key];
+
+    public void Shuffle()
+    {
+        System.Random rand = new System.Random();
+        // Fisher-Yates Shuffle
+        for (int i = list.Count - 1; i > 0; i--)
+        {
+            int j = rand.Next(i + 1);
+            (list[i], list[j]) = (list[j], list[i]);
+        }
+    }
+
+    public void Remove(DropInstance drop)
+    {
+        list.Remove(drop);
+    }
+
+    public IEnumerator<DropInstance> GetEnumerator()
+    => list.GetEnumerator();
+
+    IEnumerator IEnumerable.GetEnumerator()
+        => GetEnumerator();
+}
 
 public static class Soldout
 {
     public static (Combo, PoolType) pair = (null, PoolType.None);
 }
 
+[JsonConverter(typeof(StringEnumConverter))]
 public enum PoolType
 {
     Active,
@@ -16,16 +73,16 @@ public enum PoolType
 
 public class MerchantPanel : FullScreenPanel
 {
-    public List<(Combo, PoolType)> instock;
+    public List<DropInstance> instock;
     public MerchantCardUI[] childs;
 
     private void Awake()
     {
-        instock = new List<(Combo, PoolType)>()
+        instock = new List<DropInstance>()
         {
-            Soldout.pair,
-            Soldout.pair,
-            Soldout.pair,
+            DropInstance.soldout,
+            DropInstance.soldout,
+            DropInstance.soldout,
         };
 
         for (int i = 0; i < 3; i++)
@@ -51,21 +108,20 @@ public class MerchantPanel : FullScreenPanel
     public void Refill()
     {
         var modDB = ModDatabase.Instance;
+        var list = modDB.droptable["stage1"];
+        if (list.Count < 3)
+            return;
 
-        List<(string key, PoolType type)> keys =
-            GetRandomKeys(modDB.activePool, modDB.passivePool, 3);
+        list.Shuffle();
 
-        instock = keys.Select(x =>
-        {
-            return x.type == PoolType.Active
-                ? ((Combo)modDB.activePool[x.key], PoolType.Active)
-                : ((Combo)modDB.passivePool[x.key], PoolType.Passive);
-        }).ToList();
+        var result = list
+        .Take(3)
+        .ToList();
+
+        instock = result;
 
         for (int i = 0; i < 3; i++)
-        {
             childs[i].Setup(instock[i]);
-        }
     }
 
     public void Escape()
@@ -87,10 +143,13 @@ public class MerchantPanel : FullScreenPanel
         }
     }
 
-    public void Purchase((Combo, PoolType)pair)
+    public void Purchase(DropInstance drop)
     {
-        int i = instock.FindIndex(x => x == pair);
-        instock[i] = Soldout.pair;
-        childs[i].Setup(Soldout.pair);
+        int i = instock.FindIndex(x => x.id == drop.id);
+        instock[i] = DropInstance.soldout;
+        childs[i].Setup(instock[i]);
+
+        var modDB = ModDatabase.Instance;
+        modDB.droptable["stage1"].Remove(drop);
     }
 }

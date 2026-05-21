@@ -5,6 +5,7 @@ using UnityEngine;
 public class WindowManager : MonoBehaviour
 {
     public InputHandler input;
+    public UIManager ui;
     public InfoPanelUI infoPanel;
     public DuelPanel duelPanel;
     public MerchantPanel merchantPanel;
@@ -37,6 +38,7 @@ public class WindowManager : MonoBehaviour
             if (input != null)
             {
                 input.gameObject.SetActive(true);
+                ui.Refresh();
             }
         }
     }

@@ -12,8 +12,10 @@ public class CharacterBase : MonoBehaviour
     public Team team = Team.Enemy;
     public int MaxHP = 20;
     public int HP;
-    public int Attack = 5;
-    public int Defense = 2;
+    protected int _Attack = 4;
+    protected int _Defense = 1;
+    public virtual int Attack { get { return _Attack; } }
+    public virtual int Defense { get { return _Defense; } }
 
     [SerializeField] protected GridPosition currentPosition;
 
@@ -43,8 +45,8 @@ public class CharacterBase : MonoBehaviour
         name = newName;
         this.team = team;
         MaxHP = Mathf.Max(1, hp);
-        Attack = Mathf.Max(0, atk);
-        Defense = Mathf.Max(0, def);
+        _Attack = Mathf.Max(0, atk);
+        _Defense = Mathf.Max(0, def);
 
         HP = MaxHP;
 
@@ -158,23 +160,26 @@ public class CharacterBase : MonoBehaviour
         return true;
     }
 
+    public bool TryAttackGrid(Vector2Int grid)
+    {
+        var targetPos = CurrentGridPosition + grid;
+        var target = MapManager.Instance.GetUnitAt(targetPos);
+        if (target != null && target.team != this.team)
+        {
+            target.TakeDamage(this);
+            return true;
+        }
+        return false;
+    }
+
     public bool TryAttack()
     {
-        Vector2Int targetPos;
         bool hit = false;
         for (int x = -1; x <= 1; x += 1)
         {
             for (int y = -1; y <= 1; y += 1)
             {
-                targetPos = CurrentGridPosition + new Vector2Int(x, y);
-                var target = MapManager.Instance.GetUnitAt(targetPos);
-
-                if (target != null && target.team != this.team)
-                {
-                    hit = true;
-                    target.TakeDamage(this);
-                    Debug.Log(target == null ? "Çã°ø" : target.name);
-                }
+                hit = TryAttackGrid(new Vector2Int(x, y));
             }
         }
         return hit;

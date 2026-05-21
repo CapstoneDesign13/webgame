@@ -11,9 +11,9 @@ public class MerchantCardUI : MonoBehaviour
     public TMP_Text descTxt;
     public Button btn;
     public Image pic;
-    public void Setup((Combo, PoolType) pair)
+    public void Setup(DropInstance drop)
     {
-        if (pair == Soldout.pair)
+        if (drop.id == DropInstance.soldout.id)
         {
             nameTxt.text = "판매 완료";
             typeTxt.text = "";
@@ -22,19 +22,35 @@ public class MerchantCardUI : MonoBehaviour
             pic.sprite = null;
             btn.onClick.RemoveAllListeners();
         }
-        else
+        else if (drop.type == PoolType.Active)
         {
             if (parent == null)
                 parent = GetComponentInParent<MerchantPanel>();
-            nameTxt.text = pair.Item1.name;
-            typeTxt.text = $"<color=#B8F8FB>{pair.Item2}</color>";
-            priceTxt.text = $"가격:---";
-            descTxt.text = $"{pair.Item1.description}";
-            Sprite cache = ModDatabase.Instance.GetPic(pair.Item1.id + "_pic");
+            ModDatabase.Instance.activePool.TryGetValue(drop.id, out Active active);
+            nameTxt.text = active.name;
+            typeTxt.text = $"<color=#B8F8FB>{drop.type}</color>";
+            priceTxt.text = $"가격:{drop.price}";
+            descTxt.text = $"{active.description}";
+            Sprite cache = ModDatabase.Instance.GetPic(active.id + "_pic");
             pic.sprite = cache;
             btn.onClick.RemoveAllListeners();
-            btn.onClick.AddListener(() => MapManager.Instance.Player.Learn(pair));
-            btn.onClick.AddListener(() => parent.Purchase(pair));
+            btn.onClick.AddListener(() => MapManager.Instance.Player.LearnA(active));
+            btn.onClick.AddListener(() => parent.Purchase(drop));
+        }
+        else if (drop.type == PoolType.Passive)
+        {
+            if (parent == null)
+                parent = GetComponentInParent<MerchantPanel>();
+            ModDatabase.Instance.passivePool.TryGetValue(drop.id, out Passive passive);
+            nameTxt.text = passive.name;
+            typeTxt.text = $"<color=#B8F8FB>{drop.type}</color>";
+            priceTxt.text = $"가격:{drop.price}";
+            descTxt.text = $"{passive.description}";
+            Sprite cache = ModDatabase.Instance.GetPic(passive.id + "_pic");
+            pic.sprite = cache;
+            btn.onClick.RemoveAllListeners();
+            btn.onClick.AddListener(() => MapManager.Instance.Player.LearnP(passive));
+            btn.onClick.AddListener(() => parent.Purchase(drop));
         }
     }
 }

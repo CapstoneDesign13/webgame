@@ -11,11 +11,24 @@ public class PlayerUnit : CharacterBase
 
     public StatEntry statEntry = new StatEntry();
 
+    public override int Attack { get { return _Attack + statEntry.atk; } }
+    public override int Defense { get { return _Defense + statEntry.def; } }
+
     public List<Active> actives = new List<Active>();
     public List<Passive> passives = new List<Passive>();
 
     public List<string> actionHistory = new List<string>();
     public List<Vector3> path = new List<Vector3>();
+
+    public void LearnA(Active active)
+    {
+        actives.Add(active);
+    }
+
+    public void LearnP(Passive passive)
+    {
+        passives.Add(passive);
+    }
 
     public void Learn((Combo, PoolType) pair)
     {
@@ -40,6 +53,21 @@ public class PlayerUnit : CharacterBase
         statEntry.def = 0;
     }
 
+    public void AtTurnEnd()
+    {
+        var active = combo.Lmatch(actionHistory, actives);
+        if (active != null)
+        {
+            statEntry += active.stat_bonuses;
+            foreach (var cord in active.range_coordinates)
+            {
+                TryAttackGrid(cord);
+            }
+        }
+        //공격력 증가는 턴 종료시까지 유지
+        statEntry.atk = 0;
+    }
+
     public void RegisterAction(string action)
     {
         actionHistory.Add(action);
@@ -62,17 +90,17 @@ public class PlayerUnit : CharacterBase
     public void DoAttack()
     {
         if (ActionPoints <= 0) return;
-        
-        if (TryAttack())
-        {
-            ActionPoints--;
-            RegisterAction("Attack");
-            ui.Refresh();
+
+        ActionPoints--;
+        RegisterAction("Z");
+
+        TryAttack();
+
+        ui.Refresh();
             
-            if (RunManager.Instance != null)
-            {
-                RunManager.Instance.TryClearBattle();
-            }
+        if (RunManager.Instance != null)
+        {
+            RunManager.Instance.TryClearBattle();
         }
     }
 
@@ -82,7 +110,7 @@ public class PlayerUnit : CharacterBase
 
         Debug.Log("Player Defending");
         ActionPoints--;
-        RegisterAction("Defense");
+        RegisterAction("X");
         ui.Refresh();
     }
 
@@ -98,7 +126,7 @@ public class PlayerUnit : CharacterBase
 
                 if (target != null && target.team != this.team)
                 {
-                    if(target.Answer());
+                    if(target.Answer())
                         return true;
                 }
             }

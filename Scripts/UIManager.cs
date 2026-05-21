@@ -42,11 +42,11 @@ public class UIManager : MonoBehaviour
                     //#D4B000
                     colors[i].color = new Color32(212, 176, 0, 255);
                     break;
-                case "Attack":
+                case "Z":
                     //#CD2E3A
                     colors[i].color = new Color32(205, 46, 58, 255);
                     break;
-                case "Defense":
+                case "X":
                     //#0047A0
                     colors[i].color = new Color32(0, 71, 160, 255);
                     break;

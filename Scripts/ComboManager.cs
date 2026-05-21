@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,14 +45,18 @@ public class ComboManager : MonoBehaviour
 {
     private bool Match(List<string> input, List<string> commandChains, int startIndex = 0)
     {
-        // 범위 체크
         if (startIndex < 0) return false;
         if (startIndex + commandChains.Count > input.Count) return false;
 
         for (int i = 0; i < commandChains.Count; i++)
         {
-            if (input[startIndex + i] != commandChains[i])
+            if (!string.Equals(
+                    input[startIndex + i],
+                    commandChains[i],
+                    StringComparison.OrdinalIgnoreCase))
+            {
                 return false;
+            }
         }
 
         return true;
@@ -61,12 +66,19 @@ public class ComboManager : MonoBehaviour
     {
         StatEntry sum = new StatEntry();
 
-        for (int i = 0; i < input.Count; i++)
+        foreach (var pattern in patterns)
         {
-            foreach (var pattern in patterns)
+            int startIndex = input.Count - pattern.command_chains.Count;
+
+            // 길이가 부족하면 스킵
+            if (startIndex < 0)
+                continue;
+
+            // input의 끝부분만 검사
+            if (Match(input, pattern.command_chains, startIndex))
             {
-                if (Match(input, pattern.command_chains, i))
-                    sum += pattern.stat_bonuses;
+                sum += pattern.stat_bonuses;
+                Debug.Log($"{pattern.name}: 조건 만족");
             }
         }
 
@@ -83,6 +95,8 @@ public class ComboManager : MonoBehaviour
             {
                 if (bestMatch == null || pattern.command_chains.Count > bestMatch.command_chains.Count)
                     bestMatch = pattern;
+
+                Debug.Log($"{pattern.name}: 조건 만족");
             }
         }
 

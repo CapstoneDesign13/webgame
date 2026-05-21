@@ -83,6 +83,8 @@ public class TurnManager : MonoBehaviour
             window.input.gameObject.SetActive(false);
         }
 
+        MapManager.Instance.Player.AtTurnEnd();
+
         enemyTurnCoroutine = StartCoroutine(EnemyTurn());
     }
 
