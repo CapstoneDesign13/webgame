@@ -18,7 +18,10 @@ MonoBehaviour:
   - content: "\uB530\uB73B\uD55C \uAD6D\uBC25 \uD55C \uADF8\uB987, \uADF8\uB9AC\uACE0
       \uD734\uC2DD."
     desc: "\uCCB4\uB825 30% \uD68C\uBCF5"
+    effects: 00000000
   - content: "\uD2B9\uC81C \uBCF4\uC591\uC2DD\uC744 \uC8FC\uBB38!"
     desc: "\uB2E4\uC74C \uC804\uD22C \uB3D9\uC548 ATK+1"
+    effects: 01000000
   - content: "\uC18C\uBB38\uC744 \uC5FF\uB4E3\uB294\uB2E4."
     desc: "\uB2E4\uC74C \uC804\uD22C \uB3D9\uC548 DEF+1"
+    effects: 02000000

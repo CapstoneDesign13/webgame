@@ -10,10 +10,11 @@ public class PlayerUnit : CharacterBase
     public int ActionPoints = 3;
     public bool engaged = false;
 
+    public StatEntry nextBattle = new StatEntry();
     public StatEntry statEntry = new StatEntry();
 
-    public override int Attack { get { return _Attack + statEntry.atk; } }
-    public override int Defense { get { return _Defense + statEntry.def; } }
+    public override int Attack { get { return _Attack + nextBattle.atk + statEntry.atk; } }
+    public override int Defense { get { return _Defense + nextBattle.def + statEntry.def; } }
 
     public List<Active> actives = new List<Active>();
     public List<Passive> passives = new List<Passive>();
@@ -69,6 +70,12 @@ public class PlayerUnit : CharacterBase
         statEntry.atk = 0;
 
         ui.Refresh();
+    }
+
+    public void AtBattleEnd()
+    {
+        nextBattle.atk = 0;
+        nextBattle.def = 0;
     }
 
     public void RegisterAction(string action)

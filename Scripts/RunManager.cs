@@ -8,6 +8,7 @@ public class RunManager : MonoBehaviour
     [SerializeField] private TurnManager turnManager;
     [SerializeField] private WindowManager window;
     [SerializeField] private RoomDefinition[] rooms;
+    [SerializeField] private PlayerUnit player;
 
     [SerializeField] private Vector2Int playerStartPosition = new Vector2Int(4, 0);
 
@@ -110,11 +111,7 @@ public class RunManager : MonoBehaviour
             return false;
         }
 
-        transitioning = true;
-
-        Debug.Log("STAGE CLEAR");
-
-        OpenStageClearChoice();
+        EndBattle("NORMAL");
 
         return true;
     }
@@ -135,10 +132,17 @@ public class RunManager : MonoBehaviour
             Debug.LogWarning("RunManager: 현재 방이 Battle이 아니므로 일기토 클리어를 처리하지 않습니다.");
             return;
         }
+        
+        EndBattle("DUEL");
+    }
+
+    public void EndBattle(string source)
+    {
+        player.AtBattleEnd();
         transitioning = true;
-        Debug.Log("STAGE CLEAR BY DUEL");
+        Debug.Log($"STAGE CLEAR BY {source}");
         OpenStageClearChoice();
-        }
+    }
 
     private void OpenStageClearChoice()
     {

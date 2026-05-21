@@ -484,6 +484,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1278703281092037683}
   - component: {fileID: 441898435591141176}
+  - component: {fileID: 8018828458834728041}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -520,3 +521,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7458919799528797440}
   m_CullTransparentMesh: 1
+--- !u!114 &8018828458834728041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7458919799528797440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64cc5575bb71ac54aadea0169fec3e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChoiceCardUI
+  content: {fileID: 3583395363830201827}
+  desc: {fileID: 1501663551569886584}
+  btn: {fileID: 3350785148024889090}
