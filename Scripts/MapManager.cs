@@ -83,29 +83,13 @@ public enum Clan
 }
 
 [System.Serializable]
-public class UnitSpawnSetting : IHasID
+public class SpawnEntry
 {
-    public string id;
-    string IHasID.id => id;
-    [JsonProperty("name")] public string displayName;
-    [JsonProperty("faction")] public Clan clan;
-    public int hp;
-    [JsonProperty("atk")] public int attack;
-    [JsonProperty("def")] public int defense;
-    [JsonProperty("unit_type")] public PieceType type;
-    public string passive_id;
-    public string sprite_id;
-
-    public UnitSpawnSetting(string displayName, Clan clan, PieceType type, int hp, int attack, int defense)
-    {
-        this.displayName = displayName;
-        this.clan = clan;
-        this.type = type;
-        this.hp = hp;
-        this.attack = attack;
-        this.defense = defense;
-    }
+    public UnitSpawnSetting setting;
+    public Vector2Int pos;
+    public DialogType type;
 }
+
 
 public class MapManager : MonoBehaviour
 {

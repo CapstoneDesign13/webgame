@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2adeaea8873edd14d94a7b12c458d418, type: 3}
   m_Name: "\uAC1D\uC794"
   m_EditorClassIdentifier: Assembly-CSharp::PubDialogSO
-  type: 1
+  type: 2
   title_txt: "\uAC1D\uC794\uC5D0\uC11C \uC788\uC5C8\uB358 \uC77C"
   entries:
   - content: "\uB530\uB73B\uD55C \uAD6D\uBC25 \uD55C \uADF8\uB987, \uADF8\uB9AC\uACE0

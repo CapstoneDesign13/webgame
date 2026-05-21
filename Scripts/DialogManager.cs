@@ -3,6 +3,7 @@ using UnityEngine;
 
 public enum DialogType
 {
+    None,
     ªÛ¿Œ,
     ∞¥¿‹,
 }

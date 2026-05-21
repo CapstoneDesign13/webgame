@@ -6,6 +6,7 @@ public class PlayerUnit : CharacterBase
     public UIManager ui;
     public ComboManager combo;
 
+    public int duelturn = 5;
     public int ActionPoints = 3;
     public bool engaged = false;
 
@@ -66,10 +67,15 @@ public class PlayerUnit : CharacterBase
         }
         //공격력 증가는 턴 종료시까지 유지
         statEntry.atk = 0;
+
+        ui.Refresh();
     }
 
     public void RegisterAction(string action)
     {
+        if (!engaged)
+            return;
+        ActionPoints--;
         actionHistory.Add(action);
         statEntry += combo.Pmatch(actionHistory, passives);
     }
@@ -81,7 +87,6 @@ public class PlayerUnit : CharacterBase
         if (TryMove(dir))
         {
             path.Add(transform.position);
-            ActionPoints--;
             RegisterAction("Move");
             ui.Refresh();
         }
@@ -91,7 +96,6 @@ public class PlayerUnit : CharacterBase
     {
         if (ActionPoints <= 0) return;
 
-        ActionPoints--;
         RegisterAction("Z");
 
         TryAttack();
@@ -108,8 +112,10 @@ public class PlayerUnit : CharacterBase
     {
         if (ActionPoints <= 0) return;
 
-        Debug.Log("Player Defending");
-        ActionPoints--;
+        statEntry += new StatEntry()
+        {
+            def = _Defense,
+        };
         RegisterAction("X");
         ui.Refresh();
     }
@@ -140,5 +146,25 @@ public class PlayerUnit : CharacterBase
             DoAttack();
         else
             TryTalk();
+    }
+
+    public void SecondaryAction()
+    {
+        if (engaged)
+            DoDefense();
+    }
+
+    public void SetPlayer(UnitSpawnSetting setting)
+    {
+        SetupStats(
+            setting.displayName,
+            Team.Ally,
+            setting.hp,
+            setting.attack,
+            setting.defense
+        );
+        SpriteRenderer spr = GetComponent<SpriteRenderer>();
+        Sprite cache = ModDatabase.Instance.GetPic(setting.sprite_id + "N");
+        spr.sprite = cache;
     }
 }

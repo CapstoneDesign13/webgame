@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09c9c4546962d54485a3df9e3cc3e6a, type: 3}
   m_Name: "\uC0C1\uC778"
   m_EditorClassIdentifier: Assembly-CSharp::MerchantDialogSO
-  type: 0
+  type: 1

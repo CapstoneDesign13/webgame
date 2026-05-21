@@ -78,7 +78,7 @@ public class SpawnManager : MonoBehaviour
         map.PlaceUnit(enemy, startPosition);
     }
 
-    public void SpawnNeutral(UnitSpawnSetting setting, Vector2Int startPosition, DialogType? type)
+    public void SpawnNeutral(UnitSpawnSetting setting, Vector2Int startPosition, DialogType type)
     {
         var map = MapManager.Instance;
         MerchantUnit merchant = Instantiate(MerchantPrefab, transform);
@@ -90,7 +90,7 @@ public class SpawnManager : MonoBehaviour
             setting.defense
         );
         merchant.type = type;
-        if (type != null)
+        if (type != DialogType.None)
             merchant.SetDialogHandler(dialog);
         SpriteRenderer spr = merchant.GetComponent<SpriteRenderer>();
         Sprite cache = ModDatabase.Instance.GetPic(merchant.name + "S");
