@@ -24,6 +24,12 @@ public class PlayerUnit : CharacterBase
     public List<Vector3> path = new List<Vector3>();
     public List<Vector3> last_move = new List<Vector3>();
 
+    public void Train(StatEntry stat)
+    {
+        _Attack += stat.atk;
+        _Defense += stat.def;
+    }
+
     public void LearnA(Active active)
     {
         actives.Add(active);

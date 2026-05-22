@@ -102,15 +102,15 @@ public class WindowManager : MonoBehaviour
         }
     }
 
-    public void OpenPub(string title_txt, List<SelcEntry> entries)
+    public void OpenPub(string title_txt, string content_txt, List<SelcEntry> entries)
     {
         CloseAll();
 
-        choicePanel.Setup(title_txt, entries);
         if (choicePanel != null)
         {
             choicePanel.gameObject.SetActive(true);
         }
+        choicePanel.Setup(title_txt, content_txt, entries);
     }
 
     public void OpenStageClear()

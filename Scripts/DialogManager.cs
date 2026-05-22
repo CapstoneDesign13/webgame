@@ -6,6 +6,8 @@ public enum DialogType
     None,
     ªÛ¿Œ,
     ∞¥¿‹,
+    øµ√µ,
+    æ‡πÊ
 }
 
 public abstract class DialogSO : ScriptableObject

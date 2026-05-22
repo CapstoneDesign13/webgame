@@ -6,7 +6,9 @@ public enum RoomType
 {
     Battle,
     Merchant,
-    Pub
+    Pub,
+    Pond,
+    Parmacy,
 }
 
 public class RoomBootstrap : MonoBehaviour
@@ -46,6 +48,14 @@ public class RoomBootstrap : MonoBehaviour
 
             case RoomType.Pub:
                 LoadPub();
+                break;
+
+            case RoomType.Pond:
+                LoadPond();
+                break;
+
+            case RoomType.Parmacy:
+                LoadParmacy();
                 break;
         }
     }
@@ -93,7 +103,7 @@ public class RoomBootstrap : MonoBehaviour
 
         foreach (var r in merchantSet)
         {
-            spawn.SpawnNeutral(r.setting, r.pos, r.type);
+            spawn.SpawnNeutral(r.setting.data, r.pos, r.type);
         }
 
         currentPlayer.engaged = false;
@@ -118,7 +128,49 @@ public class RoomBootstrap : MonoBehaviour
         {
             try
             {
-                spawn.SpawnNeutral(r.setting, r.pos, r.type);
+                spawn.SpawnNeutral(r.setting.data, r.pos, r.type);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Spawn failed at {r.pos}: {e}");
+            }
+        }
+
+        currentPlayer.engaged = false;
+    }
+
+    public SpawnEntry[] pondSet;
+
+    public void LoadPond()
+    {
+        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
+
+        foreach (var r in pondSet)
+        {
+            try
+            {
+                spawn.SpawnNeutral(r.setting.data, r.pos, r.type);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Spawn failed at {r.pos}: {e}");
+            }
+        }
+
+        currentPlayer.engaged = false;
+    }
+
+    public SpawnEntry[] parmacySet;
+
+    public void LoadParmacy()
+    {
+        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
+
+        foreach (var r in parmacySet)
+        {
+            try
+            {
+                spawn.SpawnNeutral(r.setting.data, r.pos, r.type);
             }
             catch (Exception e)
             {
