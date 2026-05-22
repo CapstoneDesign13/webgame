@@ -32,7 +32,7 @@ public abstract class Combo : IHasID
 [System.Serializable]
 public class Active : Combo
 {
-    public List<Vector2Int> range_coordinates;
+    public Shape range_coordinates;
 }
 
 [System.Serializable]

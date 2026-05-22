@@ -61,7 +61,8 @@ public class PlayerUnit : CharacterBase
         if (active != null)
         {
             statEntry += active.stat_bonuses;
-            foreach (var cord in active.range_coordinates)
+            var area = ShapeUtils.IterateThruShape(active.range_coordinates);
+            foreach (var cord in area)
             {
                 TryAttackGrid(cord);
             }
