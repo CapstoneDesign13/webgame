@@ -49,6 +49,32 @@ public static class ShapeUtils
         }
     }
 
+    public static List<Vector3> IterateThruShapeCorners(Shape shape, Vector3 origin)
+    {
+        List<Vector3> points = shape.type switch
+        {
+            ShapeType.Square => SquareCorners(shape.a),
+            ShapeType.Cross => CrossCorners(shape.a, shape.b),
+            ShapeType.Diamond => DiamondCorners(shape.a),
+            ShapeType.Custom => CustomCorners(shape.cells),
+            _ => new List<Vector3>()
+        };
+
+        // origin 적용
+        for (int i = 0; i < points.Count; i++)
+        {
+            points[i] += origin;
+        }
+
+        // 마지막에 시작점 다시 추가해서 닫기
+        if (points.Count > 0)
+        {
+            points.Add(points[0]);
+        }
+
+        return points;
+    }
+
     // -------------------------
     // Square
     // -------------------------
@@ -66,6 +92,19 @@ public static class ShapeUtils
         }
 
         return result;
+    }
+
+    private static List<Vector3> SquareCorners(int size)
+    {
+        int r = size / 2;
+
+        return new List<Vector3>
+        {
+            new Vector3(-r, -r, 0),
+            new Vector3( r, -r, 0),
+            new Vector3( r,  r, 0),
+            new Vector3(-r,  r, 0),
+        };
     }
 
     // -------------------------
@@ -92,6 +131,32 @@ public static class ShapeUtils
         return result;
     }
 
+    private static List<Vector3> CrossCorners(int arm, int thickness)
+    {
+        int t = thickness;
+
+        return new List<Vector3>
+        {
+            new Vector3(-t, -arm, 0),
+            new Vector3( t, -arm, 0),
+
+            new Vector3( t, -t, 0),
+            new Vector3( arm, -t, 0),
+
+            new Vector3( arm,  t, 0),
+            new Vector3( t,  t, 0),
+
+            new Vector3( t,  arm, 0),
+            new Vector3(-t,  arm, 0),
+
+            new Vector3(-t,  t, 0),
+            new Vector3(-arm,  t, 0),
+
+            new Vector3(-arm, -t, 0),
+            new Vector3(-t, -t, 0),
+        };
+    }
+
     // -------------------------
     // Diamond
     // -------------------------
@@ -111,5 +176,44 @@ public static class ShapeUtils
         }
 
         return result;
+    }
+
+    private static List<Vector3> DiamondCorners(int radius)
+    {
+        return new List<Vector3>
+        {
+            new Vector3( 0, -radius, 0),
+            new Vector3( radius, 0, 0),
+            new Vector3( 0, radius, 0),
+            new Vector3(-radius, 0, 0),
+        };
+    }
+
+    private static List<Vector3> CustomCorners(List<Vector2Int> cells)
+    {
+        if (cells == null || cells.Count == 0)
+            return new List<Vector3>();
+
+        int minX = int.MaxValue;
+        int maxX = int.MinValue;
+        int minY = int.MaxValue;
+        int maxY = int.MinValue;
+
+        foreach (var c in cells)
+        {
+            minX = Mathf.Min(minX, c.x);
+            maxX = Mathf.Max(maxX, c.x);
+
+            minY = Mathf.Min(minY, c.y);
+            maxY = Mathf.Max(maxY, c.y);
+        }
+
+        return new List<Vector3>
+        {
+            new Vector3(minX, minY, 0),
+            new Vector3(maxX, minY, 0),
+            new Vector3(maxX, maxY, 0),
+            new Vector3(minX, maxY, 0),
+        };
     }
 }

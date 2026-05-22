@@ -68,6 +68,10 @@ public class UIManager : MonoBehaviour
         Skills.text = sb.ToString();
         QiText.text = "<color=#B8F8FB>Qi:" + player.ActionPoints + "</color>";
         TurnText.text = "<color=#FFD000>Turn:" + turn.turnCount + "</color>";
-        line.DrawPath(player.path);
+        var movement = player.path;
+        if (movement.Count == 1)
+            line.DrawPath(movement);
+        else
+            line.AddPath(player.last_move);
     }
 }

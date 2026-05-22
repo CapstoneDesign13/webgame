@@ -5,6 +5,7 @@ public class PlayerUnit : CharacterBase
 {
     public UIManager ui;
     public ComboManager combo;
+    public LineAnimator line;
 
     public int duelturn = 5;
     public int ActionPoints = 3;
@@ -21,6 +22,7 @@ public class PlayerUnit : CharacterBase
 
     public List<string> actionHistory = new List<string>();
     public List<Vector3> path = new List<Vector3>();
+    public List<Vector3> last_move = new List<Vector3>();
 
     public void LearnA(Active active)
     {
@@ -50,6 +52,10 @@ public class PlayerUnit : CharacterBase
         ActionPoints = 3;
         actionHistory.Clear();
         path.Clear();
+        if (last_move.Count == 1)
+            last_move[0] = transform.position;
+        else
+            last_move.Add(transform.position);
         path.Add(transform.position);
         //������ ����� ����� ���� ����
         statEntry.def = 0;
@@ -60,6 +66,8 @@ public class PlayerUnit : CharacterBase
         var active = combo.Lmatch(actionHistory, actives);
         if (active != null)
         {
+            var Corners = ShapeUtils.IterateThruShapeCorners(active.range_coordinates, this.transform.position);
+            line.DrawPath(Corners);
             statEntry += active.stat_bonuses;
             var area = ShapeUtils.IterateThruShape(active.range_coordinates);
             foreach (var cord in area)
@@ -95,6 +103,10 @@ public class PlayerUnit : CharacterBase
         if (TryMove(dir))
         {
             path.Add(transform.position);
+            if (last_move.Count == 1)
+                last_move[0] = transform.position;
+            else
+                last_move.Add(transform.position);
             RegisterAction("Move");
             ui.Refresh();
         }
