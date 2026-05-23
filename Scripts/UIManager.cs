@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
         PlayerUnit player = MapManager.Instance.Player;
         ATK.text = $"공:{player.Attack}";
         DEF.text = $"방:{player.Defense}";
-        Gold.text = $"소지 금화:{economy.Money}";
+        Gold.text = $"소지 은자:{economy.Money}";
         for (int i = 0; i < 3; i++)
         {
             string s = i >= player.actionHistory.Count ? null :  player.actionHistory[i];

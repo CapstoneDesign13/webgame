@@ -102,7 +102,7 @@ public class MerchantPanel : FullScreenPanel
 
     public void RefreshUI()
     {
-        moneyTxt.text = $"소지 은전:{economy.Money}";
+        moneyTxt.text = $"소지 은자:{economy.Money}";
     }
 
     public List<(string key, PoolType type)> GetRandomKeys(
