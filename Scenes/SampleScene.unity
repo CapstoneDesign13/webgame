@@ -5967,7 +5967,6 @@ MonoBehaviour:
   turn: {fileID: 906787196}
   player: {fileID: 2107183156}
   run: {fileID: 1911166626}
-  playerSetting: {fileID: 11400000, guid: f3753edb151513544a2981af75c023fb, type: 2}
 --- !u!4 &1178203429
 Transform:
   m_ObjectHideFlags: 0
@@ -6103,11 +6102,6 @@ MonoBehaviour:
   - {fileID: 1793880689}
   - {fileID: 1878823449}
   - {fileID: 2119061098}
-  settings:
-  - {fileID: 11400000, guid: 4a6b8820ece955a43bea40bf958edc3f, type: 2}
-  - {fileID: 11400000, guid: 4037ab13fd848934c8b127a59d86dbca, type: 2}
-  - {fileID: 11400000, guid: f3753edb151513544a2981af75c023fb, type: 2}
-  - {fileID: 11400000, guid: 5cfa0049d34ae034bad1146d3860aed9, type: 2}
 --- !u!224 &1207070392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9117,7 +9111,7 @@ MonoBehaviour:
   - setting: {fileID: 11400000, guid: 5cfa0049d34ae034bad1146d3860aed9, type: 2}
     pos: {x: 2, y: 5}
     type: 8
-  - setting: {fileID: 11400000, guid: f81c9f0fc536a074894542d466f4095e, type: 2}
+  - setting: {fileID: 11400000, guid: c42a8991ea2312a4695ae0235d131587, type: 2}
     pos: {x: 4, y: 5}
     type: 0
   BossSet1:
@@ -9944,7 +9938,7 @@ MonoBehaviour:
   turnManager: {fileID: 906787196}
   window: {fileID: 518549340}
   rooms:
-  - type: 1
+  - type: 5
     stageKey: stage1
   - type: 0
     stageKey: stage1
