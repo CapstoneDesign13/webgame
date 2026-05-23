@@ -3,6 +3,7 @@ using Newtonsoft.Json.Converters;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 [System.Serializable]
@@ -73,6 +74,9 @@ public enum PoolType
 
 public class MerchantPanel : FullScreenPanel
 {
+    public EconomyManager economy;
+
+    public TMP_Text moneyTxt;
     public List<DropInstance> instock;
     public MerchantCardUI[] childs;
 
@@ -89,6 +93,16 @@ public class MerchantPanel : FullScreenPanel
         {
             childs[i].Setup(instock[i]);
         }
+    }
+
+    public override void Refresh()
+    {
+        RefreshUI();
+    }
+
+    public void RefreshUI()
+    {
+        moneyTxt.text = $"소지 은전:{economy.Money}";
     }
 
     public List<(string key, PoolType type)> GetRandomKeys(
@@ -145,11 +159,15 @@ public class MerchantPanel : FullScreenPanel
 
     public void Purchase(DropInstance drop)
     {
-        int i = instock.FindIndex(x => x.id == drop.id);
-        instock[i] = DropInstance.soldout;
-        childs[i].Setup(instock[i]);
+        if (economy.TrySpend(drop.price))
+        {
+            Refresh();
+            int i = instock.FindIndex(x => x.id == drop.id);
+            instock[i] = DropInstance.soldout;
+            childs[i].Setup(instock[i]);
 
-        var modDB = ModDatabase.Instance;
-        modDB.droptable["stage1"].Remove(drop);
+            var modDB = ModDatabase.Instance;
+            modDB.droptable["stage1"].Remove(drop);
+        }
     }
 }

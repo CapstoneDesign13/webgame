@@ -9,6 +9,7 @@ public class RunManager : MonoBehaviour
     [SerializeField] private WindowManager window;
     [SerializeField] private RoomDefinition[] rooms;
     [SerializeField] private PlayerUnit player;
+    [SerializeField] private EconomyManager economy;
 
     [SerializeField] private Vector2Int playerStartPosition = new Vector2Int(4, 0);
 
@@ -139,6 +140,8 @@ public class RunManager : MonoBehaviour
     public void EndBattle(string source)
     {
         player.AtBattleEnd();
+        economy.Earn(10);
+
         transitioning = true;
         Debug.Log($"STAGE CLEAR BY {source}");
         OpenStageClearChoice();

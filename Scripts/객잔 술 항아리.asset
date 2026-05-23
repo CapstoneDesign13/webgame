@@ -12,12 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ddcd060076eb04683ce525da2bab45, type: 3}
   m_Name: "\uAC1D\uC794 \uC220 \uD56D\uC544\uB9AC"
   m_EditorClassIdentifier: Assembly-CSharp::UnitSpawnSetting
-  id: "\uAC1D\uC794 \uC220 \uD56D\uC544\uB9AC"
-  displayName: "\uAC1D\uC794 \uC220 \uD56D\uC544\uB9AC"
-  clan: 1
-  hp: 50
-  attack: 12
-  defense: 3
-  type: 0
-  passive_id: 
-  sprite_id: "\uAC1D\uC794 \uC220 \uD56D\uC544\uB9AC"
+  data:
+    id: "\uAC1D\uC794 \uC220 \uD56D\uC544\uB9AC"
+    displayName: "\uAC1D\uC794 \uC220 \uD56D\uC544\uB9AC"
+    clan: 1
+    hp: 50
+    attack: 12
+    defense: 3
+    type: 0
+    passive_id: 
+    on_hit_status_id: 
+    sprite_id: "\uAC1D\uC794 \uC220 \uD56D\uC544\uB9AC"
