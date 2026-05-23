@@ -9159,26 +9159,26 @@ MonoBehaviour:
   player: {fileID: 2107183156}
   type: 0
   merchantSet:
-  - setting: {fileID: 11400000, guid: 5a5432fa283f5fe46a3a790d7f7b8966, type: 2}
+  - setting: {fileID: 11400000, guid: 119c4dd2940209b42afe726ba0795359, type: 2}
     pos: {x: 5, y: 5}
     type: 1
-  - setting: {fileID: 11400000, guid: cd63f850087d3ef4fa1e501ed7648b50, type: 2}
+  - setting: {fileID: 11400000, guid: d4336a6382dbcd148a2079792f9e6514, type: 2}
     pos: {x: 3, y: 5}
     type: 0
   pubSet:
   - setting: {fileID: 11400000, guid: 02f6966aac3469f4e908b05c467f54ab, type: 2}
     pos: {x: 1, y: 1}
     type: 0
-  - setting: {fileID: 11400000, guid: 536d438012bcadc44a46f5b5d9ba6d37, type: 2}
+  - setting: {fileID: 11400000, guid: dc400e2bf5f91b141b97bfbf2c0a4435, type: 2}
     pos: {x: 1, y: 4}
     type: 0
-  - setting: {fileID: 11400000, guid: 78757de0f01ab7c42a7ae6a2dbf9491e, type: 2}
+  - setting: {fileID: 11400000, guid: 8c7107826a1b6cc45b1874c301943421, type: 2}
     pos: {x: 4, y: 1}
     type: 2
-  - setting: {fileID: 11400000, guid: 922df1b2543d76e499d643ffcbf68130, type: 2}
+  - setting: {fileID: 11400000, guid: ef20ba2e7bc27a048a339238e36120de, type: 2}
     pos: {x: 1, y: 7}
     type: 0
-  - setting: {fileID: 11400000, guid: f81c9f0fc536a074894542d466f4095e, type: 2}
+  - setting: {fileID: 11400000, guid: c42a8991ea2312a4695ae0235d131587, type: 2}
     pos: {x: 4, y: 4}
     type: 0
   pondSet:
@@ -9913,7 +9913,7 @@ MonoBehaviour:
   turnManager: {fileID: 906787196}
   window: {fileID: 518549340}
   rooms:
-  - type: 7
+  - type: 1
     stageKey: stage1
   - type: 1
     stageKey: 
