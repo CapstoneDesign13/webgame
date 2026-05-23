@@ -259,10 +259,10 @@ public class CharacterBase : MonoBehaviour
             return;
         }
         
-        if (string.IsNullOrEmpty(passive_id))
+        /*if (string.IsNullOrEmpty(passive_id))
         {
             return;
-        }
+        }*/
 
         target.StatusEffects.AddStatus(on_hit_status_id);
     }
