@@ -7,13 +7,15 @@ public class StatEntry
 {
     public int atk;
     public int def;
+    public bool camo;
 
     public static StatEntry operator +(StatEntry a, StatEntry b)
     {
         return new StatEntry
         {
             atk = a.atk + b.atk,
-            def = a.def + b.def
+            def = a.def + b.def,
+            camo = a.camo || b.camo
         };
     }
 }

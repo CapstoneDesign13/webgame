@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class EconomyManager : MonoBehaviour
 {
-    public int Money { get; private set; }
+    private int _money = 50;
+    public int Money { get { return _money; } private set { _money = value; } }
 
     public void Earn(int amount)
     {

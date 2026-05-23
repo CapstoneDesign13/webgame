@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public TurnManager turn;
+    public EconomyManager economy;
 
     public TMP_Text QiText;
     public TMP_Text TurnText;
@@ -32,7 +33,7 @@ public class UIManager : MonoBehaviour
         PlayerUnit player = MapManager.Instance.Player;
         ATK.text = $"공:{player.Attack}";
         DEF.text = $"방:{player.Defense}";
-        Gold.text = $"소지 금화:0";
+        Gold.text = $"소지 금화:{economy.Money}";
         for (int i = 0; i < 3; i++)
         {
             string s = i >= player.actionHistory.Count ? null :  player.actionHistory[i];
@@ -59,10 +60,18 @@ public class UIManager : MonoBehaviour
         sb.AppendLine("배운 기술");
         foreach (var passive in player.passives)
         {
+            foreach (string s in passive.command_chains)
+            {
+                sb.Append(map[s.ToLower()]);
+            }
             sb.AppendLine(passive.name);
         }
         foreach (var active in player.actives)
         {
+            foreach (string s in active.command_chains)
+            {
+                sb.Append(map[s.ToLower()]);
+            }
             sb.AppendLine(active.name);
         }
         Skills.text = sb.ToString();
@@ -74,4 +83,12 @@ public class UIManager : MonoBehaviour
         else
             line.AddPath(player.last_move);
     }
+
+    Dictionary<string, string> map = new Dictionary<string, string>()
+    {
+        {"move", "<color=#D4B000>Y</color>"},
+        {"z", "<color=#CD2E3A>R</color>"},
+        {"x", "<color=#0047A0>B</color>"},
+        {"c", "<color=#FFD000>K</color>"},
+    };
 }

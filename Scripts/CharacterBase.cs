@@ -64,6 +64,14 @@ public class CharacterBase : MonoBehaviour
         }
     }
 
+    public virtual bool Camo
+    {
+        get
+        {
+            return false;
+        }
+    }
+
     [SerializeField] protected GridPosition currentPosition;
 
     public bool IsAlive => HP > 0;
@@ -130,6 +138,10 @@ public class CharacterBase : MonoBehaviour
 
     public void TakeDamage(CharacterBase attacker)
     {
+        //은신 상태에서 무시
+        if (Camo)
+            return;
+
         int damage = Mathf.Max(1, attacker.Attack - Defense);
         HP -= damage;
 
