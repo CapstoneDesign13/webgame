@@ -23,6 +23,17 @@
         "atk": 0,
         "def": 1
       }
+    },
+    {
+      "id": "p_combo_00X",
+      "name": "무흔보",
+      "description": "1회 턴 안에 연속으로 3회 이상 이동 입력 시 발동, 은신",
+      "command_chains": [
+        "MOVE", "MOVE", "MOVE"
+      ],
+      "stat_bonuses": {
+        "camo": true
+      }
     }
   ]
 }

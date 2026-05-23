@@ -42,6 +42,11 @@
           "id": "p_combo_002",
           "type": "Passive",
           "price": 11
+        },
+        {
+          "id": "p_combo_00X",
+          "type": "Passive",
+          "price": 5
         }
       ]
     }
