@@ -105,6 +105,12 @@ public class ResourceLoader : MonoBehaviour
                     file, database.droptable, "드롭 테이블"
                 );
             }
+            else if (lowerName.EndsWith("_status_effect"))
+            {
+                LoadFromTextAsset<Data_status_effect, StatusEffectData>(
+                    file, database.statusEffectDatabase, "상태 이상"
+                );
+            }
         }
     }
 

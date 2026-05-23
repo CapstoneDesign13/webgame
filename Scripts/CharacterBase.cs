@@ -14,8 +14,55 @@ public class CharacterBase : MonoBehaviour
     public int HP;
     protected int _Attack = 4;
     protected int _Defense = 1;
-    public virtual int Attack { get { return _Attack; } }
-    public virtual int Defense { get { return _Defense; } }
+    public string on_hit_status_id;
+    private StatusEffectController statusEffects;
+    public StatusEffectController StatusEffects
+    {
+        get
+        {
+            if (statusEffects == null)
+            {
+                statusEffects = GetComponent<StatusEffectController>();
+            }
+
+            if (statusEffects == null)
+            {
+                statusEffects = gameObject.AddComponent<StatusEffectController>();
+            }
+
+            return statusEffects;
+        }
+    }
+    
+    protected int StatusAttackModifier
+    {
+        get
+        {
+            return StatusEffects != null ? StatusEffects.AttackModifier : 0;
+        }
+    }
+    protected int StatusDefenseModifier
+    {
+        get
+        {
+            return StatusEffects != null ? StatusEffects.DefenseModifier : 0;
+        }
+    }
+    
+    public virtual int Attack
+    {
+        get
+        {
+            return Mathf.Max(0, _Attack + StatusAttackModifier);
+        }
+    }
+    public virtual int Defense
+    {
+        get
+        {
+            return Mathf.Max(0, _Defense + StatusDefenseModifier);
+        }
+    }
 
     [SerializeField] protected GridPosition currentPosition;
 
@@ -33,20 +80,29 @@ public class CharacterBase : MonoBehaviour
             HP = MaxHP;
         }
 
+        statusEffects = GetComponent<StatusEffectController>();
+
+        if (statusEffects == null)
+        {
+            statusEffects = gameObject.AddComponent<StatusEffectController>();
+        }
+
         InitializeHealthBar();
     }
 
     /// <summary>
-    /// ÇÁ·ÎÅäÅ¸ÀÔ¿ë ½ºÅÈ ¼¼ÆÃ ÇÔ¼ö.
-    /// MapManager°¡ À¯´Ö »ı¼º Á÷ÈÄ È£ÃâÇÑ´Ù.
+    /// í”„ë¡œí† íƒ€ì…ìš© ìŠ¤íƒ¯ ì„¸íŒ… í•¨ìˆ˜.
+    /// MapManagerê°€ ìœ ë‹› ìƒì„± ì§í›„ í˜¸ì¶œí•œë‹¤.
     /// </summary>
-    public virtual void SetupStats(string newName, Team team, int hp, int atk, int def)
+    public virtual void SetupStats(string newName, Team team, int hp, int atk, int def, string onHitStatusId = "")
     {
         name = newName;
         this.team = team;
         MaxHP = Mathf.Max(1, hp);
         _Attack = Mathf.Max(0, atk);
         _Defense = Mathf.Max(0, def);
+
+        on_hit_status_id = onHitStatusId;
 
         HP = MaxHP;
 
@@ -55,7 +111,7 @@ public class CharacterBase : MonoBehaviour
     }
 
     /// <summary>
-    /// À¯´ÖÀÇ º¸µå ÁÂÇ¥¸¦ °»½ÅÇÏ°í, Transform À§Ä¡µµ ¿ùµå ÁÂÇ¥¿¡ ¸ÂÃá´Ù.
+    /// ìœ ë‹›ì˜ ë³´ë“œ ì¢Œí‘œë¥¼ ê°±ì‹ í•˜ê³ , Transform ìœ„ì¹˜ë„ ì›”ë“œ ì¢Œí‘œì— ë§ì¶˜ë‹¤.
     /// </summary>
     public void SetGridPosition(Vector2Int newPosition)
     {
@@ -92,9 +148,40 @@ public class CharacterBase : MonoBehaviour
         }
     }
 
+    public void TakeFlatDamage(int damage, string source = "Status")
+    {
+        if (IsDead)
+        {
+            return;
+        }
+        
+        damage = Mathf.Max(0, damage);
+        
+        if (damage <= 0)
+        {
+            return;
+        }
+        
+        HP -= damage;
+        
+        if (HP < 0)
+        {
+            HP = 0;
+        }
+        
+        Debug.Log(source + " -> " + name + " fixed damage: " + damage + " (HP: " + HP + ")");
+        
+        UpdateHealthBar();
+        
+        if (HP <= 0)
+        {
+            Die();
+        }
+    }
+
     public virtual bool Answer()
     {
-        Debug.Log("´ëÈ­°¡ ÅëÇÒ »ó´ë°¡ ¾Æ´Ï´Ù!");
+        Debug.Log("ëŒ€í™”ê°€ í†µí•  ìƒëŒ€ê°€ ì•„ë‹ˆë‹¤!");
         return false;
     }
 
@@ -117,9 +204,9 @@ public class CharacterBase : MonoBehaviour
     }
 
     /// <summary>
-    /// Ã¼·Â ¹Ù¸¦ ÁØºñÇÑ´Ù.
-    /// PlayerUnit°ú EnemyUnit ¸ğµÎ CharacterBase¸¦ »ó¼ÓÇÏ¹Ç·Î,
-    /// ¸ğµç À¯´Ö¿¡°Ô ÀÚµ¿À¸·Î Ã¼·Â ¹Ù°¡ ºÙ´Â´Ù.
+    /// ì²´ë ¥ ë°”ë¥¼ ì¤€ë¹„í•œë‹¤.
+    /// PlayerUnitê³¼ EnemyUnit ëª¨ë‘ CharacterBaseë¥¼ ìƒì†í•˜ë¯€ë¡œ,
+    /// ëª¨ë“  ìœ ë‹›ì—ê²Œ ìë™ìœ¼ë¡œ ì²´ë ¥ ë°”ê°€ ë¶™ëŠ”ë‹¤.
     /// </summary>
     private void InitializeHealthBar()
     {
@@ -151,6 +238,11 @@ public class CharacterBase : MonoBehaviour
 
     public bool TryMove(Vector2Int dir)
     {
+        if (StatusEffects != null && StatusEffects.DisableMove)
+        {
+            Debug.Log(name + " ì´ë™ ë¶ˆê°€ ìƒíƒœì…ë‹ˆë‹¤.");
+            return false;
+        }
         Vector2Int target = CurrentGridPosition + dir;
 
         if (!MapManager.Instance.IsInsideBoard(target)) return false;
@@ -158,6 +250,26 @@ public class CharacterBase : MonoBehaviour
 
         MapManager.Instance.MoveUnit(this, target);
         return true;
+    }
+    
+    private void ApplyOnHitStatus(CharacterBase target)
+    {
+        if (target == null)
+        {
+            return;
+        }
+        
+        if (string.IsNullOrEmpty(passive_id))
+        {
+            return;
+        }
+
+        target.StatusEffects.AddStatus(on_hit_status_id);
+    }
+    
+    public void TickStatus(StatusTickTiming timing)
+    {
+        StatusEffects.Tick(timing);
     }
 
     public bool TryAttackGrid(Vector2Int grid)
@@ -167,6 +279,7 @@ public class CharacterBase : MonoBehaviour
         if (target != null && target.team != this.team)
         {
             target.TakeDamage(this);
+            ApplyOnHitStatus(target);
             return true;
         }
         return false;
@@ -187,8 +300,13 @@ public class CharacterBase : MonoBehaviour
 
     public bool TryAttackTarget(CharacterBase character)
     {
-        bool hit = false;
+        if (character == null)
+        {
+            return false;
+        }
         character.TakeDamage(this);
-        return hit;
+        ApplyOnHitStatus(character);
+        
+        return true;
     }
 }

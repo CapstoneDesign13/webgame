@@ -56,8 +56,14 @@ public class TurnManager : MonoBehaviour
             return;
         }
 
-        MapManager.Instance.Player.ResetTurn();
+        MapManager.Instance.Player.TickStatus(StatusTickTiming.TurnStart);
+        if (!MapManager.Instance.Player.IsAlive)
+        {
+            Debug.Log("플레이어가 상태 이상으로 사망했습니다.");
+            return;
+        }
 
+        MapManager.Instance.Player.ResetTurn();
         if (ui != null)
         {
             ui.Refresh();
@@ -85,6 +91,14 @@ public class TurnManager : MonoBehaviour
         }
 
         MapManager.Instance.Player.AtTurnEnd();
+        MapManager.Instance.Player.TickStatus(StatusTickTiming.TurnEnd);
+        if (!MapManager.Instance.Player.IsAlive)
+        {
+            Debug.Log("플레이어가 상태 이상으로 사망했습니다.");
+            isResolvingTurn = false;
+            enemyTurnCoroutine = null;
+            return;
+        }
 
         enemyTurnCoroutine = StartCoroutine(EnemyTurn());
     }
@@ -119,8 +133,24 @@ public class TurnManager : MonoBehaviour
                 break;
             }
 
+            enemy.TickStatus(StatusTickTiming.TurnStart);
+            if (enemy == null || !enemy.IsAlive)
+            {
+                if (RunManager.Instance != null)
+                {
+                    RunManager.Instance.TryClearBattle();
+                }
+                continue;
+            }
             enemy.TakeTurn(player);
-
+            if (enemy != null && enemy.IsAlive)
+            {
+                enemy.TickStatus(StatusTickTiming.TurnEnd);
+            }
+            if (RunManager.Instance != null && RunManager.Instance.TryClearBattle())
+            {
+                yield break;
+            }
             yield return new WaitForSeconds(0.2f);
         }
 

@@ -28,7 +28,8 @@ public class SpawnManager : MonoBehaviour
             Team.Ally,
             setting.hp,
             setting.attack,
-            setting.defense
+            setting.defense,
+            setting.on_hit_status_id
         );
         map.Player.ui = ui;
         SpriteRenderer spr = map.Player.GetComponent<SpriteRenderer>();
@@ -70,7 +71,8 @@ public class SpawnManager : MonoBehaviour
             Team.Enemy,
             setting.hp,
             setting.attack,
-            setting.defense
+            setting.defense,
+            setting.on_hit_status_id
         );
         SpriteRenderer spr = enemy.GetComponent<SpriteRenderer>();
         Sprite cache = ModDatabase.Instance.GetPic(enemy.name + "S");
@@ -87,7 +89,8 @@ public class SpawnManager : MonoBehaviour
             Team.Neutral,
             setting.hp,
             setting.attack,
-            setting.defense
+            setting.defense,
+            setting.on_hit_status_id
         );
         merchant.type = type;
         if (type != DialogType.None)

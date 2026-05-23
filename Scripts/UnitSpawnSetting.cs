@@ -14,5 +14,6 @@ public class UnitSpawnSetting : ScriptableObject, IHasID
     [JsonProperty("def")] public int defense;
     [JsonProperty("unit_type")] public PieceType type;
     public string passive_id;
+    public string on_hit_status_id;
     public string sprite_id;
 }

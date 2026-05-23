@@ -14,8 +14,8 @@ public class PlayerUnit : CharacterBase
     public StatEntry nextBattle = new StatEntry();
     public StatEntry statEntry = new StatEntry();
 
-    public override int Attack { get { return _Attack + nextBattle.atk + statEntry.atk; } }
-    public override int Defense { get { return _Defense + nextBattle.def + statEntry.def; } }
+    public override int Attack { get { return Mathf.Max(0, _Attack + nextBattle.atk + statEntry.atk + StatusAttackModifier); } }
+    public override int Defense { get { return Mathf.Max(0, _Defense + nextBattle.def + statEntry.def + StatusDefenseModifier); } }
 
     public List<Active> actives = new List<Active>();
     public List<Passive> passives = new List<Passive>();
@@ -187,7 +187,8 @@ public class PlayerUnit : CharacterBase
             Team.Ally,
             setting.hp,
             setting.attack,
-            setting.defense
+            setting.defense,
+            setting.on_hit_status_id
         );
         SpriteRenderer spr = GetComponent<SpriteRenderer>();
         Sprite cache = ModDatabase.Instance.GetPic(setting.sprite_id + "N");

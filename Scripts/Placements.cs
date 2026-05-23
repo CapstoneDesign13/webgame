@@ -57,6 +57,8 @@ public class EnemyData
     public string enemy_id;
     public int PowerScore;
     public bool MustBeInPalace;
+    public bool Guaranteed;
+    public int MaxCount;
 
     public static bool PalaceBound(PieceType type)
     {

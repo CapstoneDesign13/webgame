@@ -398,7 +398,7 @@
       "name": "천마신교 마교도",
       "faction": "천마신교",
       "hp": 4,
-c      "ap": 3,
+      "ap": 3,
       "atk": 1,
       "def": 0,
       "unit_type": "Guard",

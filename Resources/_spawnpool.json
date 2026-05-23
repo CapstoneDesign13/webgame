@@ -69,6 +69,113 @@
           "MustBeInPalace": true
         }
       ]
+    },
+    {
+      "id": "stage3",
+      "list": [
+        {
+          "enemy_id": "solim_king",
+          "PowerScore": 15,
+          "MustBeInPalace": true
+        },
+        {
+          "enemy_id": "solim_chariot",
+          "PowerScore": 15,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "solim_cannon",
+          "PowerScore": 7,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "solim_horse",
+          "PowerScore": 5,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "solim_elephant",
+          "PowerScore": 3,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "solim_guard",
+          "PowerScore": 3,
+          "MustBeInPalace": true
+        }
+      ]
+    },
+    {
+      "id": "stage4",
+      "list": [
+        {
+          "enemy_id": "haoman_king",
+          "PowerScore": 15,
+          "MustBeInPalace": true
+        },
+        {
+          "enemy_id": "haoman_chariot",
+          "PowerScore": 15,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "haoman_cannon",
+          "PowerScore": 7,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "haoman_horse",
+          "PowerScore": 5,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "haoman_elephant",
+          "PowerScore": 3,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "haoman_guard",
+          "PowerScore": 3,
+          "MustBeInPalace": true
+        }
+      ]
+    },
+    {
+      "id": "stage5",
+      "list": [
+        {
+          "enemy_id": "demonic_king_phase1",
+          "PowerScore": 15,
+          "MustBeInPalace": true,
+          "Guaranteed": true,
+          "MaxCount": 1
+        },
+        {
+          "enemy_id": "demonic_chariot",
+          "PowerScore": 15,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "demonic_cannon",
+          "PowerScore": 7,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "demonic_horse",
+          "PowerScore": 5,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "demonic_elephant",
+          "PowerScore": 3,
+          "MustBeInPalace": false
+        },
+        {
+          "enemy_id": "demonic_guard",
+          "PowerScore": 3,
+          "MustBeInPalace": true
+        }
+      ]
     }
   ]
 }

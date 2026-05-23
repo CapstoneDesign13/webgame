@@ -1,0 +1,37 @@
+{
+  "items": [
+    {
+      "id": "Poison",
+      "displayName": "중독",
+      "defaultDuration": 2,
+      "maxStacks": 2,
+      "tickDamage": 1,
+      "attackModifier": 0,
+      "defenseModifier": 0,
+      "disableMove": false,
+      "tickTiming": "TurnEnd"
+    },
+    {
+      "id": "Weakness",
+      "displayName": "약화",
+      "defaultDuration": 2,
+      "maxStacks": 1,
+      "tickDamage": 0,
+      "attackModifier": -1,
+      "defenseModifier": 0,
+      "disableMove": false,
+      "tickTiming": "TurnStart"
+    },
+    {
+      "id": "Paralysis",
+      "displayName": "마비",
+      "defaultDuration": 1,
+      "maxStacks": 1,
+      "tickDamage": 0,
+      "attackModifier": 0,
+      "defenseModifier": 0,
+      "disableMove": true,
+      "tickTiming": "TurnStart"
+    }
+  ]
+}
