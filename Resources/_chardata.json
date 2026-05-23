@@ -78,6 +78,19 @@
       "sprite_id": "무당파 평제자",
       "effect_color": ""
     },
+    {
+      "id": "mudang_soldier",
+      "name": "무당파 평제자",
+      "faction": "무당파",
+      "hp": 4,
+      "ap": 3,
+      "atk": 1,
+      "def": 0,
+      "unit_type": "Soldier",
+      "passive_id": "",
+      "sprite_id": "무당파 평제자",
+      "effect_color": ""
+    },
 
     {
       "id": "sacheon_king",
@@ -153,6 +166,19 @@
       "atk": 1,
       "def": 0,
       "unit_type": "Guard",
+      "passive_id": "",
+      "sprite_id": "사천당가 평제자",
+      "effect_color": ""
+    },
+    {
+      "id": "sacheon_soldier",
+      "name": "사천당가 평제자",
+      "faction": "사천당가",
+      "hp": 4,
+      "ap": 3,
+      "atk": 1,
+      "def": 0,
+      "unit_type": "Soldier",
       "passive_id": "",
       "sprite_id": "사천당가 평제자",
       "effect_color": ""
@@ -236,6 +262,19 @@
       "sprite_id": "소림사 행자승",
       "effect_color": ""
     },
+    {
+      "id": "solim_soldier",
+      "name": "소림사 행자승",
+      "faction": "소림사",
+      "hp": 5,
+      "ap": 3,
+      "atk": 1,
+      "def": 1,
+      "unit_type": "Soldier",
+      "passive_id": "",
+      "sprite_id": "소림사 행자승",
+      "effect_color": ""
+    },
 
     {
       "id": "haoman_king",
@@ -315,6 +354,21 @@
       "sprite_id": "하오문 뒷골목패",
       "effect_color": ""
     },
+    {
+      "id": "haoman_soldier",
+      "name": "하오문 뒷골목패",
+      "faction": "하오문",
+      "hp": 4,
+      "ap": 3,
+      "atk": 1,
+      "def": 0,
+      "unit_type": "Soldier",
+      "passive_id": "",
+      "sprite_id": "하오문 뒷골목패",
+      "effect_color": ""
+    },
+
+
     {
     "id": "demonic_king_phase1",
     "name": "천마 (1페이즈)",
@@ -402,6 +456,19 @@
       "atk": 1,
       "def": 0,
       "unit_type": "Guard",
+      "passive_id": "",
+      "sprite_id": "천마신교 마교도",
+      "effect_color": ""
+    },
+    {
+      "id": "demonic_soldier",
+      "name": "천마신교 마교도",
+      "faction": "천마신교",
+      "hp": 4,
+      "ap": 3,
+      "atk": 1,
+      "def": 0,
+      "unit_type": "Soldier",
       "passive_id": "",
       "sprite_id": "천마신교 마교도",
       "effect_color": ""
