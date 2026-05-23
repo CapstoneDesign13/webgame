@@ -17,6 +17,7 @@ public class DuelManager : MonoBehaviour
 {
     [Header("References")]
     [SerializeField] private TurnManager turnManager;
+    [SerializeField] private WindowManager window;
     [SerializeField] private Button continueButton;
 
     [Header("Duel Settings")]
@@ -221,7 +222,7 @@ public class DuelManager : MonoBehaviour
             }
             return;
         }
-        txt.text = "패배했습니다.";
+        window.OpenGameOver();
     }
 
     public void ContinueAfterDuelVictory()

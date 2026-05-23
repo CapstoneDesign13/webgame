@@ -129,6 +129,11 @@ public class TurnManager : MonoBehaviour
         enemyTurnCoroutine = null;
         isResolvingTurn = false;
 
+        if (player == null || !player.IsAlive)
+        {
+            window.OpenGameOver();
+        }
+
         if (turnCount >= duelturn && !duelStarted)
         {
             StartDuel();

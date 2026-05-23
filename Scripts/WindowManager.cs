@@ -11,6 +11,7 @@ public class WindowManager : MonoBehaviour
     public MerchantPanel merchantPanel;
     public GameObject stageClearPanel;
     public ChoicePanel choicePanel;
+    public GameOverPanel gameoverPanel;
 
     private int _active = 0;
 
@@ -126,5 +127,11 @@ public class WindowManager : MonoBehaviour
         {
             stageClearPanel.SetActive(true);
         }
+    }
+
+    public void OpenGameOver()
+    {
+        CloseAll();
+        gameoverPanel.gameObject.SetActive(true);
     }
 }
