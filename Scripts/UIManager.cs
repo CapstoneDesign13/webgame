@@ -51,6 +51,9 @@ public class UIManager : MonoBehaviour
                     //#0047A0
                     colors[i].color = new Color32(0, 71, 160, 255);
                     break;
+                case "C":
+                    colors[i].color = Color.black;
+                    break;
                 default:
                     colors[i].color = Color.white;
                     break;

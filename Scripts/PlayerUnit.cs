@@ -120,6 +120,23 @@ public class PlayerUnit : CharacterBase
         }
     }
 
+    public void DoFlash(Vector2Int dir)
+    {
+        if (ActionPoints <= 0) return;
+
+        if (TryMove(dir * 2))
+        {
+            path.Add(transform.position);
+            if (last_move.Count == 1)
+                last_move[0] = transform.position;
+            else
+                last_move.Add(transform.position);
+            StatusEffects.AddStatus("Weakness");
+            RegisterAction("C");
+            ui.Refresh();
+        }
+    }
+
     public void DoAttack()
     {
         if (ActionPoints <= 0) return;

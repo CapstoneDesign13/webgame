@@ -1,11 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InputHandler : MonoBehaviour
 {
     public TurnManager turn;
     public WindowManager window;
+    public PlayerUnit player;
+    public Image altUI;
+    public bool altMode;
 
     private void Awake()
     {
@@ -21,25 +25,37 @@ public class InputHandler : MonoBehaviour
     public void MoveU()
     {
         if (!CanUsePlayerInput()) return;
-        MapManager.Instance.Player.DoMove(Vector2Int.up);
+        if (altMode)
+            player.DoFlash(Vector2Int.up);
+        else
+            MapManager.Instance.Player.DoMove(Vector2Int.up);
     }
 
     public void MoveD()
     {
         if (!CanUsePlayerInput()) return;
-        MapManager.Instance.Player.DoMove(Vector2Int.down);
+        if (altMode)
+            player.DoFlash(Vector2Int.down);
+        else
+            MapManager.Instance.Player.DoMove(Vector2Int.down);
     }
 
     public void MoveL()
     {
         if (!CanUsePlayerInput()) return;
-        MapManager.Instance.Player.DoMove(Vector2Int.left);
+        if (altMode)
+            player.DoFlash(Vector2Int.left);
+        else
+            MapManager.Instance.Player.DoMove(Vector2Int.left);
     }
 
     public void MoveR()
     {
         if (!CanUsePlayerInput()) return;
-        MapManager.Instance.Player.DoMove(Vector2Int.right);
+        if (altMode)
+            player.DoFlash(Vector2Int.right);
+        else
+            MapManager.Instance.Player.DoMove(Vector2Int.right);
     }
 
     public void DoZ()
@@ -124,5 +140,27 @@ public class InputHandler : MonoBehaviour
                 window.CloseInfo();
             }
         }*/
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            Debug.Log("LeftShift pressed");
+
+            if (altUI != null)
+            {
+                altUI.color = Color.black;
+                altMode = true;
+            }
+        }
+
+        if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            Debug.Log("LeftShift released");
+
+            if (altUI != null)
+            {
+                altUI.color = Color.yellow;
+                altMode = false;
+            }
+        }
     }
 }
