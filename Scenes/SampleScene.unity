@@ -6136,7 +6136,11 @@ MonoBehaviour:
   - {fileID: 1793880689}
   - {fileID: 1878823449}
   - {fileID: 2119061098}
-  choices: []
+  settings:
+  - {fileID: 11400000, guid: 4a6b8820ece955a43bea40bf958edc3f, type: 2}
+  - {fileID: 11400000, guid: 4037ab13fd848934c8b127a59d86dbca, type: 2}
+  - {fileID: 11400000, guid: f3753edb151513544a2981af75c023fb, type: 2}
+  - {fileID: 11400000, guid: 5cfa0049d34ae034bad1146d3860aed9, type: 2}
 --- !u!224 &1207070392
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8763,6 +8767,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f86f964f07e04034b94acd415b5b119e, type: 2}
   - {fileID: 11400000, guid: 8f5d62db34042eb49a2efe6a43c16a24, type: 2}
   - {fileID: 11400000, guid: c2fcc50d444665f43bdbc150d888a8b5, type: 2}
+  - {fileID: 11400000, guid: 2797a0c3a701a9d4584888c2c3ef8c65, type: 2}
+  - {fileID: 11400000, guid: 06474675b8a18504a8c290ca098aaa18, type: 2}
+  - {fileID: 11400000, guid: a26be6ae0a8bd02468a30daaad5fd5d5, type: 2}
+  - {fileID: 11400000, guid: e59f398a559c86f459363b3ec840f26a, type: 2}
 --- !u!4 &1607070281
 Transform:
   m_ObjectHideFlags: 0
@@ -9181,6 +9189,22 @@ MonoBehaviour:
   - setting: {fileID: 11400000, guid: 056021e9297621d41866c94a9edca6e4, type: 2}
     pos: {x: 5, y: 5}
     type: 4
+  titleSet:
+  - setting: {fileID: 11400000, guid: f3753edb151513544a2981af75c023fb, type: 2}
+    pos: {x: 4, y: 3}
+    type: 7
+  - setting: {fileID: 11400000, guid: 4a6b8820ece955a43bea40bf958edc3f, type: 2}
+    pos: {x: 4, y: 7}
+    type: 5
+  - setting: {fileID: 11400000, guid: 4037ab13fd848934c8b127a59d86dbca, type: 2}
+    pos: {x: 6, y: 5}
+    type: 6
+  - setting: {fileID: 11400000, guid: 5cfa0049d34ae034bad1146d3860aed9, type: 2}
+    pos: {x: 2, y: 5}
+    type: 8
+  - setting: {fileID: 11400000, guid: f81c9f0fc536a074894542d466f4095e, type: 2}
+    pos: {x: 4, y: 5}
+    type: 0
 --- !u!4 &1745856242
 Transform:
   m_ObjectHideFlags: 0
@@ -9869,7 +9893,7 @@ MonoBehaviour:
   turnManager: {fileID: 906787196}
   window: {fileID: 518549340}
   rooms:
-  - type: 1
+  - type: 5
     stageKey: stage1
   - type: 1
     stageKey: 
