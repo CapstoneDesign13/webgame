@@ -85,7 +85,7 @@ public enum Clan
 [System.Serializable]
 public class SpawnEntry
 {
-    public UnitSpawnSetting setting;
+    public UnitSettingSO setting;
     public Vector2Int pos;
     public DialogType type;
 }
