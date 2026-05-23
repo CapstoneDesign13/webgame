@@ -32,6 +32,11 @@
           "enemy_id": "mudang_guard",
           "PowerScore": 3,
           "MustBeInPalace": true
+        },
+        {
+          "enemy_id": "mudang_soldier",
+          "PowerScore": 3,
+          "MustBeInPalace": false
         }
       ]
     },
@@ -67,6 +72,11 @@
           "enemy_id": "sacheon_guard",
           "PowerScore": 3,
           "MustBeInPalace": true
+        },
+        {
+          "enemy_id": "sacheon_soldier",
+          "PowerScore": 3,
+          "MustBeInPalace": false
         }
       ]
     },
@@ -102,6 +112,11 @@
           "enemy_id": "solim_guard",
           "PowerScore": 3,
           "MustBeInPalace": true
+        },
+        {
+          "enemy_id": "solim_soldier",
+          "PowerScore": 3,
+          "MustBeInPalace": false
         }
       ]
     },
@@ -137,6 +152,11 @@
           "enemy_id": "haoman_guard",
           "PowerScore": 3,
           "MustBeInPalace": true
+        },
+        {
+          "enemy_id": "haoman_soldier",
+          "PowerScore": 3,
+          "MustBeInPalace": false
         }
       ]
     },
@@ -174,6 +194,11 @@
           "enemy_id": "demonic_guard",
           "PowerScore": 3,
           "MustBeInPalace": true
+        },
+        {
+          "enemy_id": "demonic_soldier",
+          "PowerScore": 3,
+          "MustBeInPalace": false
         }
       ]
     }
