@@ -15,6 +15,7 @@ public class UnitSpawnSetting : IHasID
     public string passive_id;
     public string on_hit_status_id;
     public string sprite_id;
+    public int duelturn;
 }
 
 [CreateAssetMenu(menuName = "Setting/Others")]

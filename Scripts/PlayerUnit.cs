@@ -7,7 +7,7 @@ public class PlayerUnit : CharacterBase
     public ComboManager combo;
     public LineAnimator line;
 
-    public int duelturn = 5;
+    public int duelturn = 10;
     public int ActionPoints = 3;
     public bool engaged = false;
 
@@ -212,5 +212,6 @@ public class PlayerUnit : CharacterBase
         SpriteRenderer spr = GetComponent<SpriteRenderer>();
         Sprite cache = ModDatabase.Instance.GetPic(setting.sprite_id + "N");
         spr.sprite = cache;
+        duelturn = setting.duelturn;
     }
 }

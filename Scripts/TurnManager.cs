@@ -8,7 +8,6 @@ public class TurnManager : MonoBehaviour
     public WindowManager window;
 
     public int turnCount = 0;
-    public int duelturn = 5;
 
     private bool duelStarted = false;
     private bool isResolvingTurn = false;
@@ -164,7 +163,7 @@ public class TurnManager : MonoBehaviour
             window.OpenGameOver();
         }
 
-        if (turnCount >= duelturn && !duelStarted)
+        if (turnCount >= player.duelturn && !duelStarted)
         {
             StartDuel();
             yield break;
