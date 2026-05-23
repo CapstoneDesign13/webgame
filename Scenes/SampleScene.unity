@@ -9205,6 +9205,26 @@ MonoBehaviour:
   - setting: {fileID: 11400000, guid: f81c9f0fc536a074894542d466f4095e, type: 2}
     pos: {x: 4, y: 5}
     type: 0
+  BossSet1:
+  - setting: {fileID: 11400000, guid: 66a6d746b278f77479f5212de348e2d7, type: 2}
+    pos: {x: 4, y: 8}
+    type: 0
+  - setting: {fileID: 11400000, guid: e9cb0acb66b7035418e7393fe51797d8, type: 2}
+    pos: {x: 3, y: 9}
+    type: 0
+  - setting: {fileID: 11400000, guid: e9cb0acb66b7035418e7393fe51797d8, type: 2}
+    pos: {x: 5, y: 9}
+    type: 0
+  BossSet2:
+  - setting: {fileID: 11400000, guid: 77214d4740e60c849a64b10e094b1e62, type: 2}
+    pos: {x: 4, y: 8}
+    type: 0
+  - setting: {fileID: 11400000, guid: c2531e0fc1bde7e43897e67db58100e0, type: 2}
+    pos: {x: 3, y: 9}
+    type: 0
+  - setting: {fileID: 11400000, guid: c2531e0fc1bde7e43897e67db58100e0, type: 2}
+    pos: {x: 5, y: 9}
+    type: 0
 --- !u!4 &1745856242
 Transform:
   m_ObjectHideFlags: 0
@@ -9893,7 +9913,7 @@ MonoBehaviour:
   turnManager: {fileID: 906787196}
   window: {fileID: 518549340}
   rooms:
-  - type: 5
+  - type: 7
     stageKey: stage1
   - type: 1
     stageKey: 
