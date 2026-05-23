@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "id": "player_1",
+      "name": "사천당가 만천우침",
+      "faction": "사천당가",
+      "hp": 100,
+      "ap": 3,
+      "atk": 17,
+      "def": 5,
+      "unit_type": "King",
+      "passive_id": "",
+      "sprite_id": "사천당가 만천우침",
+      "effect_color": ""
+    },
+    {
+      "id": "player_2",
+      "name": "소림사 지진나한",
+      "faction": "소림사",
+      "hp": 100,
+      "ap": 3,
+      "atk": 17,
+      "def": 5,
+      "unit_type": "King",
+      "passive_id": "",
+      "sprite_id": "소림사 지진나한",
+      "effect_color": ""
+    },
+    {
+      "id": "player_3",
+      "name": "무당파 검성",
+      "faction": "무당파",
+      "hp": 100,
+      "ap": 3,
+      "atk": 17,
+      "def": 5,
+      "unit_type": "King",
+      "passive_id": "",
+      "sprite_id": "무당파 검성",
+      "effect_color": ""
+    },
+    {
+      "id": "player_4",
+      "name": "하오문 혼선교란자",
+      "faction": "하오문",
+      "hp": 100,
+      "ap": 3,
+      "atk": 17,
+      "def": 5,
+      "unit_type": "King",
+      "passive_id": "",
+      "sprite_id": "하오문 혼선교란자",
+      "effect_color": ""
+    }
+  ]
+}
