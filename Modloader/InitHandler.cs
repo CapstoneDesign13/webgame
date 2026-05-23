@@ -9,8 +9,8 @@ public class InitHandler : MonoBehaviour
     public PlayerUnit player;
     public RunManager run;
 
-    [SerializeField]
-    private readonly Vector2Int initpos = new Vector2Int(4, 0);
+    public PlayerSettingSO playerSetting;
+    [SerializeField] private readonly Vector2Int initpos = new Vector2Int(4, 0);
 
     void Start()
     {
@@ -21,6 +21,8 @@ public class InitHandler : MonoBehaviour
         resourceLoader.database = sharedDatabase;
         resourceLoader.LoadMods();
 
+        player.SetPlayer(playerSetting.data);
+        turn.duelturn = player.duelturn;
         MapManager.Instance.PlaceUnit(player, initpos);
 
         if (player.team != Team.Ally)
