@@ -10,6 +10,8 @@ public enum RoomType
     Pond,
     Parmacy,
     Title,
+    BossBattle1,
+    BossBattle2
 }
 
 public class RoomBootstrap : MonoBehaviour
@@ -62,6 +64,14 @@ public class RoomBootstrap : MonoBehaviour
             case RoomType.Title:
                 LoadNonBattle(titleSet);
                 break;
+
+            case RoomType.BossBattle1:
+                LoadBattle(BossSet1);
+                break;
+
+            case RoomType.BossBattle2:
+                LoadBattle(BossSet2);
+                break;
         }
     }
 
@@ -94,6 +104,25 @@ public class RoomBootstrap : MonoBehaviour
         currentPlayer.engaged = true;
     }
 
+    public void LoadBattle(SpawnEntry[] spawns)
+    {
+        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
+
+        foreach (var r in spawns)
+        {
+            try
+            {
+                spawn.SpawnEnemy(r.setting.data, r.pos);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Spawn failed at {r.pos}: {e}");
+            }
+        }
+
+        currentPlayer.engaged = true;
+    }
+
     public void LoadNonBattle(SpawnEntry[] spawns)
     {
         PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
@@ -118,4 +147,6 @@ public class RoomBootstrap : MonoBehaviour
     public SpawnEntry[] pondSet;
     public SpawnEntry[] parmacySet;
     public SpawnEntry[] titleSet;
+    public SpawnEntry[] BossSet1;
+    public SpawnEntry[] BossSet2;
 }
