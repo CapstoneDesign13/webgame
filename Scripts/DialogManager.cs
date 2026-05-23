@@ -7,7 +7,11 @@ public enum DialogType
     상인,
     객잔,
     영천,
-    약방
+    약방,
+    사천당가_만천우침,
+    소림사_지진나한,
+    무당파_검성,
+    하오문_혼선교란자,
 }
 
 public abstract class DialogSO : ScriptableObject

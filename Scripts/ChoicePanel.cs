@@ -13,6 +13,10 @@ public enum Effect
     영구공격,
     영구방어,
     영구체력,
+    사천당가_만천우침,
+    소림사_지진나한,
+    무당파_검성,
+    하오문_혼선교란자,
 }
 
 [System.Serializable]
@@ -29,19 +33,17 @@ public class ChoicePanel : FullScreenPanel
     public TMP_Text title;
     public TMP_Text content;
     public ChoiceCardUI[] cards;
-    public List<SelcEntry> choices;
 
     public void Setup(string title_txt, string content_txt, List<SelcEntry> entries)
     {
         title.text = title_txt;
         content.text = content_txt;
-        choices = entries;
         for (int i = 0; i < 3; i++)
         {
             if (i >= entries.Count)
             {
                 cards[i].gameObject.SetActive(false);
-                return;
+                continue;
             }
             cards[i].gameObject.SetActive(true);
             var entry = entries[i];
@@ -76,7 +78,18 @@ public class ChoicePanel : FullScreenPanel
                     case Effect.영구체력:
                         pair.Add((MaxHPE, -2));
                         break;
-
+                    case Effect.사천당가_만천우침:
+                        pair.Add((ChangePlayer, 0));
+                        break;
+                    case Effect.소림사_지진나한:
+                        pair.Add((ChangePlayer, 1));
+                        break;
+                    case Effect.무당파_검성:
+                        pair.Add((ChangePlayer, 2));
+                        break;
+                    case Effect.하오문_혼선교란자:
+                        pair.Add((ChangePlayer, 3));
+                        break;
                 }
             cards[i].parent = this;
             cards[i].Setup(entry.content, entry.desc, pair);
@@ -137,6 +150,13 @@ public class ChoicePanel : FullScreenPanel
         {
             player.HP -= 2;
         }
+    }
+
+    public PlayerSettingSO[] settings;
+
+    public void ChangePlayer(int index)
+    {
+        player.SetPlayer(settings[index].data);
     }
 
     public void Escape()

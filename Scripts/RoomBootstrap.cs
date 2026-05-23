@@ -9,6 +9,7 @@ public enum RoomType
     Pub,
     Pond,
     Parmacy,
+    Title,
 }
 
 public class RoomBootstrap : MonoBehaviour
@@ -43,19 +44,23 @@ public class RoomBootstrap : MonoBehaviour
                 break;
 
             case RoomType.Merchant:
-                LoadMerchant();
+                LoadNonBattle(merchantSet);
                 break;
 
             case RoomType.Pub:
-                LoadPub();
+                LoadNonBattle(pubSet);
                 break;
 
             case RoomType.Pond:
-                LoadPond();
+                LoadNonBattle(pondSet);
                 break;
 
             case RoomType.Parmacy:
-                LoadParmacy();
+                LoadNonBattle(parmacySet);
+                break;
+
+            case RoomType.Title:
+                LoadNonBattle(titleSet);
                 break;
         }
     }
@@ -89,95 +94,28 @@ public class RoomBootstrap : MonoBehaviour
         currentPlayer.engaged = true;
     }
 
+    public void LoadNonBattle(SpawnEntry[] spawns)
+    {
+        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
+
+        foreach (var r in spawns)
+        {
+            try
+            {
+                spawn.SpawnNeutral(r.setting.data, r.pos, r.type);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Spawn failed at {r.pos}: {e}");
+            }
+        }
+
+        currentPlayer.engaged = false;
+    }
+
     public SpawnEntry[] merchantSet;
-
-    public void LoadMerchant()
-    {
-        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
-
-        /*var settings = new List<(UnitSpawnSetting, Vector2Int, DialogType?)>()
-        {
-            (new UnitSpawnSetting("상회 상인", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(5, 5), DialogType.상인),
-            (new UnitSpawnSetting("상회 백운상회", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(3, 5), null),
-        };*/
-
-        foreach (var r in merchantSet)
-        {
-            spawn.SpawnNeutral(r.setting.data, r.pos, r.type);
-        }
-
-        currentPlayer.engaged = false;
-    }
-
     public SpawnEntry[] pubSet;
-
-    public void LoadPub()
-    {
-        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
-
-        /*var settings = new List<(UnitSpawnSetting, Vector2Int, DialogType?)>()
-        {
-            (new UnitSpawnSetting("객잔 간판", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(1, 1), null),
-            (new UnitSpawnSetting("객잔 술 항아리", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(1, 4), null),
-            (new UnitSpawnSetting("객잔 카운터", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(1, 7), null),
-            (new UnitSpawnSetting("객잔 주인", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(4, 1), DialogType.객잔),
-            (new UnitSpawnSetting("객잔 테이블", Clan.비전투, PieceType.Soldier, 50, 12, 3), new Vector2Int(4, 4), null),
-        };*/
-
-        foreach (var r in pubSet)
-        {
-            try
-            {
-                spawn.SpawnNeutral(r.setting.data, r.pos, r.type);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Spawn failed at {r.pos}: {e}");
-            }
-        }
-
-        currentPlayer.engaged = false;
-    }
-
     public SpawnEntry[] pondSet;
-
-    public void LoadPond()
-    {
-        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
-
-        foreach (var r in pondSet)
-        {
-            try
-            {
-                spawn.SpawnNeutral(r.setting.data, r.pos, r.type);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Spawn failed at {r.pos}: {e}");
-            }
-        }
-
-        currentPlayer.engaged = false;
-    }
-
     public SpawnEntry[] parmacySet;
-
-    public void LoadParmacy()
-    {
-        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
-
-        foreach (var r in parmacySet)
-        {
-            try
-            {
-                spawn.SpawnNeutral(r.setting.data, r.pos, r.type);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Spawn failed at {r.pos}: {e}");
-            }
-        }
-
-        currentPlayer.engaged = false;
-    }
+    public SpawnEntry[] titleSet;
 }
