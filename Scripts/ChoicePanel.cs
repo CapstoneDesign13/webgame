@@ -79,16 +79,16 @@ public class ChoicePanel : FullScreenPanel
                         pair.Add((MaxHPE, -2));
                         break;
                     case Effect.사천당가_만천우침:
-                        pair.Add((ChangePlayer, 0));
-                        break;
-                    case Effect.소림사_지진나한:
                         pair.Add((ChangePlayer, 1));
                         break;
-                    case Effect.무당파_검성:
+                    case Effect.소림사_지진나한:
                         pair.Add((ChangePlayer, 2));
                         break;
-                    case Effect.하오문_혼선교란자:
+                    case Effect.무당파_검성:
                         pair.Add((ChangePlayer, 3));
+                        break;
+                    case Effect.하오문_혼선교란자:
+                        pair.Add((ChangePlayer, 4));
                         break;
                 }
             cards[i].parent = this;
@@ -152,11 +152,11 @@ public class ChoicePanel : FullScreenPanel
         }
     }
 
-    public PlayerSettingSO[] settings;
-
     public void ChangePlayer(int index)
     {
-        player.SetPlayer(settings[index].data);
+        ModDatabase.Instance.unitspawnDatabase.TryGetValue($"player_{index}", out UnitSpawnSetting setting);
+        if (setting != null)
+            player.SetPlayer(setting);
     }
 
     public void Escape()
