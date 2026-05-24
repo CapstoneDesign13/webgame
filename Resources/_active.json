@@ -72,6 +72,129 @@
         "a": 2,
         "b": 1
       }
+    },
+
+    {
+      "id": "a_combo_007",
+      "name": "태극진공파",
+      "description": "연속 방어 후 공격 시 발동. 직선 범위 적들을 밀쳐냅니다.",
+      "command_chains": ["X", "X", "Z"],
+      "stat_bonuses": { "atk": -8 },
+      "knockback": 1,
+      "range_coordinates": { 
+        "type": "Cross",
+        "a": 4,
+        "b": 1
+      },
+      "price": 3
+    },
+
+    {
+      "id": "a_combo_008",
+      "name": "만천화우",
+      "description": "경공 후 연속 공격 시 발동. 주변 광역 공격과 중독 효과를 부여합니다.",
+      "command_chains": ["C", "Z", "Z"],
+      "stat_bonuses": { "atk": 2 },
+      "poison_stack": 2,
+      "range_coordinates": {
+        "type": "Square",
+        "a": 3
+      },
+      "price": 4
+    },
+
+    {
+      "id": "a_combo_009",
+      "name": "삼매진화",
+      "description": "연속 공격 후 경공 시 발동. 출발 위치에 화염 지대를 생성합니다.",
+      "command_chains": ["Z", "Z", "C"],
+      "stat_bonuses": { "atk": -8 },
+      "burn_stack": 2,
+      "range_coordinates": {
+        "type": "Square",
+        "a": 3
+      },
+      "price": 4
+    },
+
+    {
+      "id": "a_combo_010",
+      "name": "금강파황권",
+      "description": "이동 후 공격과 경공을 연계합니다. 강력한 피해와 넉백 효과를 줍니다.",
+      "command_chains": ["MOVE", "Z", "C"],
+      "stat_bonuses": { "atk": 4 },
+      "knockback": 2,
+      "range_coordinates": {
+        "type": "Square",
+        "a": 3
+      },
+      "price": 4
+    },
+
+    {
+      "id": "a_combo_011",
+      "name": "사자후폭풍",
+      "description": "방어 후 연속 공격 시 발동. 전방 적들을 멀리 밀쳐냅니다.",
+      "command_chains": ["X", "Z", "Z"],
+      "stat_bonuses": { "atk": -2 },
+      "knockback": 3,
+      "range_coordinates": {
+        "type": "Square",
+        "a": 3
+      },
+      "price": 3
+    },
+
+    {
+      "id": "a_combo_012",
+      "name": "묵혈반천격",
+      "description": "공격 후 경공 후 공격 시 발동. 출혈을 부여하고 안전거리를 확보합니다.",
+      "command_chains": ["Z", "C", "Z"],
+      "stat_bonuses": { "atk": -8 },
+      "bleed_stack": 3,
+      "range_coordinates": {
+        "type": "Square",
+        "a": 3
+      },
+      "price": 3
+    },
+
+    {
+      "id": "a_combo_013",
+      "name": "등천보",
+      "description": "3회 연속 경공 시 발동. 착지 시 주변 적들에게 피해를 줍니다.",
+      "command_chains": ["C", "C", "C"],
+      "range_coordinates": {
+        "type": "Square",
+        "a": 3
+      },
+      "price": 3
+    },
+
+    {
+      "id": "a_combo_00X",
+      "name": "투경참",
+      "description": "2회 경공 후 공격 시 발동. 방어력을 무시하는 관통 피해를 줍니다.",
+      "command_chains": ["C", "C", "Z"],
+      "stat_bonuses": { "atk": -8, "def": -1 },
+      "piercing_damage": true,
+      "range_coordinates": {
+        "type": "Square",
+        "a": 3
+      }
+    },
+
+    {
+      "id": "a_combo_00Y",
+      "name": "정중동",
+      "description": "연속 방어 후 경공 사용 시 발동. 인접 적들을 1턴 동안 이동 불가 상태로 만듭니다.",
+      "command_chains": ["X", "X", "C"],
+      "stat_bonuses": { "atk": -8 },
+      "immobilize_stack": 1,
+      "range_coordinates": {
+        "type": "Square",
+        "a": 3
+      }
     }
   ]
 }
