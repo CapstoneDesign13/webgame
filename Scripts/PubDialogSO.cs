@@ -1,9 +1,9 @@
 using System.Collections.Generic;
-using UnityEngine;
 
-[CreateAssetMenu(menuName = "Dialog/Pub")]
-public class PubDialogSO : DialogSO
+public class PubDialog : Dialog, IHasID
 {
+    public string id;
+    string IHasID.id => id;
     public string title_txt;
     public string content_txt;
     public List<SelcEntry> entries;

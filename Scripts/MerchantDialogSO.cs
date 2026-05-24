@@ -1,7 +1,6 @@
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Dialog/Merchant")]
-public class MerchantDialogSO : DialogSO
+public class MerchantDialog : Dialog
 {
     public override void Open(WindowManager window)
     {

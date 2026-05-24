@@ -1,6 +1,9 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System.Collections.Generic;
 using UnityEngine;
 
+[JsonConverter(typeof(StringEnumConverter))]
 public enum DialogType
 {
     None,
@@ -14,7 +17,7 @@ public enum DialogType
     하오문_혼선교란자,
 }
 
-public abstract class DialogSO : ScriptableObject
+public abstract class Dialog
 {
     public DialogType type;
 
@@ -24,15 +27,23 @@ public abstract class DialogSO : ScriptableObject
 public class DialogManager : MonoBehaviour
 {
     public WindowManager window;
-    public List<DialogSO> dialogs;
-
-    private Dictionary<DialogType, DialogSO> map;
-
-    private void Awake()
+    public List<Dialog> dialogs = new List<Dialog>()
     {
-        map = new Dictionary<DialogType, DialogSO>();
+        new MerchantDialog()
+        {
+            type = DialogType.상인
+        }
+    };
 
+    private Dictionary<DialogType, Dialog> map = new Dictionary<DialogType, Dialog>();
+
+    public void StartMap()
+    {
         foreach (var d in dialogs)
+        {
+            map[d.type] = d;
+        }
+        foreach (var d in ModDatabase.Instance.dialogDB.Values)
         {
             map[d.type] = d;
         }

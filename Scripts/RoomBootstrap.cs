@@ -162,11 +162,49 @@ public class RoomBootstrap : MonoBehaviour
         currentPlayer.engaged = false;
     }
 
-    public SpawnEntry[] merchantSet;
-    public SpawnEntry[] pubSet;
+    public void LoadNonBattle(RawEntry[] spawns)
+    {
+        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
+
+        foreach (var r in spawns)
+        {
+            try
+            {
+                ModDatabase.Instance.unitspawnDatabase.TryGetValue(r.id, out UnitSpawnSetting setting);
+                spawn.SpawnNeutral(setting, r.pos, r.type);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Spawn failed at {r.pos}: {e}");
+            }
+        }
+
+        currentPlayer.engaged = false;
+    }
+
+    RawEntry[] merchantSet = new RawEntry[2]
+    {
+        new RawEntry() { id = "trader_league", pos = new Vector2Int(3, 5) },
+        new RawEntry() { id = "trader", pos = new Vector2Int(5, 5), type = DialogType.상인 }
+    };
+    RawEntry[] pubSet = new RawEntry[5]
+    {
+        new RawEntry() { id = "pub_sign", pos = new Vector2Int(1, 1) },
+        new RawEntry() { id = "pub_drink_pot", pos = new Vector2Int(1, 4) },
+        new RawEntry() { id = "pub_owner", pos = new Vector2Int(4, 1), type = DialogType.객잔 },
+        new RawEntry() { id = "pub_counter", pos = new Vector2Int(1, 7) },
+        new RawEntry() { id = "pub_table", pos = new Vector2Int(4, 4) },
+    };
     public SpawnEntry[] pondSet;
     public SpawnEntry[] parmacySet;
-    public SpawnEntry[] titleSet;
+    RawEntry[] titleSet = new RawEntry[5]
+    {
+        new RawEntry() { id = "player_3", pos = new Vector2Int(4, 3), type = DialogType.무당파_검성 },
+        new RawEntry() { id = "player_1", pos = new Vector2Int(4, 7), type = DialogType.사천당가_만천우침 },
+        new RawEntry() { id = "player_2", pos = new Vector2Int(6, 5), type = DialogType.소림사_지진나한 },
+        new RawEntry() { id = "player_4", pos = new Vector2Int(2, 5), type = DialogType.하오문_혼선교란자 },
+        new RawEntry() { id = "pub_table", pos = new Vector2Int(4, 5) },
+    };
     RawEntry[] BossSet1 = new RawEntry[3]
     {
         new RawEntry() { id = "demonic_king_phase1", pos = new Vector2Int(4, 8) },

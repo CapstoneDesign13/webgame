@@ -1,8 +1,11 @@
+using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+[JsonConverter(typeof(StringEnumConverter))]
 public enum Effect
 {
     È¸º¹30,
