@@ -10,6 +10,8 @@ public class InputHandler : MonoBehaviour
     public WindowManager window;
     public PlayerUnit player;
 
+    public bool leftshiftpressed;
+
     public Image altUI;
     public TMP_Text altBtnTxt;
     public bool altMode;
@@ -20,6 +22,17 @@ public class InputHandler : MonoBehaviour
             Input.imeCompositionMode = IMECompositionMode.Off;
     }
 
+    private void OnDisable()
+    {
+        //화면 전환시 프레스 전부 해제
+        if (leftshiftpressed)
+        {
+            Debug.Log("LeftShift released");
+            leftshiftpressed = false;
+            AltMode();
+        }
+    }
+
     private bool CanUsePlayerInput()
     {
         return turn != null && turn.CanUsePlayerInput;
@@ -27,6 +40,10 @@ public class InputHandler : MonoBehaviour
 
     public void AltMode()
     {
+        //키와 버튼 동시 입력을 방지
+        if (leftshiftpressed)
+            return;
+
         altMode = !altMode;
         if (altUI != null && altBtnTxt != null)
             if (altMode)
@@ -164,11 +181,13 @@ public class InputHandler : MonoBehaviour
         {
             Debug.Log("LeftShift pressed");
             AltMode();
+            leftshiftpressed = true;
         }
 
-        if (Input.GetKeyUp(KeyCode.LeftShift))
+        if (Input.GetKeyUp(KeyCode.LeftShift) && leftshiftpressed)
         {
             Debug.Log("LeftShift released");
+            leftshiftpressed = false;
             AltMode();
         }
     }
