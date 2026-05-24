@@ -183,6 +183,7 @@ public class TurnManager : MonoBehaviour
         isResolvingTurn = true;
         enemyTurnCoroutine = null;
 
+        MapManager.Instance.Player.AtDuelStart();
         if (window != null)
         {
             window.OpenDuel();

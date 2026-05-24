@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,7 +9,9 @@ public class InputHandler : MonoBehaviour
     public TurnManager turn;
     public WindowManager window;
     public PlayerUnit player;
+
     public Image altUI;
+    public TMP_Text altBtnTxt;
     public bool altMode;
 
     private void Awake()
@@ -20,6 +23,22 @@ public class InputHandler : MonoBehaviour
     private bool CanUsePlayerInput()
     {
         return turn != null && turn.CanUsePlayerInput;
+    }
+
+    public void AltMode()
+    {
+        altMode = !altMode;
+        if (altUI != null && altBtnTxt != null)
+            if (altMode)
+            {
+                altUI.color = Color.black;
+                altBtnTxt.text = "<color=#D4B000>●</color>이동(shift)";
+            }
+            else
+            {
+                altUI.color = new Color32(212, 176, 0, 255);
+                altBtnTxt.text = "<color=#000000>●</color>경공(shift)";
+            }
     }
 
     public void MoveU()
@@ -144,23 +163,13 @@ public class InputHandler : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             Debug.Log("LeftShift pressed");
-
-            if (altUI != null)
-            {
-                altUI.color = Color.black;
-                altMode = true;
-            }
+            AltMode();
         }
 
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             Debug.Log("LeftShift released");
-
-            if (altUI != null)
-            {
-                altUI.color = Color.yellow;
-                altMode = false;
-            }
+            AltMode();
         }
     }
 }

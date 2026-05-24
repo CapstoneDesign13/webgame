@@ -89,6 +89,13 @@ public class PlayerUnit : CharacterBase
         ui.Refresh();
     }
 
+    public void AtDuelStart()
+    {
+        statEntry.atk = 0;
+        statEntry.def = 0;
+        statEntry.camo = false;
+    }
+
     public void AtBattleEnd()
     {
         nextBattle.atk = 0;
