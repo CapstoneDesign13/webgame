@@ -54,11 +54,11 @@ public class RoomBootstrap : MonoBehaviour
                 break;
 
             case RoomType.Pond:
-                LoadNonBattle(pondSet);
+                //LoadNonBattle(pondSet);
                 break;
 
             case RoomType.Parmacy:
-                LoadNonBattle(parmacySet);
+                //LoadNonBattle(parmacySet);
                 break;
 
             case RoomType.Title:
@@ -124,44 +124,6 @@ public class RoomBootstrap : MonoBehaviour
         currentPlayer.engaged = true;
     }
 
-    public void LoadBattle(SpawnEntry[] spawns)
-    {
-        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
-
-        foreach (var r in spawns)
-        {
-            try
-            {
-                spawn.SpawnEnemy(r.setting.data, r.pos);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Spawn failed at {r.pos}: {e}");
-            }
-        }
-
-        currentPlayer.engaged = true;
-    }
-
-    public void LoadNonBattle(SpawnEntry[] spawns)
-    {
-        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
-
-        foreach (var r in spawns)
-        {
-            try
-            {
-                spawn.SpawnNeutral(r.setting.data, r.pos, r.type);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Spawn failed at {r.pos}: {e}");
-            }
-        }
-
-        currentPlayer.engaged = false;
-    }
-
     public void LoadNonBattle(RawEntry[] spawns)
     {
         PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
@@ -195,8 +157,6 @@ public class RoomBootstrap : MonoBehaviour
         new RawEntry() { id = "pub_counter", pos = new Vector2Int(1, 7) },
         new RawEntry() { id = "pub_table", pos = new Vector2Int(4, 4) },
     };
-    public SpawnEntry[] pondSet;
-    public SpawnEntry[] parmacySet;
     RawEntry[] titleSet = new RawEntry[5]
     {
         new RawEntry() { id = "player_3", pos = new Vector2Int(4, 3), type = DialogType.무당파_검성 },

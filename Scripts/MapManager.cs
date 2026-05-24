@@ -82,15 +82,6 @@ public enum Clan
     하오문
 }
 
-[System.Serializable]
-public class SpawnEntry
-{
-    public UnitSettingSO setting;
-    public Vector2Int pos;
-    public DialogType type;
-}
-
-
 public class MapManager : MonoBehaviour
 {
     public static MapManager Instance { get; private set; }
