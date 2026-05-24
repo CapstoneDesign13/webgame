@@ -149,6 +149,12 @@ public class RunManager : MonoBehaviour
 
     private void OpenStageClearChoice()
     {
+        if (window != null && window.oraclePanel != null)
+        {
+            window.OpenOracle();
+            return;
+        }
+        //레거시
         if (window != null && window.stageClearPanel != null)
         {
             window.OpenStageClear();

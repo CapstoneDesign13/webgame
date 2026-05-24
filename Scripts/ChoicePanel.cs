@@ -32,6 +32,7 @@ public class SelcEntry
 
 public class ChoicePanel : FullScreenPanel
 {
+    public StageManager stage;
     public PlayerUnit player;
     public TMP_Text title;
     public TMP_Text content;
@@ -171,7 +172,11 @@ public class ChoicePanel : FullScreenPanel
     {
         Escape();
 
-        if (RunManager.Instance != null)
+        if (stage != null)
+        {
+            stage.OpenOracle();
+        }
+        else if (RunManager.Instance != null)
         {
             RunManager.Instance.GoNextBattleRoom();
         }

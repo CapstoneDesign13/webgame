@@ -75,6 +75,7 @@ public enum PoolType
 public class MerchantPanel : FullScreenPanel
 {
     public EconomyManager economy;
+    public StageManager stage;
 
     public TMP_Text moneyTxt;
     public List<DropInstance> instock;
@@ -147,7 +148,11 @@ public class MerchantPanel : FullScreenPanel
     {
         Escape();
         
-        if (RunManager.Instance != null)
+        if (stage != null)
+        {
+            stage.OpenOracle();
+        }
+        else if (RunManager.Instance != null)
         {
             RunManager.Instance.GoNextBattleRoom();
         }

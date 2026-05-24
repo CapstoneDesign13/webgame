@@ -27,7 +27,7 @@ public abstract class Dialog
 public class DialogManager : MonoBehaviour
 {
     public WindowManager window;
-    public List<Dialog> dialogs = new List<Dialog>()
+    List<Dialog> dialogs = new List<Dialog>()
     {
         new MerchantDialog()
         {

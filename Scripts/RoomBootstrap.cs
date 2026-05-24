@@ -4,9 +4,9 @@ using UnityEngine;
 
 public enum RoomType
 {
-    Battle,
-    Merchant,
-    Pub,
+    Battle = 2,
+    Merchant = 1,
+    Pub = 4,
     Pond,
     Parmacy,
     Title,

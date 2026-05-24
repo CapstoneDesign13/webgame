@@ -12,6 +12,7 @@ public class WindowManager : MonoBehaviour
     public GameObject stageClearPanel;
     public ChoicePanel choicePanel;
     public GameOverPanel gameoverPanel;
+    public OraclePanel oraclePanel;
 
     private int _active = 0;
 
@@ -60,6 +61,10 @@ public class WindowManager : MonoBehaviour
         {
             stageClearPanel.SetActive(false);
         }
+
+        choicePanel.gameObject.SetActive(false);
+        gameoverPanel.gameObject.SetActive(false);
+        oraclePanel.gameObject.SetActive(false);
     }
 
     public void OpenField()
@@ -133,5 +138,11 @@ public class WindowManager : MonoBehaviour
     {
         CloseAll();
         gameoverPanel.gameObject.SetActive(true);
+    }
+
+    public void OpenOracle()
+    {
+        CloseAll();
+        oraclePanel.gameObject.SetActive(true);
     }
 }
