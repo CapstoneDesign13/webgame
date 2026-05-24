@@ -32,6 +32,28 @@
       "defenseModifier": 0,
       "disableMove": true,
       "tickTiming": "TurnStart"
+    },
+    {
+      "id": "Bleed",
+      "displayName": "출혈",
+      "defaultDuration": 3,
+      "maxStacks": 1,
+      "tickDamage": 1,
+      "attackModifier": 0,
+      "defenseModifier": 0,
+      "disableMove": false,
+      "tickTiming": "TurnEnd"
+    },
+    {
+      "id": "Burn",
+      "displayName": "출혈",
+      "defaultDuration": 3,
+      "maxStacks": 1,
+      "tickDamage": 1,
+      "attackModifier": 0,
+      "defenseModifier": 0,
+      "disableMove": false,
+      "tickTiming": "TurnStart"
     }
   ]
 }

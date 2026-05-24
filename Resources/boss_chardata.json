@@ -1,0 +1,56 @@
+{
+  "items": [
+    {
+      "id": "demonic_king_phase1",
+      "name": "천마신교 천마 1페이즈",
+      "faction": "천마신교",
+      "hp": 99,
+      "ap": 3,
+      "atk": 20,
+      "def": 0,
+      "unit_type": "King",
+      "passive_id": "",
+      "sprite_id": "천마_1페이즈",
+      "effect_color": ""
+    },
+    {
+      "id": "demonic_king_phase2",
+      "name": "천마신교 천마 2페이즈",
+      "faction": "천마신교",
+      "hp": 3,
+      "ap": 3,
+      "atk": 20,
+      "def": 99,
+      "unit_type": "King",
+      "passive_id": "",
+      "sprite_id": "천마신교 천마 2페이즈",
+      "effect_color": ""
+    },
+    {
+      "id": "demonic_king_phase1_aura",
+      "name": "천마신교 천마 1페이즈 오라",
+      "faction": "천마신교",
+      "hp": 20,
+      "ap": 3,
+      "atk": 20,
+      "def": 0,
+      "unit_type": "Chariot",
+      "passive_id": "",
+      "sprite_id": "천마신교 천마 1페이즈 오라",
+      "effect_color": ""
+    },
+    {
+      "id": "demonic_king_phase2_aura",
+      "name": "천마신교 천마 2페이즈 오라",
+      "faction": "천마신교",
+      "hp": 40,
+      "ap": 3,
+      "atk": 40,
+      "def": 0,
+      "unit_type": "Chariot",
+      "passive_id": "",
+      "sprite_id": "천마신교 천마 2페이즈 오라",
+      "effect_color": ""
+    }
+  ]
+}

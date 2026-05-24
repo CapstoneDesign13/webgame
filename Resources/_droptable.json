@@ -34,6 +34,51 @@
           "price": 5
         },
         {
+          "id": "a_combo_007",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "id": "a_combo_008",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "id": "a_combo_009",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "id": "a_combo_010",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "id": "a_combo_011",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "id": "a_combo_012",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "id": "a_combo_013",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "id": "a_combo_00X",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "id": "a_combo_00Y",
+          "type": "Active",
+          "price": 5
+        },
+        {
           "id": "p_combo_001",
           "type": "Passive",
           "price": 11
@@ -44,9 +89,44 @@
           "price": 11
         },
         {
+          "id": "p_combo_001",
+          "type": "Passive",
+          "price": 11
+        },
+        {
+          "id": "p_combo_002",
+          "type": "Passive",
+          "price": 11
+        },
+        {
+          "id": "p_combo_003",
+          "type": "Passive",
+          "price": 11
+        },
+        {
+          "id": "p_combo_004",
+          "type": "Passive",
+          "price": 11
+        },
+        {
+          "id": "p_combo_005",
+          "type": "Passive",
+          "price": 11
+        },
+        {
+          "id": "p_combo_006",
+          "type": "Passive",
+          "price": 11
+        },
+        {
+          "id": "p_combo_007",
+          "type": "Passive",
+          "price": 11
+        },
+        {
           "id": "p_combo_00X",
           "type": "Passive",
-          "price": 5
+          "price": 11
         }
       ]
     }
