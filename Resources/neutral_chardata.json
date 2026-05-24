@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "id": "trader_league",
+      "name": "상회 백운상회",
+      "faction": "비전투",
+      "unit_type": "Soldier",
+      "sprite_id": "상회 백운상회"
+    },
+    {
+      "id": "trader",
+      "name": "상회 상인",
+      "faction": "비전투",
+      "unit_type": "Soldier",
+      "sprite_id": "상회 상인"
+    },
+    {
+      "id": "pub_sign",
+      "name": "객잔 간판",
+      "faction": "비전투",
+      "unit_type": "Soldier",
+      "sprite_id": "객잔 간판"
+    },
+    {
+      "id": "pub_drink_pot",
+      "name": "객잔 술 항아리",
+      "faction": "비전투",
+      "unit_type": "Soldier",
+      "sprite_id": "객잔 테이블"
+    },
+    {
+      "id": "pub_owner",
+      "name": "객잔 주인",
+      "faction": "비전투",
+      "unit_type": "Soldier",
+      "sprite_id": "객잔 주인"
+    },
+    {
+      "id": "pub_counter",
+      "name": "객잔 카운터",
+      "faction": "비전투",
+      "unit_type": "Soldier",
+      "sprite_id": "객잔 카운터"
+    },
+    {
+      "id": "pub_table",
+      "name": "객잔 테이블",
+      "faction": "비전투",
+      "unit_type": "Soldier",
+      "sprite_id": "객잔 테이블"
+    }
+  ]
+}
