@@ -6237,6 +6237,7 @@ MonoBehaviour:
   turn: {fileID: 906787196}
   player: {fileID: 2107183156}
   run: {fileID: 1911166626}
+  dialog: {fileID: 1607070280}
 --- !u!4 &1178203429
 Transform:
   m_ObjectHideFlags: 0
@@ -8942,15 +8943,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogManager
   window: {fileID: 518549340}
-  dialogs:
-  - {fileID: 11400000, guid: f791d75d8805c96438af1ce2c649ee07, type: 2}
-  - {fileID: 11400000, guid: f86f964f07e04034b94acd415b5b119e, type: 2}
-  - {fileID: 11400000, guid: 8f5d62db34042eb49a2efe6a43c16a24, type: 2}
-  - {fileID: 11400000, guid: c2fcc50d444665f43bdbc150d888a8b5, type: 2}
-  - {fileID: 11400000, guid: 2797a0c3a701a9d4584888c2c3ef8c65, type: 2}
-  - {fileID: 11400000, guid: 06474675b8a18504a8c290ca098aaa18, type: 2}
-  - {fileID: 11400000, guid: a26be6ae0a8bd02468a30daaad5fd5d5, type: 2}
-  - {fileID: 11400000, guid: e59f398a559c86f459363b3ec840f26a, type: 2}
 --- !u!4 &1607070281
 Transform:
   m_ObjectHideFlags: 0
@@ -9337,29 +9329,6 @@ MonoBehaviour:
   spawn: {fileID: 313791283}
   player: {fileID: 2107183156}
   type: 0
-  merchantSet:
-  - setting: {fileID: 11400000, guid: 119c4dd2940209b42afe726ba0795359, type: 2}
-    pos: {x: 5, y: 5}
-    type: 1
-  - setting: {fileID: 11400000, guid: d4336a6382dbcd148a2079792f9e6514, type: 2}
-    pos: {x: 3, y: 5}
-    type: 0
-  pubSet:
-  - setting: {fileID: 11400000, guid: 02f6966aac3469f4e908b05c467f54ab, type: 2}
-    pos: {x: 1, y: 1}
-    type: 0
-  - setting: {fileID: 11400000, guid: dc400e2bf5f91b141b97bfbf2c0a4435, type: 2}
-    pos: {x: 1, y: 4}
-    type: 0
-  - setting: {fileID: 11400000, guid: 8c7107826a1b6cc45b1874c301943421, type: 2}
-    pos: {x: 4, y: 1}
-    type: 2
-  - setting: {fileID: 11400000, guid: ef20ba2e7bc27a048a339238e36120de, type: 2}
-    pos: {x: 1, y: 7}
-    type: 0
-  - setting: {fileID: 11400000, guid: c42a8991ea2312a4695ae0235d131587, type: 2}
-    pos: {x: 4, y: 4}
-    type: 0
   pondSet:
   - setting: {fileID: 11400000, guid: 056021e9297621d41866c94a9edca6e4, type: 2}
     pos: {x: 5, y: 5}
@@ -9368,22 +9337,6 @@ MonoBehaviour:
   - setting: {fileID: 11400000, guid: 056021e9297621d41866c94a9edca6e4, type: 2}
     pos: {x: 5, y: 5}
     type: 4
-  titleSet:
-  - setting: {fileID: 11400000, guid: f3753edb151513544a2981af75c023fb, type: 2}
-    pos: {x: 4, y: 3}
-    type: 7
-  - setting: {fileID: 11400000, guid: 4a6b8820ece955a43bea40bf958edc3f, type: 2}
-    pos: {x: 4, y: 7}
-    type: 5
-  - setting: {fileID: 11400000, guid: 4037ab13fd848934c8b127a59d86dbca, type: 2}
-    pos: {x: 6, y: 5}
-    type: 6
-  - setting: {fileID: 11400000, guid: 5cfa0049d34ae034bad1146d3860aed9, type: 2}
-    pos: {x: 2, y: 5}
-    type: 8
-  - setting: {fileID: 11400000, guid: c42a8991ea2312a4695ae0235d131587, type: 2}
-    pos: {x: 4, y: 5}
-    type: 0
 --- !u!4 &1745856242
 Transform:
   m_ObjectHideFlags: 0
@@ -9889,6 +9842,7 @@ MonoBehaviour:
   turn: {fileID: 906787196}
   window: {fileID: 518549340}
   player: {fileID: 2107183156}
+  leftshiftpressed: 0
   altUI: {fileID: 1820876196}
   altBtnTxt: {fileID: 315111987}
   altMode: 0
@@ -10189,7 +10143,7 @@ MonoBehaviour:
   turnManager: {fileID: 906787196}
   window: {fileID: 518549340}
   rooms:
-  - type: 5
+  - type: 2
     stageKey: stage1
   - type: 1
     stageKey: stage1
