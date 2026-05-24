@@ -71,6 +71,7 @@ public class PlayerUnit : CharacterBase
 
     public void AtTurnEnd()
     {
+        //액티브 스킬
         var active = combo.Lmatch(actionHistory, actives);
         if (active != null)
         {
@@ -80,7 +81,31 @@ public class PlayerUnit : CharacterBase
             var area = ShapeUtils.IterateThruShape(active.range_coordinates);
             foreach (var cord in area)
             {
-                TryAttackGrid(cord);
+                if(TryAttackGrid(cord, active.piercing_damage))
+                {
+                    var victim = MapManager.Instance.GetUnitAt(cord);
+                    if (active.poison_stack > 0)
+                    {
+                        victim.StatusEffects.AddStatus("Poison", active.poison_stack);
+                    }
+                    if (active.burn_stack > 0)
+                    {
+                        victim.StatusEffects.AddStatus("Burn", active.burn_stack);
+                    }
+                    //knockback
+                    if (active.knockback > 0)
+                    {
+                        MapManager.Instance.PushUnit(victim, this.CurrentGridPosition, active.knockback);
+                    }
+                    if (active.bleed_stack > 0)
+                    {
+                        victim.StatusEffects.AddStatus("Bleed", active.bleed_stack);
+                    }
+                    if (active.immobilize_stack > 0)
+                    {
+                        victim.StatusEffects.AddStatus("Paralysis", active.immobilize_stack);
+                    }
+                }
             }
         }
         //공격력 증가는 턴 종료시까지 유지
@@ -204,6 +229,11 @@ public class PlayerUnit : CharacterBase
     {
         if (engaged)
             DoDefense();
+    }
+
+    public void TerdinaryAction()
+    {
+
     }
 
     public void SetPlayer(UnitSpawnSetting setting)

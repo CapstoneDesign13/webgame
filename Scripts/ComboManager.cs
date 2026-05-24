@@ -34,6 +34,12 @@ public abstract class Combo : IHasID
 [System.Serializable]
 public class Active : Combo
 {
+    public int poison_stack;
+    public int burn_stack;
+    public int knockback;
+    public int bleed_stack;
+    public int immobilize_stack;
+    public bool piercing_damage;
     public Shape range_coordinates;
 }
 

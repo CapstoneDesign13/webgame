@@ -136,13 +136,13 @@ public class CharacterBase : MonoBehaviour
         get { return currentPosition.ToVector2Int(); }
     }
 
-    public void TakeDamage(CharacterBase attacker)
+    public void TakeDamage(CharacterBase attacker, bool pierce = false)
     {
         //은신 상태에서 무시
         if (Camo)
             return;
 
-        int damage = Mathf.Max(1, attacker.Attack - Defense);
+        int damage = pierce ? Mathf.Max(1, attacker.Attack) : Mathf.Max(1, attacker.Attack - Defense);
         HP -= damage;
 
         if (HP < 0)
@@ -284,13 +284,13 @@ public class CharacterBase : MonoBehaviour
         StatusEffects.Tick(timing);
     }
 
-    public bool TryAttackGrid(Vector2Int grid)
+    public bool TryAttackGrid(Vector2Int grid, bool pierce = false)
     {
         var targetPos = CurrentGridPosition + grid;
         var target = MapManager.Instance.GetUnitAt(targetPos);
         if (target != null && target.team != this.team)
         {
-            target.TakeDamage(this);
+            target.TakeDamage(this, pierce);
             ApplyOnHitStatus(target);
             return true;
         }

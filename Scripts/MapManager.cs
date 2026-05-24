@@ -408,6 +408,150 @@ public class MapManager : MonoBehaviour
     }
 
     /// <summary>
+    /// 특정 위치(anchorPosition) 기준 반대 방향으로 유닛을 밀어낸다.
+    /// 
+    /// 예:
+    /// 폭발 중심(anchor)에서 바깥 방향으로 밀기.
+    /// 
+    /// 규칙:
+    /// - unit이 anchor 반대 방향으로 한 칸씩 이동
+    /// - 막히면 중단
+    /// - 최대 distance 만큼만 이동
+    /// - 보드 밖으로는 이동하지 않음
+    /// - 다른 유닛이 있으면 직전 칸까지만 이동
+    /// </summary>
+    public bool PushUnit(
+        CharacterBase unit,
+        Vector2Int anchorPosition,
+        int distance)
+    {
+        if (unit == null || !unit.IsAlive)
+        {
+            return false;
+        }
+
+        if (distance <= 0)
+        {
+            return false;
+        }
+
+        Vector2Int current = unit.CurrentGridPosition;
+        Vector2Int finalPosition = current;
+
+        for (int i = 0; i < distance; i++)
+        {
+            // anchor -> unit 방향 계산
+            Vector2Int diff = finalPosition - anchorPosition;
+
+            // anchor 와 같은 위치면 방향 계산 불가
+            if (diff == Vector2Int.zero)
+            {
+                break;
+            }
+
+            // 한 칸 방향 정규화
+            Vector2Int step = new Vector2Int(
+                diff.x == 0 ? 0 : (diff.x > 0 ? 1 : -1),
+                diff.y == 0 ? 0 : (diff.y > 0 ? 1 : -1)
+            );
+
+            Vector2Int next = finalPosition + step;
+
+            // 보드 밖이면 중단
+            if (!IsInsideBoard(next))
+            {
+                break;
+            }
+
+            // 다른 유닛이 있으면 중단
+            if (IsTileOccupied(next))
+            {
+                break;
+            }
+
+            finalPosition = next;
+        }
+
+        // 실제 이동 없음
+        if (finalPosition == current)
+        {
+            return false;
+        }
+
+        return MoveUnit(unit, finalPosition);
+    }
+
+    /// <summary>
+    /// 특정 위치(anchorPosition) 방향으로 유닛을 끌어당긴다.
+    /// 
+    /// 예:
+    /// attacker 위치로 적을 당기기.
+    /// 
+    /// 규칙:
+    /// - target이 anchor 쪽으로 한 칸씩 이동
+    /// - 막히면 중단
+    /// - 최대 distance 만큼만 이동
+    /// </summary>
+    public bool PullUnit(
+        CharacterBase unit,
+        Vector2Int anchorPosition,
+        int distance)
+    {
+        if (unit == null || !unit.IsAlive)
+        {
+            return false;
+        }
+
+        if (distance <= 0)
+        {
+            return false;
+        }
+
+        Vector2Int current = unit.CurrentGridPosition;
+        Vector2Int finalPosition = current;
+
+        for (int i = 0; i < distance; i++)
+        {
+            Vector2Int diff = anchorPosition - finalPosition;
+
+            // 이미 anchor 위치
+            if (diff == Vector2Int.zero)
+            {
+                break;
+            }
+
+            // 한 칸 방향 계산
+            Vector2Int step = new Vector2Int(
+                diff.x == 0 ? 0 : (diff.x > 0 ? 1 : -1),
+                diff.y == 0 ? 0 : (diff.y > 0 ? 1 : -1)
+            );
+
+            Vector2Int next = finalPosition + step;
+
+            // 보드 밖
+            if (!IsInsideBoard(next))
+            {
+                break;
+            }
+
+            // 다른 유닛 있음
+            if (IsTileOccupied(next))
+            {
+                break;
+            }
+
+            finalPosition = next;
+        }
+
+        if (finalPosition == current)
+        {
+            return false;
+        }
+
+        return MoveUnit(unit, finalPosition);
+    }
+
+    /// <summary>
     /// 사망한 유닛을 보드 점유 목록에서 제거한다.
     /// 프로토타입에서는 GameObject를 비활성화한다.
     /// </summary>

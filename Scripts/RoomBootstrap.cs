@@ -104,6 +104,26 @@ public class RoomBootstrap : MonoBehaviour
         currentPlayer.engaged = true;
     }
 
+    public void LoadBattle(RawEntry[] spawns)
+    {
+        PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
+
+        foreach (var r in spawns)
+        {
+            try
+            {
+                ModDatabase.Instance.unitspawnDatabase.TryGetValue(r.id, out UnitSpawnSetting setting);
+                spawn.SpawnEnemy(setting, r.pos);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Spawn failed at {r.pos}: {e}");
+            }
+        }
+
+        currentPlayer.engaged = true;
+    }
+
     public void LoadBattle(SpawnEntry[] spawns)
     {
         PlayerUnit currentPlayer = player != null ? player : MapManager.Instance.Player;
@@ -147,6 +167,24 @@ public class RoomBootstrap : MonoBehaviour
     public SpawnEntry[] pondSet;
     public SpawnEntry[] parmacySet;
     public SpawnEntry[] titleSet;
-    public SpawnEntry[] BossSet1;
-    public SpawnEntry[] BossSet2;
+    RawEntry[] BossSet1 = new RawEntry[3]
+    {
+        new RawEntry() { id = "demonic_king_phase1", pos = new Vector2Int(4, 8) },
+        new RawEntry() { id = "demonic_king_phase1_aura", pos = new Vector2Int(3, 9) },
+        new RawEntry() { id = "demonic_king_phase1_aura", pos = new Vector2Int(5, 9) },
+    };
+    RawEntry[] BossSet2 = new RawEntry[3]
+    {
+        new RawEntry() { id = "demonic_king_phase2", pos = new Vector2Int(4, 8) },
+        new RawEntry() { id = "demonic_king_phase2_aura", pos = new Vector2Int(3, 9) },
+        new RawEntry() { id = "demonic_king_phase2_aura", pos = new Vector2Int(5, 9) },
+    };
+}
+
+[System.Serializable]
+public class RawEntry
+{
+    public string id;
+    public Vector2Int pos;
+    public DialogType type;
 }
