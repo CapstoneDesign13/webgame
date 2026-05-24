@@ -8,8 +8,8 @@ public class InitHandler : MonoBehaviour
     public TurnManager turn;
     public PlayerUnit player;
     public RunManager run;
+    public DialogManager dialog;
 
-    public PlayerSettingSO playerSetting;
     [SerializeField] private readonly Vector2Int initpos = new Vector2Int(4, 0);
 
     void Start()
@@ -21,14 +21,16 @@ public class InitHandler : MonoBehaviour
         resourceLoader.database = sharedDatabase;
         resourceLoader.LoadMods();
 
-        player.SetPlayer(playerSetting.data);
-        turn.duelturn = player.duelturn;
+        ModDatabase.Instance.unitspawnDatabase.TryGetValue("player_3", out UnitSpawnSetting setting);
+        player.SetPlayer(setting);
         MapManager.Instance.PlaceUnit(player, initpos);
 
         if (player.team != Team.Ally)
         {
             Debug.LogError("주인공 팀이 이상합니다.");
         }
+
+        dialog.StartMap();
 
         if (run == null)
         {

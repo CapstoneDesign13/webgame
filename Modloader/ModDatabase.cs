@@ -15,6 +15,7 @@ public class ModDatabase : ScriptableObject
     public Dictionary<string, Passive> passivePool = new Dictionary<string, Passive>();
     public Dictionary<string, DropTable> droptable = new Dictionary<string, DropTable>();
     public Dictionary<string, StatusEffectData> statusEffectDatabase = new Dictionary<string, StatusEffectData>();
+    public Dictionary<string, PubDialog> dialogDB = new Dictionary<string, PubDialog>();
 
     public void Initialize()
     {

@@ -111,6 +111,12 @@ public class ResourceLoader : MonoBehaviour
                     file, database.statusEffectDatabase, "상태 이상"
                 );
             }
+            else if (lowerName.EndsWith("_dialog"))
+            {
+                LoadFromTextAsset<Data_dialog, PubDialog>(
+                    file, database.dialogDB, "디알로그"
+                );
+            }
         }
     }
 
