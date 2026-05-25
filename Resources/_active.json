@@ -85,8 +85,7 @@
         "type": "Cross",
         "a": 4,
         "b": 1
-      },
-      "price": 3
+      }
     },
 
     {
@@ -99,8 +98,7 @@
       "range_coordinates": {
         "type": "Square",
         "a": 3
-      },
-      "price": 4
+      }
     },
 
     {
@@ -113,8 +111,7 @@
       "range_coordinates": {
         "type": "Square",
         "a": 3
-      },
-      "price": 4
+      }
     },
 
     {
@@ -127,8 +124,7 @@
       "range_coordinates": {
         "type": "Square",
         "a": 3
-      },
-      "price": 4
+      }
     },
 
     {
@@ -141,8 +137,7 @@
       "range_coordinates": {
         "type": "Square",
         "a": 3
-      },
-      "price": 3
+      }
     },
 
     {
@@ -155,8 +150,7 @@
       "range_coordinates": {
         "type": "Square",
         "a": 3
-      },
-      "price": 3
+      }
     },
 
     {
@@ -167,8 +161,57 @@
       "range_coordinates": {
         "type": "Square",
         "a": 3
-      },
-      "price": 3
+      }
+    },
+
+    {
+      "id": "a_combo_00A",
+      "name": "반탄신공",
+      "description": "연속 방어 후 공격 시 발동. 직선 범위 적들을 밀쳐냅니다.",
+      "command_chains": ["X", "Z"],
+      "knockback": 1,
+      "range_coordinates": { 
+        "type": "Square",
+        "a": 3
+      }
+    },
+
+    {
+      "id": "a_combo_00B",
+      "name": "풍익보",
+      "description": "적의 공격을 막아낸 직후 힘을 되돌려주는 초식.",
+      "command_chains": ["X", "C"],
+      "stat_bonuses": { "atk": -8 },
+      "range_coordinates": { 
+        "type": "Square",
+        "a": 3
+      }
+    },
+
+    {
+      "id": "a_combo_00C",
+      "name": "십자혈랑참",
+      "description": "베고, 이동하고, 다시 베기",
+      "command_chains": ["X", "X", "Z"],
+      "stat_bonuses": { "atk": 2 },
+      "bleed_stack": 1,
+      "range_coordinates": { 
+        "type": "Diamond",
+        "a": 1
+      }
+    },
+
+    {
+      "id": "a_combo_00D",
+      "name": "환영미종보",
+      "description": "이동 후 경공 관통, 방어 태세",
+      "command_chains": ["X", "X", "Z"],
+      "stat_bonuses": { "def": 2 },
+      "bleed_stack": 1,
+      "range_coordinates": { 
+        "type": "Diamond",
+        "a": 1
+      }
     },
 
     {

@@ -69,6 +69,26 @@
           "price": 5
         },
         {
+          "id": "a_combo_00A",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "id": "a_combo_00B",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "id": "a_combo_00C",
+          "type": "Active",
+          "price": 5
+        },
+        {
+          "id": "a_combo_00D",
+          "type": "Active",
+          "price": 5
+        },
+        {
           "id": "a_combo_00X",
           "type": "Active",
           "price": 5
