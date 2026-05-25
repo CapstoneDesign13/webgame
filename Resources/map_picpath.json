@@ -1,0 +1,24 @@
+{
+    "items": [
+    {
+        "id": "stage1",
+        "path": "maps/스테이지 1 (무당파) 맵"
+    },
+    {
+        "id": "stage2",
+        "path": "maps/스테이지 2 (사천당가) 맵"
+    },
+    {
+        "id": "stage3",
+        "path": "maps/스테이지 3 (소림사) 맵"
+    },
+    {
+        "id": "stage4",
+        "path": "maps/스테이지 4 (하오문) 맵"
+    },
+    {
+        "id": "stage5",
+        "path": "maps/스테이지 5 (천마신교) 맵"
+    }
+    ]
+}
