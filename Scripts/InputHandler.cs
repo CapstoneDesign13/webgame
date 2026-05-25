@@ -108,8 +108,8 @@ public class InputHandler : MonoBehaviour
 
     public void DoSpace()
     {
-        if (turn == null) return;
-        turn.EndPlayerTurn();
+        if (!CanUsePlayerInput()) return;
+        player.TurnEndReq();
     }
 
     private void Update()

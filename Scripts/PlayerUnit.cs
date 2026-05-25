@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public class PlayerUnit : CharacterBase
 {
+    public TurnManager turn;
     public UIManager ui;
     public ComboManager combo;
     public LineAnimator line;
@@ -239,6 +240,16 @@ public class PlayerUnit : CharacterBase
     public void TerdinaryAction()
     {
 
+    }
+
+    public void TurnEndReq()
+    {
+        if (ActionPoints > 0 && !engaged)
+        {
+            return;
+        }
+
+        turn.EndPlayerTurn();
     }
 
     public void SetPlayer(UnitSpawnSetting setting)
