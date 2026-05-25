@@ -25,7 +25,7 @@
     {
       "id": "Paralysis",
       "displayName": "마비",
-      "defaultDuration": 1,
+      "defaultDuration": 2,
       "maxStacks": 1,
       "tickDamage": 0,
       "attackModifier": 0,
@@ -46,7 +46,7 @@
     },
     {
       "id": "Burn",
-      "displayName": "출혈",
+      "displayName": "화상",
       "defaultDuration": 3,
       "maxStacks": 1,
       "tickDamage": 1,
