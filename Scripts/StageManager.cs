@@ -8,7 +8,7 @@ public class StageManager : MonoBehaviour
     public RoomType type;
     public int stage = 1;
 
-    int exp = 9;
+    int exp = 0;
 
     public void Proxy(int type)
     {
