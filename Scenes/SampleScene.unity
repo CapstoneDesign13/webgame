@@ -4917,9 +4917,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6271b124b45a8443be0f6dc0868e9c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageManager
-  room: {fileID: 1745856241}
+  run: {fileID: 1911166626}
   window: {fileID: 518549340}
-  turn: {fileID: 906787196}
   type: 2
   stage: 1
 --- !u!4 &768984007
