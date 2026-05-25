@@ -221,8 +221,15 @@ public class RunManager : MonoBehaviour
             return;
         }
 
-        transitioning = false;
         roomIndex = index;
+        CleanUp(rooms[roomIndex]);
+
+        Debug.Log($"ROOM LOADED: index={roomIndex}, type={rooms[roomIndex].type}, stageKey={rooms[roomIndex].stageKey}");
+    }
+
+    public void CleanUp(RoomDefinition RD)
+    {
+        transitioning = false;
 
         if (window != null)
         {
@@ -242,14 +249,12 @@ public class RunManager : MonoBehaviour
             turnManager.ResetForNewRoom();
         }
 
-        roomBootstrap.LoadRoom(rooms[roomIndex]);
+        roomBootstrap.LoadRoom(RD);
 
         if (turnManager != null)
         {
             turnManager.StartPlayerTurn();
         }
-
-        Debug.Log($"ROOM LOADED: index={roomIndex}, type={rooms[roomIndex].type}, stageKey={rooms[roomIndex].stageKey}");
     }
 
     private void CompleteRun()

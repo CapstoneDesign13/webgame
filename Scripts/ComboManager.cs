@@ -8,6 +8,7 @@ public class StatEntry
     public int atk;
     public int def;
     public bool camo;
+    public int heal;
 
     public static StatEntry operator +(StatEntry a, StatEntry b)
     {
@@ -15,7 +16,8 @@ public class StatEntry
         {
             atk = a.atk + b.atk,
             def = a.def + b.def,
-            camo = a.camo || b.camo
+            camo = a.camo || b.camo,
+            heal = a.heal + b.heal,
         };
     }
 }

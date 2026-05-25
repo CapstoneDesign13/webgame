@@ -134,6 +134,11 @@ public class PlayerUnit : CharacterBase
         ActionPoints--;
         actionHistory.Add(action);
         statEntry += combo.Pmatch(actionHistory, passives);
+        if (statEntry.heal > 0)
+        {
+            HP = Mathf.Min(HP + statEntry.heal, MaxHP);
+            statEntry.heal = 0;
+        }
     }
 
     public void DoMove(Vector2Int dir)
