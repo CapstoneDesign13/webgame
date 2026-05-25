@@ -84,27 +84,34 @@ public class PlayerUnit : CharacterBase
             {
                 if(TryAttackGrid(cord, active.piercing_damage))
                 {
-                    var victim = MapManager.Instance.GetUnitAt(cord);
-                    if (active.poison_stack > 0)
+                    var targetPos = CurrentGridPosition + cord;
+                    var victim = MapManager.Instance.GetUnitAt(targetPos);
+                    if (victim != null)
                     {
-                        victim.StatusEffects.AddStatus("Poison", active.poison_stack);
+                        if (active.poison_stack > 0)
+                        {
+                            victim.StatusEffects.AddStatus("Poison", active.poison_stack);
+                        }
+                        if (active.burn_stack > 0)
+                        {
+                            victim.StatusEffects.AddStatus("Burn", active.burn_stack);
+                        }
+                        if (active.knockback > 0)
+                        {
+                            MapManager.Instance.PushUnit(victim, this.CurrentGridPosition, active.knockback);
+                        }
+                        if (active.bleed_stack > 0)
+                        {
+                            victim.StatusEffects.AddStatus("Bleed", active.bleed_stack);
+                        }
+                        if (active.immobilize_stack > 0)
+                        {
+                            victim.StatusEffects.AddStatus("Paralysis", active.immobilize_stack);
+                        }
                     }
-                    if (active.burn_stack > 0)
+                    else
                     {
-                        victim.StatusEffects.AddStatus("Burn", active.burn_stack);
-                    }
-                    //knockback
-                    if (active.knockback > 0)
-                    {
-                        MapManager.Instance.PushUnit(victim, this.CurrentGridPosition, active.knockback);
-                    }
-                    if (active.bleed_stack > 0)
-                    {
-                        victim.StatusEffects.AddStatus("Bleed", active.bleed_stack);
-                    }
-                    if (active.immobilize_stack > 0)
-                    {
-                        victim.StatusEffects.AddStatus("Paralysis", active.immobilize_stack);
+                        Debug.Log("Target no longer valid");
                     }
                 }
             }

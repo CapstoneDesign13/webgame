@@ -466,9 +466,11 @@ public class MapManager : MonoBehaviour
         // 실제 이동 없음
         if (finalPosition == current)
         {
+            Debug.Log($"push:{current} failed");
             return false;
         }
 
+        Debug.Log($"push:{current} to {finalPosition}");
         return MoveUnit(unit, finalPosition);
     }
 

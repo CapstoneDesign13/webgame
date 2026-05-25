@@ -92,6 +92,6 @@ public class UIManager : MonoBehaviour
         {"move", "<color=#D4B000>Y</color>"},
         {"z", "<color=#CD2E3A>R</color>"},
         {"x", "<color=#0047A0>B</color>"},
-        {"c", "<color=#FFD000>K</color>"},
+        {"c", "<color=#000000>K</color>"},
     };
 }
