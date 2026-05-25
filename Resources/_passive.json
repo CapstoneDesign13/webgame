@@ -31,9 +31,9 @@
       "command_chains": ["C", "C"],
       "stat_bonuses": {
         "atk": 2,
-        "def": -2
-      },
-      "heal": 1
+        "def": -2,
+        "heal": 1
+      }
     },
 
     {

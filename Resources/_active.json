@@ -5,7 +5,7 @@
       "name": "질풍참",
       "description": "방향키 입력 후 공격 시 발동, 도착한 위치를 중심으로 가로세로 5x5 범위의 적들을 플레이어 공격력에 공격력 +1 해서 공격합니다.",
       "command_chains": ["MOVE", "Z"],
-      "stat_bonuses": { "atk": 1, "def": 0 },
+      "stat_bonuses": { "atk": 1 },
       "range_coordinates": { 
         "type": "Square",
         "a": 5
@@ -17,7 +17,7 @@
       "name": "연환전광참",
       "description": "이동 후 연속 공격 시 발동, 도착한 위치를 중심으로 가로와 세로 모두 폭 3칸인 거대한 십자 범위 적들을 플레이어 공격력에 공격력 +1 해서 공격합니다.",
       "command_chains": ["MOVE", "Z", "Z"],
-      "stat_bonuses": { "atk": 1, "def": 0 },
+      "stat_bonuses": { "atk": 1 },
       "range_coordinates": { 
         "type": "Cross",
         "a": 4,
@@ -30,7 +30,7 @@
       "name": "유성반월참",
       "description": "곡선 이동 후 공격 시 발동, 도착한 위치를 중심으로 가로 5칸 x 세로 5칸 범위의 적들을 플레이어 공격력에 공격력 +3 해서 공격합니다.",
       "command_chains": ["MOVE", "MOVE", "Z"],
-      "stat_bonuses": { "atk": 3, "def": 0 },
+      "stat_bonuses": { "atk": 3 },
       "range_coordinates": { 
         "type": "Square",
         "a": 5
@@ -42,7 +42,7 @@
       "name": "삼재회검",
       "description": "제자리에서 공격 3회 입력 시 발동, 자신을 중심으로 가로 7칸 x 세로 7칸 범위의 적들을 플레이어 공격력에 공격력 +3 해서 공격합니다.",
       "command_chains": ["Z", "Z", "Z"],
-      "stat_bonuses": { "atk": 3, "def": 0 },
+      "stat_bonuses": { "atk": 3 },
       "range_coordinates": { 
         "type": "Square",
         "a": 7
@@ -54,7 +54,7 @@
       "name": "유능제강",
       "description": "공격 후 연속 방어 시 발동, 자신을 중심으로 가로 3칸 x 세로 3칸 범위의 적들을 플레이어 공격력으로 공격하고, 플레이어 방어력이 2만큼 추가로 상승합니다.",
       "command_chains": ["Z", "X", "X"],
-      "stat_bonuses": { "atk": 0, "def": 2 },
+      "stat_bonuses": { "def": 2 },
       "range_coordinates": { 
         "type": "Square",
         "a": 3
@@ -64,7 +64,7 @@
     {
       "id": "a_combo_006",
       "name": "음양협격",
-      "description": "공격, 방어, 공격을 연달아 할 시 발동, 자신을 중심으로 사각 모서리 4칸이 제외된 총 21칸 범위의 적들을 플레이어 공격력에 공격력 +3 해서 공격하고, 플레이어 방어력이 2만큼 상승합니다.",
+      "description": "공격, 방어, 공격을 연달아 할 시 발동, 자신을 중심으로 사각 모서리 4칸이 제외된 총 21칸 범위의 적들을 플레이어 공격력에 공격력 +2 해서 공격하고, 플레이어 방어력이 2만큼 상승합니다.",
       "command_chains": ["Z", "X", "Z"],
       "stat_bonuses": { "atk": 2, "def": 2 },
       "range_coordinates": { 
