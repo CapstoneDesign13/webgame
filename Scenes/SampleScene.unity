@@ -7687,6 +7687,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1779454606467891970, guid: b6f9e20c5efa63b4aa6335c7dc3643be, type: 3}
+      propertyPath: turn
+      value: 
+      objectReference: {fileID: 906787196}
+    - target: {fileID: 1779454606467891970, guid: b6f9e20c5efa63b4aa6335c7dc3643be, type: 3}
       propertyPath: MaxHP
       value: 12
       objectReference: {fileID: 0}
