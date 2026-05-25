@@ -577,36 +577,36 @@
         "path": "소림사/소림사 행자승/rotations/north-west"
     },
     {
-        "id": "하오문 문주N",
-        "path": "하오문/하오문 문주/rotations/north"
+        "id": "하오문 하오문주N",
+        "path": "하오문/하오문 하오문주/rotations/north"
     },
     {
-        "id": "하오문 문주NE",
-        "path": "하오문/하오문 문주/rotations/north-east"
+        "id": "하오문 하오문주NE",
+        "path": "하오문/하오문 하오문주/rotations/north-east"
     },
     {
-        "id": "하오문 문주E",
-        "path": "하오문/하오문 문주/rotations/east"
+        "id": "하오문 하오문주E",
+        "path": "하오문/하오문 하오문주/rotations/east"
     },
     {
-        "id": "하오문 문주SE",
-        "path": "하오문/하오문 문주/rotations/south-east"
+        "id": "하오문 하오문주SE",
+        "path": "하오문/하오문 하오문주/rotations/south-east"
     },
     {
-        "id": "하오문 문주S",
-        "path": "하오문/하오문 문주/rotations/south"
+        "id": "하오문 하오문주S",
+        "path": "하오문/하오문 하오문주/rotations/south"
     },
     {
-        "id": "하오문 문주SW",
-        "path": "하오문/하오문 문주/rotations/south-west"
+        "id": "하오문 하오문주SW",
+        "path": "하오문/하오문 하오문주/rotations/south-west"
     },
     {
-        "id": "하오문 문주W",
-        "path": "하오문/하오문 문주/rotations/west"
+        "id": "하오문 하오문주W",
+        "path": "하오문/하오문 하오문주/rotations/west"
     },
     {
-        "id": "하오문 문주NW",
-        "path": "하오문/하오문 문주/rotations/north-west"
+        "id": "하오문 하오문주NW",
+        "path": "하오문/하오문 하오문주/rotations/north-west"
     },
     {
         "id": "하오문 야행객N",
