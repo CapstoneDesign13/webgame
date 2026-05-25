@@ -13,6 +13,7 @@ public class StatusEffectController : MonoBehaviour
 {
     private CharacterBase owner;
     private readonly List<ActiveStatusEffect> activeEffects = new List<ActiveStatusEffect>();
+    public GameObject[] icons;
 
     public int AttackModifier
     {
@@ -72,6 +73,14 @@ public class StatusEffectController : MonoBehaviour
         }
     }
 
+    Dictionary<string, int> map = new Dictionary<string, int>()
+    {
+        {"Poison", 1},
+        {"Bleed", 2},
+        {"Paralysis", 3},
+        {"Burn", 4},
+        {"Weakness", 5}
+    };
     private void Awake()
     {
         owner = GetComponent<CharacterBase>();
@@ -113,6 +122,9 @@ public class StatusEffectController : MonoBehaviour
         }
 
         Debug.Log(owner.name + " 상태 이상 적용: " + data.displayName);
+        map.TryGetValue(statusId, out int iconid);
+        if (iconid > 0)
+            icons[iconid].SetActive(true);
     }
 
     public void Tick(StatusTickTiming timing)
@@ -145,6 +157,9 @@ public class StatusEffectController : MonoBehaviour
             {
                 Debug.Log(owner.name + " 상태 이상 종료: " + data.displayName);
                 activeEffects.RemoveAt(i);
+                map.TryGetValue(data.id, out int iconid);
+                if (iconid > 0)
+                    icons[iconid].SetActive(false);
             }
         }
     }

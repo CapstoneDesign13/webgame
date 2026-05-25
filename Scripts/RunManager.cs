@@ -86,6 +86,7 @@ public class RunManager : MonoBehaviour
 
     public bool TryClearBattle()
     {
+        Debug.Log($"transitioning:{transitioning},방타입:{roomBootstrap.CurrentType},적수:{MapManager.Instance.GetLivingEnemies().Count}");
         if (transitioning)
         {
             return false;

@@ -122,6 +122,10 @@ public class MerchantPanel : FullScreenPanel
 
     public void Refill()
     {
+        if (!economy.TrySpend(1))
+            return;
+        RefreshUI();
+
         var modDB = ModDatabase.Instance;
         var list = modDB.droptable["stage1"];
         if (list.Count < 3)
