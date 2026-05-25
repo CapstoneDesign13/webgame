@@ -16,6 +16,7 @@ public class ModDatabase : ScriptableObject
     public Dictionary<string, DropTable> droptable = new Dictionary<string, DropTable>();
     public Dictionary<string, StatusEffectData> statusEffectDatabase = new Dictionary<string, StatusEffectData>();
     public Dictionary<string, PubDialog> dialogDB = new Dictionary<string, PubDialog>();
+    public Dictionary<string, Oracle> oracleDB = new Dictionary<string, Oracle>();
 
     public void Initialize()
     {

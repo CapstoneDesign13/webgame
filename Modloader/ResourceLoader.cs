@@ -117,6 +117,12 @@ public class ResourceLoader : MonoBehaviour
                     file, database.dialogDB, "디알로그"
                 );
             }
+            else if (lowerName.EndsWith("_oracle"))
+            {
+                LoadFromTextAsset<Data_oracle, Oracle>(
+                    file, database.oracleDB, "맵전환"
+                );
+            }
         }
     }
 
