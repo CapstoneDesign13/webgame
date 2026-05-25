@@ -2525,7 +2525,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC0C8\uB85C\uACE0\uCE68"
+  m_text: "\uC0C8\uB85C\uACE0\uCE68\n1\uC740\uC790"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a0cd23aafc1212b4baacc53cb221a1a4, type: 2}
   m_sharedMaterial: {fileID: -7279978758458918962, guid: a0cd23aafc1212b4baacc53cb221a1a4, type: 2}
@@ -2552,10 +2552,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
+  m_fontSize: 19.4
   m_fontSizeBase: 24
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -3342,11 +3342,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8121086570648372697, guid: ba31f43bf8b9e5b4c84e28e386d9c7da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 234.70557
+      value: 215.5846
       objectReference: {fileID: 0}
     - target: {fileID: 8121086570648372697, guid: ba31f43bf8b9e5b4c84e28e386d9c7da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -330.5972
+      value: -341.57968
       objectReference: {fileID: 0}
     - target: {fileID: 8121086570648372697, guid: ba31f43bf8b9e5b4c84e28e386d9c7da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3621,11 +3621,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8121086570648372697, guid: ba31f43bf8b9e5b4c84e28e386d9c7da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 954.70557
+      value: 935.5846
       objectReference: {fileID: 0}
     - target: {fileID: 8121086570648372697, guid: ba31f43bf8b9e5b4c84e28e386d9c7da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -330.5972
+      value: -341.57968
       objectReference: {fileID: 0}
     - target: {fileID: 8121086570648372697, guid: ba31f43bf8b9e5b4c84e28e386d9c7da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3782,11 +3782,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8121086570648372697, guid: ba31f43bf8b9e5b4c84e28e386d9c7da, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 594.70557
+      value: 575.5846
       objectReference: {fileID: 0}
     - target: {fileID: 8121086570648372697, guid: ba31f43bf8b9e5b4c84e28e386d9c7da, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -330.5972
+      value: -341.57968
       objectReference: {fileID: 0}
     - target: {fileID: 8121086570648372697, guid: ba31f43bf8b9e5b4c84e28e386d9c7da, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8353,8 +8353,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -50, y: -50}
-  m_SizeDelta: {x: 50, y: 50}
+  m_AnchoredPosition: {x: -75, y: -50}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1425302878
 MonoBehaviour:
@@ -11261,7 +11261,7 @@ MonoBehaviour:
   turnManager: {fileID: 906787196}
   window: {fileID: 518549340}
   rooms:
-  - type: 4
+  - type: 1
     stageKey: stage1
   - type: 1
     stageKey: stage1
