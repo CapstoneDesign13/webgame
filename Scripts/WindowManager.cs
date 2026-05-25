@@ -13,6 +13,7 @@ public class WindowManager : MonoBehaviour
     public ChoicePanel choicePanel;
     public GameOverPanel gameoverPanel;
     public OraclePanel oraclePanel;
+    public ElevatePanel elevatePanel;
 
     private int _active = 0;
 
@@ -144,5 +145,15 @@ public class WindowManager : MonoBehaviour
     {
         CloseAll();
         oraclePanel.gameObject.SetActive(true);
+    }
+
+    public void CloseElevate()
+    {
+        elevatePanel.gameObject.SetActive(false);
+    }
+
+    public void OpenElevate()
+    {
+        elevatePanel.gameObject.SetActive(true);
     }
 }
