@@ -6,7 +6,8 @@
         {
           "enemy_id": "mudang_king",
           "PowerScore": 15,
-          "MustBeInPalace": true
+          "MustBeInPalace": true,
+          "MaxCount": 1
         },
         {
           "enemy_id": "mudang_chariot",
@@ -46,7 +47,8 @@
         {
           "enemy_id": "sacheon_king",
           "PowerScore": 15,
-          "MustBeInPalace": true
+          "MustBeInPalace": true,
+          "MaxCount": 1
         },
         {
           "enemy_id": "sacheon_chariot",
@@ -86,7 +88,8 @@
         {
           "enemy_id": "solim_king",
           "PowerScore": 15,
-          "MustBeInPalace": true
+          "MustBeInPalace": true,
+          "MaxCount": 1
         },
         {
           "enemy_id": "solim_chariot",
@@ -126,7 +129,8 @@
         {
           "enemy_id": "haoman_king",
           "PowerScore": 15,
-          "MustBeInPalace": true
+          "MustBeInPalace": true,
+          "MaxCount": 1
         },
         {
           "enemy_id": "haoman_chariot",
@@ -163,13 +167,6 @@
     {
       "id": "stage5",
       "list": [
-        {
-          "enemy_id": "demonic_king_phase1",
-          "PowerScore": 15,
-          "MustBeInPalace": true,
-          "Guaranteed": true,
-          "MaxCount": 1
-        },
         {
           "enemy_id": "demonic_chariot",
           "PowerScore": 15,

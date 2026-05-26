@@ -48,6 +48,20 @@
       "faction": "비전투",
       "unit_type": "Soldier",
       "sprite_id": "객잔 테이블"
+    },
+    {
+      "id": "pond_pond",
+      "name": "영천",
+      "faction": "비전투",
+      "unit_type": "Soldier",
+      "sprite_id": "영천"
+    },
+    {
+      "id": "pharmacy_pharmacy",
+      "name": "약방",
+      "faction": "비전투",
+      "unit_type": "Soldier",
+      "sprite_id": "약방"
     }
   ]
 }
