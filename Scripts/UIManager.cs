@@ -36,7 +36,7 @@ public class UIManager : MonoBehaviour
         Gold.text = $"소지 은자:{economy.Money}";
         for (int i = 0; i < 3; i++)
         {
-            string s = i >= player.actionHistory.Count ? null :  player.actionHistory[i];
+            string s = i >= player.actionHistory.Count ? null : player.actionHistory[i];
             switch (s)
             {
                 case "Move":
@@ -59,6 +59,7 @@ public class UIManager : MonoBehaviour
                     break;
             }
         }
+
         var sb = new System.Text.StringBuilder();
         sb.AppendLine("배운 기술");
         foreach (var passive in player.passives)
@@ -78,8 +79,9 @@ public class UIManager : MonoBehaviour
             sb.AppendLine(active.name);
         }
         Skills.text = sb.ToString();
-        QiText.text = "<color=#B8F8FB>Qi:" + player.ActionPoints + "</color>";
-        TurnText.text = "<color=#FFD000>Turn:" + turn.turnCount + "</color>";
+
+        QiText.text = $"<color=#B8F8FB>일기토 까지:{player.duelturn - turn.turnCount} 합</color>";
+        TurnText.text = "<color=#FFD000>제 " + turn.turnCount + "합</color>";
         var movement = player.path;
         if (movement.Count == 1)
             line.DrawPath(movement);

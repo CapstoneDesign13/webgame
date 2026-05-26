@@ -6,9 +6,9 @@ public enum RoomType
 {
     Battle = 2,
     Merchant = 1,
-    Pub = 4,
-    Pond,
-    Parmacy,
+    Pub = 8,
+    Pond = 4,
+    Pharmacy = 16,
     Title,
     BossBattle1,
     BossBattle2
@@ -54,11 +54,11 @@ public class RoomBootstrap : MonoBehaviour
                 break;
 
             case RoomType.Pond:
-                //LoadNonBattle(pondSet);
+                LoadNonBattle(pondSet);
                 break;
 
-            case RoomType.Parmacy:
-                //LoadNonBattle(parmacySet);
+            case RoomType.Pharmacy:
+                LoadNonBattle(pharmacySet);
                 break;
 
             case RoomType.Title:
@@ -176,6 +176,14 @@ public class RoomBootstrap : MonoBehaviour
         new RawEntry() { id = "demonic_king_phase2", pos = new Vector2Int(4, 8) },
         new RawEntry() { id = "demonic_king_phase2_aura", pos = new Vector2Int(3, 9) },
         new RawEntry() { id = "demonic_king_phase2_aura", pos = new Vector2Int(5, 9) },
+    };
+    RawEntry[] pondSet = new RawEntry[1]
+    {
+        new RawEntry() { id = "pond_pond", pos = new Vector2Int(4, 5), type = DialogType.영천 }
+    };
+    RawEntry[] pharmacySet = new RawEntry[1]
+    {
+        new RawEntry() { id = "pharmacy_pharmacy", pos = new Vector2Int(4, 5), type = DialogType.약방 }
     };
 }
 

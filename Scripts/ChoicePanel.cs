@@ -20,6 +20,7 @@ public enum Effect
     소림사_지진나한,
     무당파_검성,
     하오문_혼선교란자,
+    영구일기토,
 }
 
 [System.Serializable]
@@ -77,10 +78,13 @@ public class ChoicePanel : FullScreenPanel
                         pair.Add((AtkE, 1));
                         break;
                     case Effect.영구방어:
-                        pair.Add((DefE, 2));
+                        pair.Add((DefE, 1));
                         break;
                     case Effect.영구체력:
-                        pair.Add((MaxHPE, -2));
+                        pair.Add((MaxHPE, -5));
+                        break;
+                    case Effect.영구일기토:
+                        pair.Add((DuelturnE, -1));
                         break;
                     case Effect.사천당가_만천우침:
                         pair.Add((ChangePlayer, 1));
@@ -141,6 +145,11 @@ public class ChoicePanel : FullScreenPanel
         {
             player.HP = 1;
         }
+    }
+
+    public void DuelturnE(int amount)
+    {
+        player.duelturn += amount;
     }
 
     public void ALLorNOTHING(int _)

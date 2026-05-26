@@ -8,10 +8,20 @@ public class StageManager : MonoBehaviour
     public RoomType type;
     public int stage = 1;
 
+    public bool pharmacyhappened;
+
     int exp = 0;
+
+    public void ProxyRand()
+    {
+        Option flag = (Option)UnityEngine.Random.Range(1, (int)Option.약방);
+        Proxy((int)flag);
+    }
 
     public void Proxy(int type)
     {
+        if (type == (int)Option.약방)
+            pharmacyhappened = true;
         run.CleanUp(
         new RoomDefinition()
         {
@@ -27,6 +37,7 @@ public class StageManager : MonoBehaviour
         {
             stage++;
             exp = 0;
+            pharmacyhappened = false;
             window.OpenElevate();
         }
         window.OpenOracle();
