@@ -7,7 +7,7 @@ using UnityEngine;
 public class PlacementTile
 {
     public Vector2Int Position;
-    public int Score;
+    public float Score;
     public bool IsPalace;
 }
 
@@ -59,13 +59,4 @@ public class EnemyData
     public bool MustBeInPalace;
     public bool Guaranteed;
     public int MaxCount;
-
-    public static bool PalaceBound(PieceType type)
-    {
-        return type switch
-        {
-            PieceType.Guard or PieceType.King => true,
-            _ => false,
-        };
-    }
 }

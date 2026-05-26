@@ -3,10 +3,11 @@ using UnityEngine;
 
 public class EnemyPlacementSystem : MonoBehaviour
 {
+    public StageManager stage;
+
     [Header("Difficulty")]
-    [SerializeField] private int baseC = 7;
-    [SerializeField] private int baseK = 15;
-    [SerializeField] private int step = 1;
+    [SerializeField] private int baseC = 15;
+    [SerializeField] private int baseK = 30;
 
     [Header("Board")]
     [SerializeField] private int width = 9;
@@ -27,6 +28,11 @@ public class EnemyPlacementSystem : MonoBehaviour
 
     public List<PlacementResult> GenerateStage(string stage, Vector2Int playerPosition)
     {
+        int step = 1;
+        if (this.stage != null)
+        {
+            step = this.stage.stage;
+        }
         int target = baseC * step + baseK;
 
         currentDifficulty = 0;
@@ -168,7 +174,7 @@ public class EnemyPlacementSystem : MonoBehaviour
 
     private int CalculateScore(EnemyData e, PlacementTile t)
     {
-        return Mathf.RoundToInt(e.PowerScore * 0.7f + t.Score * 0.3f);
+        return Mathf.RoundToInt(e.PowerScore * t.Score);
     }
 
     private PlacementTile GetValidTile(EnemyData enemy)
@@ -219,13 +225,17 @@ public class EnemyPlacementSystem : MonoBehaviour
         }
     }
 
-    private int Evaluate(int x, int y)
+    private float Evaluate(int x, int y)
     {
-        int center = 4 - Mathf.Abs(4 - x);
-        int forward = y;
-        int palace = IsPalace(x, y) ? 3 : 0;
+        float cx = width / 2f;
+        float cy = height / 2f ;
 
-        return center + forward + palace;
+        float dist = Mathf.Abs(cx - x) + Mathf.Abs(cy - y);
+        float maxDist = cx + cy;
+
+        float normalized = 1f - (dist / maxDist);
+
+        return 1f + normalized * 0.5f;
     }
 
     private bool IsPalace(int x, int y)
