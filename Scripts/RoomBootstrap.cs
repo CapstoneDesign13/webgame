@@ -165,9 +165,11 @@ public class RoomBootstrap : MonoBehaviour
         new RawEntry() { id = "player_4", pos = new Vector2Int(2, 5), type = DialogType.하오문_혼선교란자 },
         new RawEntry() { id = "pub_table", pos = new Vector2Int(4, 5) },
     };
-    RawEntry[] BossSet1 = new RawEntry[3]
+    RawEntry[] BossSet1 = new RawEntry[5]
     {
         new RawEntry() { id = "demonic_king_phase1", pos = new Vector2Int(4, 8) },
+        new RawEntry() { id = "demonic_king_phase1_aura", pos = new Vector2Int(3, 7) },
+        new RawEntry() { id = "demonic_king_phase1_aura", pos = new Vector2Int(5, 7) },
         new RawEntry() { id = "demonic_king_phase1_aura", pos = new Vector2Int(3, 9) },
         new RawEntry() { id = "demonic_king_phase1_aura", pos = new Vector2Int(5, 9) },
     };

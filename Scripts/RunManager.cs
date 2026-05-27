@@ -84,9 +84,22 @@ public class RunManager : MonoBehaviour
         GoNextBattleRoom();
     }
 
+    private bool IsCombatRoom(RoomType type)
+    {
+        return type == RoomType.Battle
+            || type == RoomType.BossBattle1
+            || type == RoomType.BossBattle2;
+    }
+    
+    public bool IsCurrentBossRoom()
+    {
+        if (roomBootstrap == null) return false;
+        return roomBootstrap.CurrentType == RoomType.BossBattle1
+            || roomBootstrap.CurrentType == RoomType.BossBattle2;
+    }
+
     public bool TryClearBattle()
     {
-        Debug.Log($"transitioning:{transitioning},방타입:{roomBootstrap.CurrentType},적수:{MapManager.Instance.GetLivingEnemies().Count}");
         if (transitioning)
         {
             return false;
@@ -98,23 +111,39 @@ public class RunManager : MonoBehaviour
             return false;
         }
 
-        if (roomBootstrap.CurrentType != RoomType.Battle)
-        {
-            return false;
-        }
-
         if (MapManager.Instance == null)
         {
+            Debug.LogWarning("RunManager: MapManager.Instance가 없습니다.");
             return false;
         }
 
-        if (MapManager.Instance.GetLivingEnemies().Count > 0)
+        int livingEnemyCount = MapManager.Instance.GetLivingEnemies().Count;
+
+        Debug.Log($"transitioning:{transitioning}, 방타입:{roomBootstrap.CurrentType}, 적수:{livingEnemyCount}");
+
+        if (!IsCombatRoom(roomBootstrap.CurrentType))
         {
             return false;
         }
 
-        EndBattle("NORMAL");
+        if (roomBootstrap.CurrentType == RoomType.BossBattle1)
+        {
+            return false;
+        }
 
+        if (livingEnemyCount > 0)
+        {
+            return false;
+        }
+
+        if (roomBootstrap.CurrentType == RoomType.BossBattle2)
+        {
+            CompleteRun();
+            return true;
+        }
+        
+        EndBattle("NORMAL");
+        
         return true;
     }
 
@@ -145,6 +174,18 @@ public class RunManager : MonoBehaviour
 
         transitioning = true;
         Debug.Log($"STAGE CLEAR BY {source}");
+        OpenStageClearChoice();
+
+        Debug.Log($"STAGE CLEAR BY {source}");
+
+        if (roomBootstrap != null
+            && roomBootstrap.CurrentType == RoomType.Battle
+            && roomBootstrap.CurrentStageKey == "stage5")
+        {
+            GoNextRoom();
+            return;
+        }
+
         OpenStageClearChoice();
     }
 
@@ -265,8 +306,12 @@ public class RunManager : MonoBehaviour
 
         if (window != null)
         {
-            window.CloseAll();
+            window.OpenVictory();
         }
-        // TODO: 최종 클리어 UI 연결
+    }
+
+    public void CompleteRunFromBoss()
+    {
+        CompleteRun();
     }
 }

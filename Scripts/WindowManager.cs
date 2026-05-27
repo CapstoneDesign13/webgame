@@ -10,6 +10,7 @@ public class WindowManager : MonoBehaviour
     public DuelPanel duelPanel;
     public MerchantPanel merchantPanel;
     public GameObject stageClearPanel;
+    public GameObject victoryPanel;
     public ChoicePanel choicePanel;
     public GameOverPanel gameoverPanel;
     public OraclePanel oraclePanel;
@@ -61,6 +62,11 @@ public class WindowManager : MonoBehaviour
         if (stageClearPanel != null)
         {
             stageClearPanel.SetActive(false);
+        }
+
+        if (victoryPanel != null)
+        {
+            victoryPanel.SetActive(false);
         }
 
         choicePanel.gameObject.SetActive(false);
@@ -139,6 +145,19 @@ public class WindowManager : MonoBehaviour
     {
         CloseAll();
         gameoverPanel.gameObject.SetActive(true);
+    }
+    public void OpenVictory()
+    {
+        CloseAll();
+        if (input != null)
+        {
+            input.gameObject.SetActive(false);
+        }
+        
+        if (victoryPanel != null)
+        {
+            victoryPanel.SetActive(true);
+        }
     }
 
     public void OpenOracle()

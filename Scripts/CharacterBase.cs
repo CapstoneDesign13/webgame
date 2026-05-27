@@ -10,6 +10,7 @@ public enum Team
 public class CharacterBase : MonoBehaviour
 {
     public Team team = Team.Enemy;
+    public string UnitId { get; private set; } = "";
     public int MaxHP = 20;
     public int HP;
     protected int _Attack = 4;
@@ -118,6 +119,11 @@ public class CharacterBase : MonoBehaviour
         UpdateHealthBar();
     }
 
+    public void SetUnitId(string id)
+    {
+        UnitId = string.IsNullOrEmpty(id) ? "" : id;
+    }
+
     /// <summary>
     /// 유닛의 보드 좌표를 갱신하고, Transform 위치도 월드 좌표에 맞춘다.
     /// </summary>
@@ -136,7 +142,7 @@ public class CharacterBase : MonoBehaviour
         get { return currentPosition.ToVector2Int(); }
     }
 
-    public void TakeDamage(CharacterBase attacker, bool pierce = false)
+    public virtual void TakeDamage(CharacterBase attacker, bool pierce = false)
     {
         //은신 상태에서 무시
         if (Camo)
@@ -160,7 +166,7 @@ public class CharacterBase : MonoBehaviour
         }
     }
 
-    public void TakeFlatDamage(int damage, string source = "Status")
+    public virtual void TakeFlatDamage(int damage, string source = "Status")
     {
         if (IsDead)
         {
@@ -202,6 +208,11 @@ public class CharacterBase : MonoBehaviour
         HP = 0;
 
         UpdateHealthBar();
+
+        if (BossBattleManager.Instance != null)
+        {
+            BossBattleManager.Instance.NotifyUnitDied(this);
+        }
 
         Debug.Log(name + " died");
 
