@@ -10,12 +10,12 @@ public class StageManager : MonoBehaviour
 
     public bool pharmacyhappened;
 
-    int exp = 0;
+    int exp = 9;
 
     public void ProxyRand()
     {
-        Option flag = (Option)UnityEngine.Random.Range(1, (int)Option.¾à¹æ);
-        Proxy((int)flag);
+        int flag = 1 << UnityEngine.Random.Range(0, 4);
+        Proxy(flag);
     }
 
     public void Proxy(int type)

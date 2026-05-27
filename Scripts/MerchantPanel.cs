@@ -177,6 +177,17 @@ public class MerchantPanel : FullScreenPanel
 
             var modDB = ModDatabase.Instance;
             modDB.droptable["stage1"].Remove(drop);
+
+            if (drop.type == PoolType.Active)
+            {
+                modDB.activePool.TryGetValue(drop.id, out Active active);
+                MapManager.Instance.Player.LearnA(active);
+            }
+            else if (drop.type == PoolType.Passive)
+            {
+                modDB.passivePool.TryGetValue(drop.id, out Passive passive);
+                MapManager.Instance.Player.LearnP(passive);
+            }
         }
     }
 }

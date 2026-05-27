@@ -12,8 +12,9 @@ public class ElevatePanel : MonoBehaviour
     private void OnEnable()
     {
         txt.text = $"스테이지{stage.stage}입성";
-        Sprite cache = ModDatabase.Instance.GetPic($"stage{stage.stage}");
+        Sprite cache = ModDatabase.Instance.GetPic($"stage{stage.stage}_enter");
         pic.sprite = cache;
+        cache = ModDatabase.Instance.GetPic($"stage{stage.stage}");
         render.sprite = cache;
     }
 }

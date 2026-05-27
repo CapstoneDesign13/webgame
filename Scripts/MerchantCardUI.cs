@@ -34,7 +34,6 @@ public class MerchantCardUI : MonoBehaviour
             Sprite cache = ModDatabase.Instance.GetPic(active.id + "_pic");
             pic.sprite = cache;
             btn.onClick.RemoveAllListeners();
-            btn.onClick.AddListener(() => MapManager.Instance.Player.LearnA(active));
             btn.onClick.AddListener(() => parent.Purchase(drop));
         }
         else if (drop.type == PoolType.Passive)
@@ -49,7 +48,6 @@ public class MerchantCardUI : MonoBehaviour
             Sprite cache = ModDatabase.Instance.GetPic(passive.id + "_pic");
             pic.sprite = cache;
             btn.onClick.RemoveAllListeners();
-            btn.onClick.AddListener(() => MapManager.Instance.Player.LearnP(passive));
             btn.onClick.AddListener(() => parent.Purchase(drop));
         }
     }
