@@ -19,6 +19,26 @@
     {
         "id": "stage5",
         "path": "maps/스테이지 5 (천마신교) 맵"
+    },
+    {
+        "id": "stage1_enter",
+        "path": "cut scene/맵전환 컷신 (무당파)"
+    },
+    {
+        "id": "stage2_enter",
+        "path": "cut scene/맵전환 컷신 (사천당가)"
+    },
+    {
+        "id": "stage3_enter",
+        "path": "cut scene/맵전환 컷신 (소림사)"
+    },
+    {
+        "id": "stage4_enter",
+        "path": "cut scene/맵전환 컷신 (하오문)"
+    },
+    {
+        "id": "stage5_enter",
+        "path": "cut scene/맵전환 컷신 (천마신교)"
     }
     ]
 }
