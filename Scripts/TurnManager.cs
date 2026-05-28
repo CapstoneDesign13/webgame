@@ -163,7 +163,10 @@ public class TurnManager : MonoBehaviour
             window.OpenGameOver();
         }
 
-        if (turnCount >= player.duelturn && !duelStarted)
+        if (RunManager.Instance != null
+            && !RunManager.Instance.IsCurrentBossRoom()
+            && turnCount >= player.duelturn
+            && !duelStarted)
         {
             StartDuel();
             yield break;

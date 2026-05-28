@@ -135,9 +135,17 @@ public class WindowManager : MonoBehaviour
         }
     }
 
+    public void OpenVictory()
+    {
+        CloseAll();
+        gameoverPanel.picid = "승리";
+        gameoverPanel.gameObject.SetActive(true);
+    }
+
     public void OpenGameOver()
     {
         CloseAll();
+        gameoverPanel.picid = "패배";
         gameoverPanel.gameObject.SetActive(true);
     }
 

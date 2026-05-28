@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class ElevatePanel : MonoBehaviour
 {
     public StageManager stage;
-    public BackgroundManager background;
     public TMP_Text txt;
     public Image pic;
     public SpriteRenderer render;
