@@ -6,7 +6,7 @@
       "faction": "사천당가",
       "hp": 100,
       "atk": 17,
-      "def": 5,
+      "def": 10,
       "unit_type": "King",
       "sprite_id": "사천당가 만천우침",
       "duelturn": 10
@@ -17,7 +17,7 @@
       "faction": "소림사",
       "hp": 100,
       "atk": 17,
-      "def": 5,
+      "def": 10,
       "unit_type": "King",
       "sprite_id": "소림사 지진나한",
       "duelturn": 10
@@ -28,7 +28,7 @@
       "faction": "무당파",
       "hp": 100,
       "atk": 17,
-      "def": 5,
+      "def": 10,
       "unit_type": "King",
       "sprite_id": "무당파 검성",
       "duelturn": 10
@@ -39,7 +39,7 @@
       "faction": "하오문",
       "hp": 100,
       "atk": 17,
-      "def": 5,
+      "def": 10,
       "unit_type": "King",
       "sprite_id": "하오문 혼선교란자",
       "duelturn": 10

@@ -51,6 +51,14 @@
     {
         "id": "stage5_enter",
         "path": "cut scene/맵전환 컷신 (천마신교)"
+    },
+    {
+        "id": "패배",
+        "path": "cut scene/전투 패배 컷신"
+    },
+    {
+        "id": "승리",
+        "path": "cut scene/전투 승리 컷신"
     }
     ]
 }
