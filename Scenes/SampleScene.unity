@@ -153,9 +153,9 @@ RectTransform:
   - {fileID: 460496915}
   m_Father: {fileID: 1424152754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 547.57574, y: -559.05176}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &21085309
@@ -744,7 +744,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElevatePanel
   stage: {fileID: 768984006}
-  background: {fileID: 0}
   txt: {fileID: 2004185626}
   pic: {fileID: 58445179}
   render: {fileID: 1775686319}
@@ -1803,6 +1802,8 @@ MonoBehaviour:
   ElephantPrefab: {fileID: 5533581083049255567, guid: 4c542e5d5f49ea74e917e6f9cd78b9ba, type: 3}
   GuardPrefab: {fileID: 3363836350062602364, guid: ff5d68e73bbc14646905cade985d5bb0, type: 3}
   KingPrefab: {fileID: 277587615129836927, guid: 5191e4ce66fabca42b049ae176332248, type: 3}
+  DemonicKingPhase1Prefab: {fileID: -5174202311413393897, guid: fe2aef4afb5ccda4daf2e039ba411355, type: 3}
+  DemonicKingPhase2Prefab: {fileID: 1564680866928351619, guid: d3e1290c3e09eaf46b859d40a4eb189e, type: 3}
   MerchantPrefab: {fileID: 540618184418837216, guid: 2044cd044d6f73f46a50761df40446b1, type: 3}
   unitRoot: {fileID: 0}
 --- !u!1 &315111985
@@ -2880,6 +2881,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 460496914}
   m_CullTransparentMesh: 1
+--- !u!1 &504620961
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 504620963}
+  - component: {fileID: 504620962}
+  m_Layer: 0
+  m_Name: BossBattleManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &504620962
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504620961}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35bc4379c6085024cb8dcaa9e4854ebe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BossBattleManager
+--- !u!4 &504620963
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 504620961}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 717.8703, y: 543.32043, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &505867192
 GameObject:
   m_ObjectHideFlags: 0
@@ -5545,7 +5590,7 @@ MonoBehaviour:
   run: {fileID: 1911166626}
   window: {fileID: 518549340}
   type: 2
-  stage: 1
+  stage: 4
   pharmacyhappened: 0
 --- !u!4 &768984007
 Transform:
@@ -8867,7 +8912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1424152750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8881,6 +8926,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameOverPanel
   window: {fileID: 518549340}
+  picid: "\uD328\uBC30"
+  pic: {fileID: 1424152752}
 --- !u!114 &1424152751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10499,9 +10546,9 @@ RectTransform:
   - {fileID: 800233391}
   m_Father: {fileID: 1424152754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 547.57574, y: -519.05176}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1663847185
@@ -11668,9 +11715,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1424152754}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 547.57574, y: -469.05173}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1842353482
@@ -12154,26 +12201,6 @@ MonoBehaviour:
   rooms:
   - type: 17
     stageKey: stage1
-  - type: 1
-    stageKey: stage1
-  - type: 2
-    stageKey: stage1
-  - type: 1
-    stageKey: stage1
-  - type: 2
-    stageKey: stage2
-  - type: 1
-    stageKey: stage1
-  - type: 2
-    stageKey: stage3
-  - type: 1
-    stageKey: stage1
-  - type: 2
-    stageKey: stage4
-  - type: 1
-    stageKey: stage1
-  - type: 2
-    stageKey: stage5
   - type: 18
     stageKey: stage5
   - type: 19
@@ -13620,3 +13647,4 @@ SceneRoots:
   - {fileID: 1901316333}
   - {fileID: 768984007}
   - {fileID: 749472616}
+  - {fileID: 504620963}
