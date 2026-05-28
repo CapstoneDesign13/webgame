@@ -16,7 +16,7 @@ public class HealthBar2D : MonoBehaviour
     [SerializeField] private float barHeight = 0.09f;
 
     [Header("Sorting")]
-    [SerializeField] private int sortingOrder = 100;
+    [SerializeField] private int sortingOrder = 2;
 
     [Header("Colors")]
     [SerializeField] private Color backgroundColor = Color.black;

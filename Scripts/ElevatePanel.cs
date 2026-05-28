@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class ElevatePanel : MonoBehaviour
 {
     public StageManager stage;
+    public BackgroundManager background;
     public TMP_Text txt;
     public Image pic;
     public SpriteRenderer render;
@@ -14,7 +15,5 @@ public class ElevatePanel : MonoBehaviour
         txt.text = $"스테이지{stage.stage}입성";
         Sprite cache = ModDatabase.Instance.GetPic($"stage{stage.stage}_enter");
         pic.sprite = cache;
-        cache = ModDatabase.Instance.GetPic($"stage{stage.stage}");
-        render.sprite = cache;
     }
 }

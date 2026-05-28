@@ -16,6 +16,7 @@ public enum RoomType
 
 public class RoomBootstrap : MonoBehaviour
 {
+    public BackgroundManager background;
     public EnemyPlacementSystem placement;
     public SpawnManager spawn;
     public PlayerUnit player;
@@ -32,6 +33,11 @@ public class RoomBootstrap : MonoBehaviour
             type = type,
             stageKey = "stage1"
         });
+    }
+
+    public void LoadRoomBackground(string picid)
+    {
+        background.SetPic(picid);
     }
 
     public void LoadRoom(RoomDefinition room)
@@ -51,6 +57,7 @@ public class RoomBootstrap : MonoBehaviour
 
             case RoomType.Pub:
                 LoadNonBattle(pubSet);
+                CurrentStageKey = "Pub";
                 break;
 
             case RoomType.Pond:
@@ -59,6 +66,7 @@ public class RoomBootstrap : MonoBehaviour
 
             case RoomType.Pharmacy:
                 LoadNonBattle(pharmacySet);
+                CurrentStageKey = "Pharmacy";
                 break;
 
             case RoomType.Title:
@@ -71,8 +79,11 @@ public class RoomBootstrap : MonoBehaviour
 
             case RoomType.BossBattle2:
                 LoadBattle(BossSet2);
+                CurrentStageKey = "BossBattle2";
                 break;
         }
+
+        LoadRoomBackground(CurrentStageKey);
     }
 
     public void LoadBattle(string stageKey)

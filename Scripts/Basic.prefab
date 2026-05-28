@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3709426148907266051}
   - component: {fileID: 1427086624364473179}
   m_Layer: 0
-  m_Name: icon3_2
+  m_Name: "\uB9C8\uBE44"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,8 +26,8 @@ Transform:
   m_GameObject: {fileID: 709756127574449088}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.208, y: -0.302, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 1}
+  m_LocalPosition: {x: -0.018, y: 0.183, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7468644251749957004}
@@ -79,9 +79,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -6461850427530914369, guid: 7ddab250a3cf42a4fab6e25887622faa, type: 3}
+  m_Sprite: {fileID: 568985672233259972, guid: 79efbf924cce3e74eb5741c40c5ece2b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 3532493696027659799}
   - component: {fileID: 3397941643243673096}
   m_Layer: 0
-  m_Name: icon4_0
+  m_Name: "\uC57D\uD654"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,8 +117,8 @@ Transform:
   m_GameObject: {fileID: 984664436000429131}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.199, y: -0.115, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 1}
+  m_LocalPosition: {x: 0.085, y: 0.188, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7468644251749957004}
@@ -170,9 +170,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4809366312265499295, guid: 5a6f78990c07317449db1d692c17e1ad, type: 3}
+  m_Sprite: {fileID: 5190022812697159173, guid: 0a5355bac73eec94d82df016bdea6fa1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -193,7 +193,7 @@ GameObject:
   - component: {fileID: 5683705731203443189}
   - component: {fileID: 73671162772666856}
   m_Layer: 0
-  m_Name: icon3_0
+  m_Name: "\uC911\uB3C5"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -208,8 +208,8 @@ Transform:
   m_GameObject: {fileID: 4517223112365783224}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.20951603, y: -0.204, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 1}
+  m_LocalPosition: {x: -0.138, y: 0.18, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7468644251749957004}
@@ -261,9 +261,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -4473438565404442286, guid: 7ddab250a3cf42a4fab6e25887622faa, type: 3}
+  m_Sprite: {fileID: 7910490971622107415, guid: 9a11bc7b150e70345836c3fb870e2321, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 7135652289856634811}
   - component: {fileID: 3482599196095782233}
   m_Layer: 0
-  m_Name: icon3_1
+  m_Name: "\uCD9C\uD608"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -299,8 +299,8 @@ Transform:
   m_GameObject: {fileID: 7105411072992661942}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.131, y: -0.21309194, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 1}
+  m_LocalPosition: {x: -0.075, y: 0.187, z: 0}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7468644251749957004}
@@ -352,9 +352,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 208773013390063016, guid: 7ddab250a3cf42a4fab6e25887622faa, type: 3}
+  m_Sprite: {fileID: 4274615127154092170, guid: 57df35a6509da494082d7b691db71e04, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 7185136445251464426}
   - component: {fileID: 8572085188253906588}
   m_Layer: 0
-  m_Name: icon3_3
+  m_Name: "\uD654\uC0C1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -390,8 +390,8 @@ Transform:
   m_GameObject: {fileID: 7114477895386439307}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.123, y: -0.289, z: 0}
-  m_LocalScale: {x: 0.03, y: 0.03, z: 1}
+  m_LocalPosition: {x: 0.03, y: 0.186, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7468644251749957004}
@@ -443,9 +443,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 6514335857063276654, guid: 7ddab250a3cf42a4fab6e25887622faa, type: 3}
+  m_Sprite: {fileID: -976889838691071151, guid: 9d73db88f2898e140b948e9ef9734c0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
