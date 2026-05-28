@@ -21,6 +21,18 @@
         "path": "maps/스테이지 5 (천마신교) 맵"
     },
     {
+        "id": "Pub",
+        "path": "maps/객잔 맵"
+    },
+    {
+        "id": "Pharmacy",
+        "path": "maps/약방 맵"
+    },
+    {
+        "id": "BossBattle2",
+        "path": "maps/스테이지 5 (천마신교 2페이즈) 맵"
+    },
+    {
         "id": "stage1_enter",
         "path": "cut scene/맵전환 컷신 (무당파)"
     },
