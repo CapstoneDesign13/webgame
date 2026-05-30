@@ -32,17 +32,17 @@
       "stat_bonuses": {
         "atk": 2,
         "def": -2,
-        "heal": 1
+        "heal": 3
       }
     },
 
     {
       "id": "p_combo_004",
       "name": "차보위신",
-      "description": "이동 후 방어 시 발동. 한 턴 동안 방어력이 크게 증가합니다.",
+      "description": "이동 후 방어 시 발동. 한 턴 동안 방어력이 증가합니다.",
       "command_chains": ["MOVE", "X"],
       "stat_bonuses": {
-        "def": 10
+        "def": 2
       }
     },
 
@@ -70,10 +70,10 @@
     {
       "id": "p_combo_007",
       "name": "허실쌍검",
-      "description": "연속 공격 후 방어 시 발동. 현재 공격력만큼 방어력이 증가합니다.",
+      "description": "연속 공격 후 방어 시 발동. 방어력이 증가합니다.",
       "command_chains": ["Z", "Z", "X"],
       "stat_bonuses": {
-        "def": 16
+        "def": 2
       }
     },
 

@@ -3,34 +3,34 @@
     {
       "id": "a_combo_001",
       "name": "질풍참",
-      "description": "방향키 입력 후 공격 시 발동, 도착한 위치를 중심으로 가로세로 5x5 범위의 적들을 플레이어 공격력에 공격력 +1 해서 공격합니다.",
+      "description": "방향키 입력 후 공격 시 발동, 도착한 위치를 중심으로 가로세로 5x5 범위의 적들을 플레이어 공격력에 공격력 -2 해서 공격합니다.",
       "command_chains": ["MOVE", "Z"],
-      "stat_bonuses": { "atk": -5 },
+      "stat_bonuses": { "atk": -2 },
       "range_coordinates": { 
         "type": "Square",
-        "a": 5
+        "a": 5 
       }
     },
 
     {
       "id": "a_combo_002",
       "name": "연환전광참",
-      "description": "이동 후 연속 공격 시 발동, 도착한 위치를 중심으로 가로와 세로 모두 폭 3칸인 거대한 십자 범위 적들을 플레이어 공격력에 공격력 +1 해서 공격합니다.",
+      "description": "이동 후 연속 공격 시 발동, 도착한 위치를 중심으로 가로와 세로 모두 폭 3칸인 거대한 십자 범위 적들을 플레이어 공격력에 공격력 -3 해서 공격합니다.",
       "command_chains": ["MOVE", "Z", "Z"],
-      "stat_bonuses": { "atk": -5 },
+      "stat_bonuses": { "atk": -3 },
       "range_coordinates": { 
         "type": "Cross",
-        "a": 4,
-        "b": 1
+        "a": 3,
+        "b": 1  
       }
     },
 
     {
       "id": "a_combo_003",
       "name": "유성반월참",
-      "description": "곡선 이동 후 공격 시 발동, 도착한 위치를 중심으로 가로 5칸 x 세로 5칸 범위의 적들을 플레이어 공격력에 공격력 +3 해서 공격합니다.",
+      "description": "곡선 이동 후 공격 시 발동, 도착한 위치를 중심으로 가로 5칸 x 세로 5칸 범위의 적들을 플레이어 공격력에 공격력 -2 해서 공격합니다.",
       "command_chains": ["MOVE", "MOVE", "Z"],
-      "stat_bonuses": { "atk": -3 },
+      "stat_bonuses": { "atk": -2 },
       "range_coordinates": { 
         "type": "Square",
         "a": 5
@@ -40,21 +40,21 @@
     {
       "id": "a_combo_004",
       "name": "삼재회검",
-      "description": "제자리에서 공격 3회 입력 시 발동, 자신을 중심으로 가로 7칸 x 세로 7칸 범위의 적들을 플레이어 공격력에 공격력 +3 해서 공격합니다.",
+      "description": "제자리에서 공격 3회 입력 시 발동, 자신을 중심으로 전방위 1칸 범위의 적들을 플레이어 공격력으로 공격합니다.",
       "command_chains": ["Z", "Z", "Z"],
-      "stat_bonuses": { "atk": -4 },
+      "stat_bonuses": { "atk": 0 },
       "range_coordinates": { 
         "type": "Square",
-        "a": 7
+        "a": 3
       }
     },
 
     {
       "id": "a_combo_005",
       "name": "유능제강",
-      "description": "공격 후 연속 방어 시 발동, 자신을 중심으로 가로 3칸 x 세로 3칸 범위의 적들을 플레이어 공격력으로 공격하고, 플레이어 방어력이 2만큼 추가로 상승합니다.",
+      "description": "공격 후 연속 방어 시 발동, 자신을 중심으로 가로 3칸 x 세로 3칸 범위의 적들을 플레이어 공격력에 공격력 -4 해서 공격하고, 플레이어 방어력이 2 만큼 추가로 상승합니다.",
       "command_chains": ["Z", "X", "X"],
-      "stat_bonuses": { "atk": -5, "def": 2 },
+      "stat_bonuses": { "atk": -4, "def": 2 },
       "range_coordinates": { 
         "type": "Square",
         "a": 3
@@ -64,9 +64,9 @@
     {
       "id": "a_combo_006",
       "name": "음양협격",
-      "description": "공격, 방어, 공격을 연달아 할 시 발동, 자신을 중심으로 사각 모서리 4칸이 제외된 총 21칸 범위의 적들을 플레이어 공격력에 공격력 +2 해서 공격하고, 플레이어 방어력이 2만큼 상승합니다.",
+      "description": "공격, 방어, 공격을 연달아 할 시 발동, 자신을 중심으로 사각 모서리 4칸이 제외된 총 21칸 범위의 적들을 플레이어 공격력에 공격력 -4 해서 공격하고, 플레이어 방어력이 2 만큼 상승합니다.",
       "command_chains": ["Z", "X", "Z"],
-      "stat_bonuses": { "atk": -5, "def": 2 },
+      "stat_bonuses": { "atk": -4, "def": 2 },
       "range_coordinates": { 
         "type": "Cross",
         "a": 2,
@@ -83,7 +83,7 @@
       "knockback": 1,
       "range_coordinates": { 
         "type": "Cross",
-        "a": 4,
+        "a": 3,
         "b": 1
       }
     },
@@ -93,7 +93,7 @@
       "name": "만천화우",
       "description": "경공 후 연속 공격 시 발동. 주변 광역 공격과 중독 효과를 부여합니다.",
       "command_chains": ["C", "Z", "Z"],
-      "stat_bonuses": { "atk": -4 },
+      "stat_bonuses": { "atk": 0 },
       "poison_stack": 2,
       "range_coordinates": {
         "type": "Square",
@@ -106,7 +106,7 @@
       "name": "삼매진화",
       "description": "연속 공격 후 경공 시 발동. 출발 위치에 화염 지대를 생성합니다.",
       "command_chains": ["Z", "Z", "C"],
-      "stat_bonuses": { "atk": -4 },
+      "stat_bonuses": { "atk": 0 },
       "burn_stack": 2,
       "range_coordinates": {
         "type": "Square",
@@ -119,7 +119,7 @@
       "name": "금강파황권",
       "description": "이동 후 공격과 경공을 연계합니다. 강력한 피해와 넉백 효과를 줍니다.",
       "command_chains": ["MOVE", "Z", "C"],
-      "stat_bonuses": { "atk": -3 },
+      "stat_bonuses": { "atk": -2 },
       "knockback": 2,
       "range_coordinates": {
         "type": "Square",
@@ -132,7 +132,7 @@
       "name": "사자후폭풍",
       "description": "방어 후 연속 공격 시 발동. 전방 적들을 멀리 밀쳐냅니다.",
       "command_chains": ["X", "Z", "Z"],
-      "stat_bonuses": { "atk": -5 },
+      "stat_bonuses": { "atk": -3 },
       "knockback": 3,
       "range_coordinates": {
         "type": "Square",
@@ -145,7 +145,7 @@
       "name": "묵혈반천격",
       "description": "공격 후 경공 후 공격 시 발동. 출혈을 부여하고 안전거리를 확보합니다.",
       "command_chains": ["Z", "C", "Z"],
-      "stat_bonuses": { "atk": -4 },
+      "stat_bonuses": { "atk": 0 },
       "bleed_stack": 3,
       "range_coordinates": {
         "type": "Square",
@@ -158,7 +158,7 @@
       "name": "등천보",
       "description": "3회 연속 경공 시 발동. 착지 시 주변 적들에게 피해를 줍니다.",
       "command_chains": ["C", "C", "C"],
-      "stat_bonuses": { "atk": -4 },
+      "stat_bonuses": { "atk": -2 },
       "range_coordinates": {
         "type": "Square",
         "a": 3
@@ -170,7 +170,7 @@
       "name": "반탄신공",
       "description": "적의 공격을 막아낸 직후 힘을 되돌려주는 초식.",
       "command_chains": ["X", "Z"],
-      "stat_bonuses": { "atk": -4 },
+      "stat_bonuses": { "atk": -2 },
       "knockback": 1,
       "range_coordinates": { 
         "type": "Square",
@@ -183,7 +183,7 @@
       "name": "풍익보",
       "description": "적의 공격을 튕겨냄과 동시에 경공으로 이탈.",
       "command_chains": ["X", "C"],
-      "stat_bonuses": { "atk": -4 },
+      "stat_bonuses": { "atk": -2 },
       "range_coordinates": { 
         "type": "Square",
         "a": 3
@@ -195,7 +195,7 @@
       "name": "십자혈랑참",
       "description": "베고, 이동하고, 다시 베기",
       "command_chains": ["Z", "MOVE", "Z"],
-      "stat_bonuses": { "atk": -4 },
+      "stat_bonuses": { "atk": 0 },
       "bleed_stack": 1,
       "range_coordinates": { 
         "type": "Diamond",
@@ -208,7 +208,7 @@
       "name": "환영미종보",
       "description": "이동 후 경공 관통, 방어 태세",
       "command_chains": ["MOVE", "C", "X"],
-      "stat_bonuses": { "def": 2 },
+      "stat_bonuses": { "atk": -2, "def": 2 },
       "bleed_stack": 1,
       "range_coordinates": { 
         "type": "Diamond",
@@ -221,7 +221,7 @@
       "name": "투경참",
       "description": "2회 경공 후 공격 시 발동. 방어력을 무시하는 관통 피해를 줍니다.",
       "command_chains": ["C", "C", "Z"],
-      "stat_bonuses": { "atk": -4, "def": -1 },
+      "stat_bonuses": { "atk": -2, "def": -1 },
       "piercing_damage": true,
       "range_coordinates": {
         "type": "Square",
@@ -234,7 +234,7 @@
       "name": "정중동",
       "description": "연속 방어 후 경공 사용 시 발동. 인접 적들을 1턴 동안 이동 불가 상태로 만듭니다.",
       "command_chains": ["X", "X", "C"],
-      "stat_bonuses": { "atk": -4 },
+      "stat_bonuses": { "atk": -2 },
       "immobilize_stack": 1,
       "range_coordinates": {
         "type": "Square",
