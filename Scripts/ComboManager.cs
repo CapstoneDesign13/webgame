@@ -101,10 +101,26 @@ public class ComboManager : MonoBehaviour
 
         foreach (var pattern in patterns)
         {
-            if (Match(input, pattern.command_chains))
+            bool matched = false;
+
+            for (int startIndex = 0;
+                 startIndex <= input.Count - pattern.command_chains.Count;
+                 startIndex++)
             {
-                if (bestMatch == null || pattern.command_chains.Count > bestMatch.command_chains.Count)
+                if (Match(input, pattern.command_chains, startIndex))
+                {
+                    matched = true;
+                    break;
+                }
+            }
+
+            if (matched)
+            {
+                if (bestMatch == null ||
+                    pattern.command_chains.Count > bestMatch.command_chains.Count)
+                {
                     bestMatch = pattern;
+                }
 
                 Debug.Log($"{pattern.name}: 조건 만족");
             }

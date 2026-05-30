@@ -9,6 +9,7 @@ public class BackgroundManager : MonoBehaviour
     {
         if (picid != newid)
         {
+            picid = newid;
             Sprite cache = ModDatabase.Instance.GetPic(newid);
             sprite.sprite = cache;
         }
