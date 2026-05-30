@@ -33,35 +33,35 @@
         "path": "비전투/영천"
     },
     {
-        "id": "약방 주인N",
+        "id": "약방N",
         "path": "비전투/약방 주인/rotations/north"
     },
     {
-        "id": "약방 주인NE",
+        "id": "약방NE",
         "path": "비전투/약방 주인/rotations/north-east"
     },
     {
-        "id": "약방 주인E",
+        "id": "약방E",
         "path": "비전투/약방 주인/rotations/east"
     },
     {
-        "id": "약방 주인SE",
+        "id": "약방SE",
         "path": "비전투/약방 주인/rotations/south-east"
     },
     {
-        "id": "약방 주인S",
+        "id": "약방S",
         "path": "비전투/약방 주인/rotations/south"
     },
     {
-        "id": "약방 주인SW",
+        "id": "약방SW",
         "path": "비전투/약방 주인/rotations/south-west"
     },
     {
-        "id": "약방 주인W",
+        "id": "약방W",
         "path": "비전투/약방 주인/rotations/west"
     },
     {
-        "id": "약방 주인NW",
+        "id": "약방NW",
         "path": "비전투/약방 주인/rotations/north-west"
     }  
     ]
