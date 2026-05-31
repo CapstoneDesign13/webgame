@@ -164,7 +164,7 @@ public class TurnManager : MonoBehaviour
         }
 
         if (RunManager.Instance != null
-            && !RunManager.Instance.IsCurrentBossRoom()
+            // && !RunManager.Instance.IsCurrentBossRoom()
             && turnCount >= player.duelturn
             && !duelStarted)
         {
