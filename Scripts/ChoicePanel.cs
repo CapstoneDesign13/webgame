@@ -154,8 +154,8 @@ public class ChoicePanel : FullScreenPanel
 
     public void ALLorNOTHING(int _)
     {
-        int d2 = UnityEngine.Random.Range(1,2);
-        if (d2 == 2)
+        int d2 = UnityEngine.Random.Range(0,2);
+        if (d2 == 0)
         {
             player.HP += player.MaxHP;
         }
