@@ -32,7 +32,7 @@
       "stat_bonuses": {
         "atk": 2,
         "def": -2,
-        "heal": 3
+        "heal": 1
       }
     },
 
