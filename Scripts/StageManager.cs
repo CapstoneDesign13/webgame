@@ -33,7 +33,7 @@ public class StageManager : MonoBehaviour
     public void OpenOracle()
     {
         exp++;
-        if (exp >= 10)
+        if (stage < 5 && exp >= 10)
         {
             stage++;
             exp = 0;
