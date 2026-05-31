@@ -3,7 +3,7 @@
     {
       "id": "a_combo_001",
       "name": "질풍참",
-      "description": "방향키 입력 후 공격 시 발동, 도착한 위치를 중심으로 가로세로 5x5 범위의 적들을 플레이어 공격력에 공격력 -2 해서 공격합니다.",
+      "description": "방향키 입력 후 공격 시 발동. 도착한 위치를 중심으로 가로 세로 5x5 범위의 적들을 공격합니다.",
       "command_chains": ["MOVE", "Z"],
       "stat_bonuses": { "atk": -2 },
       "range_coordinates": { 
@@ -15,7 +15,7 @@
     {
       "id": "a_combo_002",
       "name": "연환전광참",
-      "description": "이동 후 연속 공격 시 발동, 도착한 위치를 중심으로 가로와 세로 모두 폭 3칸인 거대한 십자 범위 적들을 플레이어 공격력에 공격력 -3 해서 공격합니다.",
+      "description": "이동 후 연속 공격 시 발동. 도착한 위치를 중심으로 가로와 세로 모두 폭 3칸인 거대한 십자 범위 적들을 공격합니다.",
       "command_chains": ["MOVE", "Z", "Z"],
       "stat_bonuses": { "atk": -3 },
       "range_coordinates": { 
@@ -28,7 +28,7 @@
     {
       "id": "a_combo_003",
       "name": "유성반월참",
-      "description": "곡선 이동 후 공격 시 발동, 도착한 위치를 중심으로 가로 5칸 x 세로 5칸 범위의 적들을 플레이어 공격력에 공격력 -2 해서 공격합니다.",
+      "description": "곡선 이동 후 공격 시 발동. 도착한 위치를 중심으로 가로 세로 5x5 범위의 적들을 공격합니다.",
       "command_chains": ["MOVE", "MOVE", "Z"],
       "stat_bonuses": { "atk": -2 },
       "range_coordinates": { 
@@ -40,7 +40,7 @@
     {
       "id": "a_combo_004",
       "name": "삼재회검",
-      "description": "제자리에서 공격 3회 입력 시 발동, 자신을 중심으로 전방위 1칸 범위의 적들을 플레이어 공격력으로 공격합니다.",
+      "description": "제자리에서 공격 3회 입력 시 발동. 자신을 중심으로 전방위 1칸 범위의 적들을 공격합니다.",
       "command_chains": ["Z", "Z", "Z"],
       "stat_bonuses": { "atk": 0 },
       "range_coordinates": { 
@@ -52,7 +52,7 @@
     {
       "id": "a_combo_005",
       "name": "유능제강",
-      "description": "공격 후 연속 방어 시 발동, 자신을 중심으로 가로 3칸 x 세로 3칸 범위의 적들을 플레이어 공격력에 공격력 -4 해서 공격하고, 플레이어 방어력이 2 만큼 추가로 상승합니다.",
+      "description": "공격 후 연속 방어 시 발동. 자신을 중심으로 전방위 1칸 범위의 적들을 공격하고, 방어력이 상승합니다.",
       "command_chains": ["Z", "X", "X"],
       "stat_bonuses": { "atk": -4, "def": 2 },
       "range_coordinates": { 
@@ -64,7 +64,7 @@
     {
       "id": "a_combo_006",
       "name": "음양협격",
-      "description": "공격, 방어, 공격을 연달아 할 시 발동, 자신을 중심으로 사각 모서리 4칸이 제외된 총 21칸 범위의 적들을 플레이어 공격력에 공격력 -4 해서 공격하고, 플레이어 방어력이 2 만큼 상승합니다.",
+      "description": "공격, 방어, 공격을 연달아할 시 발동. 자신을 중심으로 사각 모서리 4칸이 제외된 총 21칸 범위의 적들을 공격하고, 방어력이 상승합니다.",
       "command_chains": ["Z", "X", "Z"],
       "stat_bonuses": { "atk": -4, "def": 2 },
       "range_coordinates": { 
@@ -168,7 +168,7 @@
     {
       "id": "a_combo_00A",
       "name": "반탄신공",
-      "description": "적의 공격을 막아낸 직후 힘을 되돌려주는 초식.",
+      "description": "방어 후 공격 시 발동. 적의 공격을 막아낸 직후 힘을 되돌려주는 초식입니다.",
       "command_chains": ["X", "Z"],
       "stat_bonuses": { "atk": -2 },
       "knockback": 1,
@@ -181,7 +181,7 @@
     {
       "id": "a_combo_00B",
       "name": "풍익보",
-      "description": "적의 공격을 튕겨냄과 동시에 경공으로 이탈.",
+      "description": "방어 후 경공 시 발동. 적의 공격을 튕겨냄과 동시에 경공으로 이탈합니다.",
       "command_chains": ["X", "C"],
       "stat_bonuses": { "atk": -2 },
       "range_coordinates": { 
@@ -193,7 +193,7 @@
     {
       "id": "a_combo_00C",
       "name": "십자혈랑참",
-      "description": "베고, 이동하고, 다시 베기",
+      "description": "공격, 이동, 공격을 연달아할 시 발동. 베고, 이동하고, 다시 벱니다.",
       "command_chains": ["Z", "MOVE", "Z"],
       "stat_bonuses": { "atk": 0 },
       "bleed_stack": 1,
@@ -206,7 +206,7 @@
     {
       "id": "a_combo_00D",
       "name": "환영미종보",
-      "description": "이동 후 경공 관통, 방어 태세",
+      "description": "이동, 경공, 방어를 연달아할 시 발동. 이동 후 경공 관통, 방어 태세를 갖춥니다.",
       "command_chains": ["MOVE", "C", "X"],
       "stat_bonuses": { "atk": -2, "def": 2 },
       "bleed_stack": 1,
