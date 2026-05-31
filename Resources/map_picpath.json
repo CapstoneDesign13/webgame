@@ -2,35 +2,35 @@
     "items": [
     {
         "id": "stage1",
-        "path": "maps/스테이지 1 (무당파) 맵"
+        "path": "maps(수정)/스테이지 1 (무당파) 맵"
     },
     {
         "id": "stage2",
-        "path": "maps/스테이지 2 (사천당가) 맵"
+        "path": "maps(수정)/스테이지 2 (사천당가) 맵"
     },
     {
         "id": "stage3",
-        "path": "maps/스테이지 3 (소림사) 맵"
+        "path": "maps(수정)/스테이지 3 (소림사) 맵"
     },
     {
         "id": "stage4",
-        "path": "maps/스테이지 4 (하오문) 맵"
+        "path": "maps(수정)/스테이지 4 (하오문) 맵"
     },
     {
         "id": "stage5",
-        "path": "maps/스테이지 5 (천마신교) 맵"
+        "path": "maps(수정)/스테이지 5 (천마신교) 맵"
     },
     {
         "id": "Pub",
-        "path": "maps/객잔 맵"
+        "path": "maps(수정)/객잔 맵"
     },
     {
         "id": "Pharmacy",
-        "path": "maps/약방 맵"
+        "path": "maps(수정)/약방 맵"
     },
     {
         "id": "BossBattle2",
-        "path": "maps/스테이지 5 (천마신교 2페이즈) 맵"
+        "path": "maps(수정)/스테이지 5 (천마신교 2페이즈) 맵"
     },
     {
         "id": "stage1_enter",
