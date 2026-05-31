@@ -9,8 +9,9 @@ public class UIManager : MonoBehaviour
     public TurnManager turn;
     public EconomyManager economy;
 
-    public TMP_Text QiText;
+    //public TMP_Text QiText;
     public TMP_Text TurnText;
+    public TMP_Text DuelText;
     public LineAnimator line;
     public TMP_Text ATK;
     public TMP_Text DEF;
@@ -80,8 +81,9 @@ public class UIManager : MonoBehaviour
         }
         Skills.text = sb.ToString();
 
-        QiText.text = $"<color=#B8F8FB>일기토 까지:{player.duelturn - turn.turnCount} 합</color>";
-        TurnText.text = "<color=#FFD000>제 " + turn.turnCount + "합</color>";
+        //QiText.text = $"<color=#B8F8FB>일기토 까지:{player.duelturn - turn.turnCount} 합</color>";
+        TurnText.text = "<color=#FFD000>제 " + turn.turnCount + " 합</color>";
+        DuelText.text = $"<color=#B8F8FB>앞으로 {player.duelturn - turn.turnCount} 합</color>";
         var movement = player.path;
         if (movement.Count == 1)
             line.DrawPath(movement);
