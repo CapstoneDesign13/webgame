@@ -208,7 +208,7 @@ public class PlayerUnit : CharacterBase
 
         statEntry += new StatEntry()
         {
-            def = _Defense,
+            def = 3,
         };
         RegisterAction("X");
         ui.Refresh();

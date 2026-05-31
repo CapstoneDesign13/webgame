@@ -122,7 +122,7 @@ public class MerchantPanel : FullScreenPanel
 
     public void Refill()
     {
-        if (!economy.TrySpend(1))
+        if (!economy.TrySpend(2))
             return;
         RefreshUI();
 
