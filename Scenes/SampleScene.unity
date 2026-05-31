@@ -5557,6 +5557,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BackgroundManager
   picid: stage1
   sprite: {fileID: 1775686319}
+  audioSource: {fileID: 592703508}
+  stage5Clip: {fileID: 8300000, guid: 37dda79760cfe084b9041df9edc8d8e5, type: 3}
+  BossBattle2Clip: {fileID: 8300000, guid: 61e83a101eb90c84d90070e01ca08bde, type: 3}
 --- !u!4 &749472616
 Transform:
   m_ObjectHideFlags: 0
@@ -11568,7 +11571,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 313791280}
@@ -11622,7 +11625,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -1494133506215645735, guid: 1c6eedd6adcb81047b4b3db6a2b551de, type: 3}
+  m_Sprite: {fileID: 3652876281773865624, guid: 34d5a42d6fc49ef409a757ccce9fdd3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12765,7 +12768,7 @@ MonoBehaviour:
   turnManager: {fileID: 906787196}
   window: {fileID: 518549340}
   rooms:
-  - type: 1
+  - type: 8
     stageKey: stage1
   - type: 18
     stageKey: stage5
