@@ -80,6 +80,7 @@ public class PlayerUnit : CharacterBase
             line.DrawPath(Corners);
             statEntry += active.stat_bonuses;
             var area = ShapeUtils.IterateThruShape(active.range_coordinates);
+            bool kill_spree = false;
             foreach (var cord in area)
             {
                 if(TryAttackGrid(cord, active.piercing_damage))
@@ -112,8 +113,11 @@ public class PlayerUnit : CharacterBase
                     else
                     {
                         Debug.Log("Target no longer valid");
+                        kill_spree = true;
                     }
                 }
+                if (kill_spree)
+                    RunManager.Instance.TryClearBattle();
             }
         }
         //공격력 증가는 턴 종료시까지 유지
