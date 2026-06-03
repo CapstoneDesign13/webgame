@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     //public TMP_Text QiText;
     public TMP_Text TurnText;
     public TMP_Text DuelText;
+    public TMP_Text PrimaryText;
     public LineAnimator line;
     public TMP_Text ATK;
     public TMP_Text DEF;
@@ -84,6 +85,9 @@ public class UIManager : MonoBehaviour
         //QiText.text = $"<color=#B8F8FB>일기토 까지:{player.duelturn - turn.turnCount} 합</color>";
         TurnText.text = "<color=#FFD000>제 " + turn.turnCount + " 합</color>";
         DuelText.text = $"<color=#B8F8FB>앞으로 {player.duelturn - turn.turnCount} 합</color>";
+        string str1 = "공격";
+        string str2 = "대화";
+        PrimaryText.text = $"<color=#CD2E3A>●</color>{(player.engaged ? str1 : str2)}(z)";
         var movement = player.path;
         if (movement.Count == 1)
             line.DrawPath(movement);

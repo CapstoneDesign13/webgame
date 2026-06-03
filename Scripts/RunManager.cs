@@ -10,6 +10,8 @@ public class RunManager : MonoBehaviour
     [SerializeField] private RoomDefinition[] rooms;
     [SerializeField] private PlayerUnit player;
     [SerializeField] private EconomyManager economy;
+    [SerializeField] private StageManager stage;
+
 
     [SerializeField] private Vector2Int playerStartPosition = new Vector2Int(4, 0);
 
@@ -193,7 +195,7 @@ public class RunManager : MonoBehaviour
     {
         if (window != null && window.oraclePanel != null)
         {
-            window.OpenOracle();
+            stage.OpenOracle();
             return;
         }
         //레거시
