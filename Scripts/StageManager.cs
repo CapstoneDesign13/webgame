@@ -10,7 +10,7 @@ public class StageManager : MonoBehaviour
 
     public bool pharmacyhappened;
 
-    int exp = 10;
+    int exp = 0;
 
     public void ProxyRand()
     {
