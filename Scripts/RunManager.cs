@@ -175,8 +175,6 @@ public class RunManager : MonoBehaviour
         economy.Earn(10);
 
         transitioning = true;
-        Debug.Log($"STAGE CLEAR BY {source}");
-        OpenStageClearChoice();
 
         Debug.Log($"STAGE CLEAR BY {source}");
 
